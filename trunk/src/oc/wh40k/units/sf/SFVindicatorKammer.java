@@ -1,0 +1,31 @@
+package oc.wh40k.units.sf;
+
+import oc.OptionsEinzelUpgrade;
+import oc.RuestkammerVater;
+
+public class SFVindicatorKammer extends RuestkammerVater {
+
+	public SFVindicatorKammer() {
+		grundkosten = 115;
+        }
+        
+        public void initButtons(boolean... defaults) {
+
+		add(ico = new oc.Picture("oc/wh40k/images/SMVindicator.jpg"));
+
+		seperator();
+
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radar-Suchkopfrakete", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Belagerungsschild", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 15));
+
+		sizeSetzen();
+	}
+
+	@Override
+	public void refreshen() {
+	}
+	
+}

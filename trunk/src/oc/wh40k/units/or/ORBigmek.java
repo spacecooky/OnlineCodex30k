@@ -1,0 +1,163 @@
+package oc.wh40k.units.or;
+
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
+
+public class ORBigmek extends Eintrag {
+
+    OptionsEinzelUpgrade Munigrot;
+    OptionsEinzelUpgrade CyborkKörpa;
+    OptionsEinzelUpgrade Panzarüstung;
+    OptionsEinzelUpgrade Trophäenstange;
+    OptionsEinzelUpgrade Schnappasquik;
+    OptionsUpgradeGruppe BigmekCC;
+    OptionsUpgradeGruppe BigmekFK;
+    OptionsEinzelZaehler Schmiergrot;
+    RuestkammerStarter MekboyJunka;
+	OptionsEinzelUpgrade madDokCybork;
+
+    public ORBigmek() {
+        kategorie = 1;
+        name = "Bigmek";
+        grundkosten = 35;
+
+        add(ico = new oc.Picture("oc/wh40k/images/Bigmek.gif"));
+        
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Brenna", 20));
+        ogE.addElement(new OptionsGruppeEintrag("Energiekrallä", 25));
+
+        BigmekCC = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE);
+        add(BigmekCC);
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Bazzukka-Kombi", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Gitbrenna-Kombi", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Megablasta", 15));
+        ogE.addElement(new OptionsGruppeEintrag("Megarüstung", 40));
+        ogE.addElement(new OptionsGruppeEintrag("Snotzogga", 60));
+        ogE.addElement(new OptionsGruppeEintrag("Schpezialkraftfeld", 50));
+        ogE.addElement(new OptionsGruppeEintrag("Waaghbike", 40));
+
+        BigmekFK = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE);
+        add(BigmekFK);
+
+        seperator(15);
+
+        Munigrot = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Munigrot", 3);
+        add(Munigrot);
+
+        CyborkKörpa = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cybork-Körpa", 10);
+        add(CyborkKörpa);
+
+        Panzarüstung = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Panzarüstung", 5);
+        add(Panzarüstung);
+
+        Trophäenstange = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Trophäenstange", 5);
+        add(Trophäenstange);
+
+        Schnappasquik = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Schnappasquik", 15);
+        add(Schnappasquik);
+
+        seperator();
+
+        Schmiergrot = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Schmiergrot", 3, 5);
+        add(Schmiergrot);
+
+        seperator();
+		
+		add(madDokCybork = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grotsniks Cybork-Körpa", 5));
+
+        seperator();
+
+        MekboyJunka = new RuestkammerStarter(ID, randAbstand, cnt, "ORMekboyJunkaKammer", "Mekboy Junka [Forgeworld]");
+        MekboyJunka.initKammer();
+        add(MekboyJunka);
+
+        BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Gargbot");
+        BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("[IA Apocalypse 2nd Ed] Grot Tank Battle Mob");
+        BuildaHQ.addToInformationVector("ORBigmek", 1);
+        
+        complete();
+    }
+
+    @Override
+    public void deleteYourself() {
+        BuildaHQ.addToInformationVector("ORBigmek", -1);
+        if(BuildaHQ.getCountFromInformationVector("ORBigmek") <= 0) {
+            BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Gargbot");
+            BuildaHQ.getChooserGruppe(2).removeSpezialAuswahl("[IA Apocalypse 2nd Ed] Grot Tank Battle Mob");
+        }
+        super.deleteYourself();
+    }
+
+    int aktivesBild = 0;
+
+    //@OVERRIDE
+    @Override
+    public void refreshen() {
+        BigmekFK.setAktiv("Megarüstung", !BigmekFK.isSelected("Waaghbike"));
+
+        if (BigmekFK.getCurrentName().equals("Schpezialkraftfeld")) {
+            if (aktivesBild != 1) {
+                String icon = "oc/wh40k/images/BigmekKraftfeld.gif";
+                ico.setIcon(icon);
+
+                try {
+                    ico.updateSize();
+                } catch (Exception e) {
+                }
+
+                aktivesBild = 1;
+            }
+        } else if (BigmekFK.getCurrentName().equals("Snotzogga")) {
+            if (aktivesBild != 2) {
+                String icon = "oc/wh40k/images/BigmekSnotzogga.gif";
+                ico.setIcon(icon);
+
+                try {
+                    ico.updateSize();
+                } catch (Exception e) {
+                }
+
+                aktivesBild = 2;
+            }
+        } else {
+            if (aktivesBild != 0) {
+                String icon = "oc/wh40k/images/Bigmek.gif";
+
+                ico.setIcon(icon);
+
+                try {
+                    ico.updateSize();
+                } catch (Exception e) {
+                }
+
+                aktivesBild = 0;
+            }
+        }
+        
+        if(BuildaHQ.getCountFromInformationVector("ORDokGrotsnik")>0 && !CyborkKörpa.isSelected()){
+			madDokCybork.setAktiv(true);
+			
+		} else {
+			madDokCybork.setAktiv(false);
+			madDokCybork.setSelected(false);
+		}
+        
+        if(madDokCybork.isSelected()){
+			CyborkKörpa.setAktiv(false);
+		} else {
+			CyborkKörpa.setAktiv(true);
+		}
+    }
+
+}
