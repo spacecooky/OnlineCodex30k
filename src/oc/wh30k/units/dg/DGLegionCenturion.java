@@ -5,6 +5,7 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class DGLegionCenturion extends Eintrag {
 
@@ -18,14 +19,44 @@ public class DGLegionCenturion extends Eintrag {
 	OptionsUpgradeGruppe termi;
 	OptionsUpgradeGruppe termiFK;
 	OptionsUpgradeGruppe termiNK;
+	RuestkammerStarter Waffen;
 
 	public DGLegionCenturion() {
 		name = "Legion Centurion";
 		grundkosten = 50;
 
-		//BuildaHQ.addToInformationVector("SMEnableCommandSquad", 1);
-
 		seperator();
+		
+		ogE.addElement(new OptionsGruppeEintrag("Chaplain", 35));
+		ogE.addElement(new OptionsGruppeEintrag("Forge lord", 35));
+		ogE.addElement(new OptionsGruppeEintrag("Legion Champion", 35));
+		ogE.addElement(new OptionsGruppeEintrag("Librarian", 25));
+		ogE.addElement(new OptionsGruppeEintrag("Master of signal", 35));
+		ogE.addElement(new OptionsGruppeEintrag("Moritat", 35));
+		ogE.addElement(new OptionsGruppeEintrag("Primus medicae", 35));
+		ogE.addElement(new OptionsGruppeEintrag("Siegebreaker", 45));
+		ogE.addElement(new OptionsGruppeEintrag("Vigilator", 45));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		
+		seperator();
+		
+		Waffen = new RuestkammerStarter(ID, randAbstand, cnt, "DGWaffen", "");
+		//Chaplain, Forge, Centurion, Champion, Librarian, Master, Moritat, Praetor, Primus, Siege, Vigilator
+		if (!o1.isSelected()){Waffen.initKammer(false, false, true, false, false, false, false, false, false, false, false);}
+		else if (o1.isSelected(0)){Waffen.initKammer(true, false, false, false, false, false, false, false, false, false, false);}
+		else if (o1.isSelected(1)){Waffen.initKammer(false, true, false, false, false, false, false, false, false, false, false);}
+		else if (o1.isSelected(2)){Waffen.initKammer(false, false, false, true, false, false, false, false, false, false, false);}
+		else if (o1.isSelected(3)){Waffen.initKammer(false, false, false, false, true, false, false, false, false, false, false);}
+		else if (o1.isSelected(4)){Waffen.initKammer(false, false, false, false, false, true, false, false, false, false, false);}
+		else if (o1.isSelected(5)){Waffen.initKammer(false, false, false, false, false, false, true, false, false, false, false);}
+		else if (o1.isSelected(6)){Waffen.initKammer(false, false, false, false, false, false, false, false, true, false, false);}
+		else if (o1.isSelected(7)){Waffen.initKammer(false, false, false, false, false, false, false, false, false, true, false);}
+		else if (o1.isSelected(8)){Waffen.initKammer(false, false, false, false, false, false, false, false, false, false, true);}
+		Waffen.setButtonText(BuildaHQ.translate("Weapons"));
+		add(Waffen);
+		Waffen.setAbwaehlbar(false);
+		
+		/*seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Bolter", 2));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
@@ -94,22 +125,19 @@ public class DGLegionCenturion extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Pair of lightning claws", 20));
 		add(o7 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
-
+*/
 
 		complete();
 	}
 
-	/*@Override
+	@Override
 	public void deleteYourself() {
-		
-		BuildaHQ.addToInformationVector("SMEnableCommandSquad", -1);
-		super.deleteYourself();
-	}*/
+		}
 
 	@Override
 	public void refreshen() {
 				
-		o1.setAktiv(!termi.isSelected());
+	/*	o1.setAktiv(!termi.isSelected());
 		o2.setAktiv(!termi.isSelected() && !o3.isSelected());
 		o3.setAktiv(!termi.isSelected());
 		o4.setAktiv(!termi.isSelected());
@@ -125,7 +153,7 @@ public class DGLegionCenturion extends Eintrag {
 			}
 		if (!termiNK.isSelected()) {
 			termiNK.setSelected(0, true);
-			}
+			}*/
 	}
 
 }
