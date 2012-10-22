@@ -47,7 +47,8 @@ public class OnlineCodex extends BuildaPanel {
 	public static int NECROMUNDA = 2;
 	public static int WH40K_LEGACY = 3;
 	public static int WHFB_LEGACY = 4;
-	public static int WH40K_FANDEX = 5;
+	public static int WH40K_FANDEX = 6;
+	public static int WH30K = 5;
 	public static String armyPackage;
 	public static String allyArmyPackage;
 
@@ -151,6 +152,14 @@ public class OnlineCodex extends BuildaPanel {
 			new IconedText("van Saar", "oc/necro/images/VSvanSaar.gif")
 	};
 
+	Object[] buildazWh30k = new Object[]{
+			"",
+			new IconedText("Death Guard", "oc/wh30k/images/VSDeathGuard.gif"),
+			new IconedText("Emperor's Children", "oc/wh30k/images/VSEmperorsChildren.gif"),
+			new IconedText("Sons of Horus", "oc/wh30k/images/VSSonsofHorus.gif"),
+			new IconedText("World Eaters", "oc/wh30k/images/VSWorldEaters.gif")
+	};
+	
 	//private final JComboBox buildaChooser = new JComboBox(buildazWh40k);
 	private JComboBox buildaChooser;
 	private JComboBox buildaChooserAllies;
@@ -305,6 +314,15 @@ public class OnlineCodex extends BuildaPanel {
 			} catch (ClassNotFoundException ex) {
 			}
 		}
+	
+		if (!gameFound) {
+			try {
+				Class.forName("oc.wh30k.armies.VOLKDeathGuard");
+				setGame(WH30K);
+				gameFound = true;
+			} catch (ClassNotFoundException ex) {
+			}
+		}
 
 		if (!gameFound) {
 			fehler("Es konnte nicht bestimmt werden, welches Spiel geladen werden soll.");
@@ -318,6 +336,7 @@ public class OnlineCodex extends BuildaPanel {
 		//setGame(WH40K_LEGACY);
 		//setGame(WH40K_FANDEX);
 		//setGame(NECROMUNDA);
+		setGame(WH30K);
 
 		armyPackage = "oc.wh40k.";
 		if (getGame() == WH40K_LEGACY) {
@@ -330,6 +349,8 @@ public class OnlineCodex extends BuildaPanel {
 			armyPackage = "oc.necro.";
 		} else if (getGame() == WH40K_FANDEX) {
 			armyPackage = "oc.fan.wh40k.";
+		} else if (getGame() == WH30K) {
+			armyPackage = "oc.wh30k.";
 		}
 
 		onlineCodex = this;
@@ -366,6 +387,9 @@ public class OnlineCodex extends BuildaPanel {
 		} else if (getGame() == WH40K_FANDEX) {
 			myWindow.setTitle("OnlineCodex Wh40k - Inoffizielle Codizes - " + FENSTER);
 			buildaChooser = new JComboBox(buildazWh40kFandex);
+		} else if (getGame() == WH30K) {
+			myWindow.setTitle("OnlineCodex Wh30k - Horus Heresy - " + FENSTER);
+			buildaChooser = new JComboBox(buildazWh30k);
 		} else {
 			System.out.println("Es konnte nicht ermittelt werden, welches Spiel geladen weerden soll.");
 			System.exit(0);
@@ -975,7 +999,7 @@ public class OnlineCodex extends BuildaPanel {
 	}
 
 	public void setSelectedItemInBuildaChooser(Object s) {
-		Object[] buildaz = getGame() == WHFB ? buildazWHFB : getGame() == WH40K ? buildazWh40k : buildazNECRO;
+		Object[] buildaz = getGame() == WHFB ? buildazWHFB : getGame() == WH40K ? buildazWh40k : getGame() == WH30K ? buildazWh30k : buildazNECRO;
 		for (int i = 0; i < buildaz.length; ++i) {
 			if (buildaz[i].toString().equals(s.toString())) {
 				buildaChooser.setSelectedItem(buildaz[i]);
