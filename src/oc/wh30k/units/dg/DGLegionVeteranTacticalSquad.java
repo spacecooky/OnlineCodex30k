@@ -56,18 +56,19 @@ public class DGLegionVeteranTacticalSquad extends Eintrag {
 
 		seperator();
 
-		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "DGVeteranSergeant", "Veteran Sergeant");
+		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "DGSergeant", "Veteran Sergeant");
 		rkBoss.setGrundkosten(0);
-		rkBoss.initKammer(true, true, true, false, false);
+		rkBoss.initKammer(true, false, false);
 		rkBoss.setAbwaehlbar(false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGRhinoKammer", "Rhino");
-		rkTransport.initKammer(true, true, true, false);
-		rkTransport.setButtonText("Legion Rhino Armoured Carrier");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
+		//Rhino, Pod, Phobos, Spartan
+		rkTransport.initKammer(true, false, false, false);
+		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 
 		complete();
