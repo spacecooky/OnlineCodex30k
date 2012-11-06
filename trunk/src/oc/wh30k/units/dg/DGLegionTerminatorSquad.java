@@ -69,7 +69,7 @@ public class DGLegionTerminatorSquad extends Eintrag {
 
 		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "DGSergeant", "Terminator Sergeant");
 		rkBoss.setGrundkosten(0);
-		rkBoss.initKammer(false, false, true);
+		rkBoss.initKammer(false, false, true, false, false);
 		rkBoss.setAbwaehlbar(false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);

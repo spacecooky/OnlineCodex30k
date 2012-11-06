@@ -1,25 +1,23 @@
 package oc.wh30k.units.dg;
 
-import java.util.Vector;
-
 import oc.BuildaHQ;
-import oc.Chooser;
-import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
+import oc.OptionsEinzelZaehler;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.RuestkammerVater;
 
-public class DGApothecary extends Eintrag {
+public class DGApothecaryKammer  extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o1, o2, o3;
 
-	boolean added = false;
+	public DGApothecaryKammer () {
+            grundkosten = 45;
+	}
 
-	public DGApothecary() {
-		name = "Apothecary";
-		grundkosten = 45;
+	public void initButtons(boolean... defaults) {
+
 
 		seperator();
 
@@ -39,44 +37,12 @@ public class DGApothecary extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		complete();
+        sizeSetzen();
 	}
 
 	@Override
 	public void refreshen() {
-		setEintragsCNT(this.calculateEntryCount());
-
 		if (!o1.isSelected()) o1.setSelected(0, true);
-		
 	}
-
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
-
-	/**
-	 * eintragsCNT berechnen
-	 * @return eintragsCNT
-	 */
-	private double calculateEntryCount() {
-		double count = 0.0;
-		Vector<Chooser> allChooser = BuildaHQ.getChooserGruppe(2).getmC();
-		for(Chooser chooser : allChooser) {
-			if(chooser.getEintrag() instanceof DGApothecary) {
-				count += 1;
-			}
-		}
-
-		// merhfache von 3 beachten
-		double adder = 1.0;
-		double checkCount = count;
-		while(checkCount > 3) {
-			checkCount = checkCount - 3.0;
-			adder++;
-		}
-		
-		return adder / (count == 0.0 ? 1.0 : count);
-	}
-
+        
 }

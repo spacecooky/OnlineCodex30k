@@ -43,7 +43,7 @@ public class DGLegionDestroyerSquad extends Eintrag {
 
 		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "DGSergeant", "Destroyer Sergeant");
 		rkBoss.setGrundkosten(0);
-		rkBoss.initKammer(false, true, false);
+		rkBoss.initKammer(false, true, false, false, false);
 		rkBoss.setAbwaehlbar(false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);
