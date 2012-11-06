@@ -11,10 +11,8 @@ import oc.RuestkammerStarter;
 public class DGLegionVeteranTacticalSquad extends Eintrag {
 
 	AnzahlPanel squad;
-	OptionsZaehlerGruppe o1;
-	OptionsZaehlerGruppe o2;
+	OptionsZaehlerGruppe o1, o2, o4;
 	OptionsUpgradeGruppe o3;
-	OptionsZaehlerGruppe o4;
 	RuestkammerStarter rkBoss;
 	RuestkammerStarter rkTransport;
 
@@ -58,7 +56,7 @@ public class DGLegionVeteranTacticalSquad extends Eintrag {
 
 		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "DGSergeant", "Veteran Sergeant");
 		rkBoss.setGrundkosten(0);
-		rkBoss.initKammer(true, false, false);
+		rkBoss.initKammer(true, false, false, false, false);
 		rkBoss.setAbwaehlbar(false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);

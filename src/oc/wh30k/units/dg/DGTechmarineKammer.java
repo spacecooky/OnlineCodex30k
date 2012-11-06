@@ -1,27 +1,26 @@
 package oc.wh30k.units.dg;
 
-import java.util.Vector;
-
 import oc.BuildaHQ;
-import oc.Chooser;
-import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
+import oc.OptionsEinzelZaehler;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
+import oc.RuestkammerVater;
 
-public class DGTechmarine extends Eintrag {
+public class DGTechmarineKammer  extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o1, o2, o3, o4;
 	OptionsZaehlerGruppe o5, o6;
 	RuestkammerStarter rkTransport;
 
-	boolean added = false;
+	public DGTechmarineKammer () {
+            grundkosten = 45;
+	}
 
-	public DGTechmarine() {
-		name = "Techmarine";
-		grundkosten = 45;
+	public void initButtons(boolean... defaults) {
+
 
 		seperator();
 
@@ -71,48 +70,16 @@ public class DGTechmarine extends Eintrag {
 		rkTransport.initKammer(true, false, false, false);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
-				
-		complete();
+		
+        sizeSetzen();
 	}
 
 	@Override
 	public void refreshen() {
-		setEintragsCNT(this.calculateEntryCount());
-
 		if (!o1.isSelected()) o1.setSelected(0, true);
 		if (!o4.isSelected()) o4.setSelected(0, true);
 		
 		o6.setMaxAnzahl(o5.getAnzahl());
-		
 	}
-
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
-
-	/**
-	 * eintragsCNT berechnen
-	 * @return eintragsCNT
-	 */
-	private double calculateEntryCount() {
-		double count = 0.0;
-		Vector<Chooser> allChooser = BuildaHQ.getChooserGruppe(2).getmC();
-		for(Chooser chooser : allChooser) {
-			if(chooser.getEintrag() instanceof DGTechmarine) {
-				count += 1;
-			}
-		}
-
-		// merhfache von 3 beachten
-		double adder = 1.0;
-		double checkCount = count;
-		while(checkCount > 3) {
-			checkCount = checkCount - 3.0;
-			adder++;
-		}
-		
-		return adder / (count == 0.0 ? 1.0 : count);
-	}
-
+        
 }
