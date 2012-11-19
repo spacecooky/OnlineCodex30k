@@ -61,7 +61,7 @@ public class DGLegionTacticalSquad extends Eintrag {
 	@Override
 	public void refreshen() {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
-        if(!o3.isSelected()) o3.setSelected(0, true);
+        if(!o3.isSelected() && !o2.isSelected(1)) o2.setSelected(0, true);
         
         rkTransport.setAktiv(squad.getModelle() <=10);
         o2.setAktiv(1, !o3.isSelected());
