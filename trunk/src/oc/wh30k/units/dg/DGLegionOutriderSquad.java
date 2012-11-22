@@ -48,7 +48,8 @@ public class DGLegionOutriderSquad extends Eintrag {
 
 		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "DGSergeant", "Outrider Sergeant");
 		rkBoss.setGrundkosten(15);
-		rkBoss.initKammer(true, false, false, false, false);
+		//Assault, Bike, Breacher, Destroyer, Heavy, Reco, Seeker, Support, Tactical, Terminator, Veteran
+		rkBoss.initKammer(false, true, false, false, false, false, false, false, false, false, false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);
 
