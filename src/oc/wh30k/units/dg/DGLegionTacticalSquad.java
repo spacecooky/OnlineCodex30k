@@ -42,7 +42,8 @@ public class DGLegionTacticalSquad extends Eintrag {
 
 		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "DGSergeant", "Tactical Sergeant");
 		rkBoss.setGrundkosten(0);
-		rkBoss.initKammer(true, false, false, false, false);
+		//Assault, Bike, Breacher, Destroyer, Heavy, Reco, Seeker, Support, Tactical, Terminator, Veteran
+		rkBoss.initKammer(false, false, false, false, false, false, false, false, true, false, false);
 		rkBoss.setAbwaehlbar(false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);
