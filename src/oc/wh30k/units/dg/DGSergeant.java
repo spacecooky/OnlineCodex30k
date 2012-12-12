@@ -327,8 +327,8 @@ public class DGSergeant extends RuestkammerVater {
 			o5a.setAktiv(!o5b.isSelected());
 			o5c.setAktiv(o5b.isSelected());
 			o5d.setAktiv(o5b.isSelected());
-			if(!o5a.isSelected()) o5a.setSelected(0, true);
-			if(!o5b.isSelected()) o5b.setSelected(0, true);
+			if(!o5a.isSelected() && !o5b.isSelected()) o5a.setSelected(0, true);
+			//if(!o5b.isSelected()) o5a.setSelected(0, true);
 			if(!o5d.isSelected()) o5d.setSelected(0, true);
 			}
 		
