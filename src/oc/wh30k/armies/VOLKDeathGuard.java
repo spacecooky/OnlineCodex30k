@@ -19,6 +19,7 @@ public class VOLKDeathGuard extends BuildaVater {
 		String[] Sturmeinträge = {"", "Legion Seeker Squad", "Legion Outrider Squad", "Legion Attack Bike Squadron", "Legion Jetbike Sky Hunter Squadron", "Legion Land Speeder Squadron", "Legion Storm Eagle Assault Gunship"};
 		String[] Unterstützungeinträge = {"", "Legion Heavy Support Squad", "Legion Predator Strike Armour Squadron", "Legion Land Raider Battle Squadron", "Legion Artillery Tank Squadron", "Legion Vindicator", "Legion Spartan Assault Tank", "Legion Caestus Assault Ram"};
 		String[] Befestigungen = {"", "Aegis-Verteidigungslinie", "Himmelsschild-Landeplattform", "Imperiale Bastion", "Festung der Erlösung"};
+		String[] LordsofWar = {"", "Legion Fellblade Super-heavy Tank", "Legion Typhon Heavy Siege Tank", "Legion Thunderhawk Gunship", "Legion Thunderhawk Transporter", "Legion Cerberus Heavy Tank Destroyer", "Legion Malcador Assault Tank"};
 
 		adden(new ChooserGruppe(reflectionKennung, cnt, 0, 1, HQeinträge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -31,14 +32,15 @@ public class VOLKDeathGuard extends BuildaVater {
 		adden(new ChooserGruppe(reflectionKennung, cnt, 0, 5, Unterstützungeinträge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe("FO", cnt, 0, 6, Befestigungen));
+		cnt += CHOOSERGRUPPEN_X_ABSTAND;
+		adden(new ChooserGruppe(reflectionKennung, cnt, 0, 7, LordsofWar));
 		cnt += 480;
 
 		nameDerArtDerArmee = "Death Guard";
 		nameDerArtDerArmeeDekliniert = "Death Guard";
 		textAreaUeberschrift = "Death Guard";
+		
 		/*
-		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Sanguinische Garde");
-
 		noAllies.clear();
 		noAllies.add("BA");
 		noAllies.add("CD");
