@@ -93,7 +93,7 @@ public class DGLegionTerminatorSquad extends Eintrag {
         int subtractor = 1; // boss
 		int nksubractor=(o7a.getAnzahl()>o8.getAnzahl()?o7a.getAnzahl():o8.getAnzahl());
         
-        o7b.setMaxAnzahl(squad.getModelle()-subtractor-o7c.getAnzahl()-nksubractor);
+        o7b.setMaxAnzahl(squad.getModelle()-subtractor-o7c.getAnzahl());
 		o7a.setMaxAnzahl(squad.getModelle()-subtractor-o7c.getAnzahl());
 		
 		o7aStandard.setMaxAnzahl(squad.getModelle()-subtractor-o7a.getAnzahl()-o7c.getAnzahl());
