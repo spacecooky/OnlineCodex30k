@@ -134,6 +134,9 @@ public class DGLegionCommandSquad extends Eintrag {
 		o7c.setAktiv(o6.isSelected());
 		o8.setAktiv(o6.isSelected());
 		
+		o3.setMaxAnzahl(squad.getModelle());
+		o4a.setMaxAnzahl(squad.getModelle());
+		o4b.setMaxAnzahl(squad.getModelle()-1);
 		
 		int nksubractor=(o7a.getAnzahl()>o8.getAnzahl()?o7a.getAnzahl():o8.getAnzahl());
         
