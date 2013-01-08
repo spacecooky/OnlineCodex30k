@@ -6,7 +6,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 
-public class DGLegionCenturion extends Eintrag {
+public class DGChaplain extends Eintrag {
 
 	OptionsUpgradeGruppe o1;
 	OptionsUpgradeGruppe o2;
@@ -19,9 +19,9 @@ public class DGLegionCenturion extends Eintrag {
 	OptionsUpgradeGruppe termiFK;
 	OptionsUpgradeGruppe termiNK;
 
-	public DGLegionCenturion() {
-		name = "Legion Centurion";
-		grundkosten = 50;
+	public DGChaplain() {
+		name = "Chaplain";
+		grundkosten = 85;
 
 		//BuildaHQ.addToInformationVector("SMEnableCommandSquad", 1);
 
