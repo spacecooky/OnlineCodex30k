@@ -57,9 +57,22 @@ public class DGDreadnoughtKammer  extends RuestkammerVater {
 			if (!o1.isSelected()) o1.setSelected(0, true);
 			if (!o2.isSelected()) o2.setSelected(0, true);
 			
-			o3.setMaxAnzahl(!o2.isSelected("Twin-linked autocannon") && !o2.isSelected("Twin-linked missile launcher") ?1:0 + (o1.isSelected("Dreadnought close combat weapon")?1:0) - o4.getAnzahl());
-			o3.setAnzahl(0, !o2.isSelected("Twin-linked autocannon") && !o2.isSelected("Twin-linked missile launcher") ?1:0 + (o1.isSelected("Dreadnought close combat weapon")?1:0) - o4.getAnzahl());
-			o4.setMaxAnzahl(!o2.isSelected("Twin-linked autocannon") && !o2.isSelected("Twin-linked missile launcher") ?1:0 + (o1.isSelected("Dreadnought close combat weapon")?1:0));
+			int Zaehler1;
+			int Zaehler2;
+			
+			if (o1.isSelected("Dreadnought close combat weapon")) 
+				{Zaehler1 = 1;}
+			else
+				{Zaehler1 = 0;}
+			
+			if (o2.isSelected("Dreadnought close combat weapon") || (o2.isSelected("Chainfist")) || (o2.isSelected("Siege Wrecker"))) 
+			{Zaehler2 = 1;}
+			else
+			{Zaehler2 = 0;}
+			
+			o3.setMaxAnzahl(Zaehler1 + Zaehler2 - o4.getAnzahl());
+			o3.setAnzahl(0, Zaehler1 + Zaehler2 - o4.getAnzahl());
+			o4.setMaxAnzahl(Zaehler1 + Zaehler2);
     		
 	}
         
