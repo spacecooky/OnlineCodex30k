@@ -59,10 +59,10 @@ public class DGLegionTacticalSupportSquad extends Eintrag {
         if (!o1.isSelected()) o1.setSelected(0, true);
         
 		o1.setPreis(0, 0);
-		o1.setPreis(1, squad.getModelle() * 5);
-		o1.setPreis(2, squad.getModelle() * 5);
-		o1.setPreis(3, squad.getModelle() * 15);
-		o1.setPreis(4, squad.getModelle() * 15);
+		o1.setPreis(1, (squad.getModelle()-1) * 5);
+		o1.setPreis(2, (squad.getModelle()-1) * 5);
+		o1.setPreis(3, (squad.getModelle()-1) * 15);
+		o1.setPreis(4, (squad.getModelle()-1) * 15);
 	}
 
 }
