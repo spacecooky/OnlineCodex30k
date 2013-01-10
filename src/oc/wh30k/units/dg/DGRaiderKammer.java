@@ -32,17 +32,10 @@ public class DGRaiderKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Auxiliary drive", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Extra armour", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 20));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 5));	
-		
-		if (o1.isSelected(0)) {
 		ogE.addElement(new OptionsGruppeEintrag("Frag assault launchers", 10));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		}
-		else if (o1.isSelected(1)) {
 		ogE.addElement(new OptionsGruppeEintrag("Explorator Augury Web", 50));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		}
-		
+		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 6));	
+						
 		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
@@ -52,14 +45,11 @@ public class DGRaiderKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 20));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		if(o1.isSelected(1)) {
 		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", "Twin-linked heavy flamer", 20));
 		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		}
 		
-		seperator();
 		
         sizeSetzen();
 	}
@@ -68,6 +58,9 @@ public class DGRaiderKammer  extends RuestkammerVater {
 	public void refreshen() {
 			if (!o1.isSelected()) o1.setSelected(0, true);
 			
+			o2.setAktiv(5, o1.isSelected(0));
+			o2.setAktiv(6, o1.isSelected(1));
+			o5.setAktiv(o1.isSelected(1));
 		
 	}
         

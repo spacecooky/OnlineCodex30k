@@ -22,7 +22,7 @@ public class DGApothecaryKammer  extends RuestkammerVater {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Power sword", 15));;
+		ogE.addElement(new OptionsGruppeEintrag("Power sword", 10));;
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
