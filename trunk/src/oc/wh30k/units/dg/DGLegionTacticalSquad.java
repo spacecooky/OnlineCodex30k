@@ -27,8 +27,8 @@ public class DGLegionTacticalSquad extends Eintrag {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Legion Vexilla", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 25));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+		ogE.addElement(new OptionsGruppeEintrag("Nuncio Vox", 10));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		
 		seperator();
 

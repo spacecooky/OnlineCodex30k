@@ -13,7 +13,7 @@ public class DGLegionLandRaiderBattleSquadron extends Eintrag {
 	RuestkammerStarter t3;
 
 	public DGLegionLandRaiderBattleSquadron() {
-		name = "Legion Predator Strike Armour Squadron";
+		name = "Legion Land Raider Battle Squadron";
 		grundkosten = 0;
         überschriftSetzen = true;
 
