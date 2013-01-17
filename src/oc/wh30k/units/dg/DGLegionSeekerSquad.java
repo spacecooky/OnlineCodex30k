@@ -27,13 +27,16 @@ public class DGLegionSeekerSquad extends Eintrag {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Nuncio-vox", 10));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Bolter", 0));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));;
 		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
 		seperator();
@@ -50,7 +53,7 @@ public class DGLegionSeekerSquad extends Eintrag {
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
 		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(true, false, false, false);
+		rkTransport.initKammer(true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 
@@ -61,12 +64,19 @@ public class DGLegionSeekerSquad extends Eintrag {
 	public void refreshen() {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
         
+        o1.setAktiv(1, o3.isSelected("Combi-flamer"));
+        
         int subtractor = 1; // boss
 		 
         o3.setMaxAnzahl(squad.getModelle()-subtractor);
 		
 		o2.setMaxAnzahl(squad.getModelle()-subtractor-o3.getAnzahl());
 		o2.setAnzahl(0, o3.getMaxAnzahl()-o3.getAnzahl());
+		
+		rkTransport.getPanel().setLocation(
+				(int) rkTransport.getPanel().getLocation().getX(),
+				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+	    );
 	}
 
 }

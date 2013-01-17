@@ -25,7 +25,8 @@ public class DGLegionAttackBikeSquadron extends Eintrag {
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		
 		seperator();
 
@@ -42,6 +43,8 @@ public class DGLegionAttackBikeSquadron extends Eintrag {
 
 	@Override
 	public void refreshen() {
+		
+		o1.setAktiv(1, o3.isSelected("Heavy flamer"));
         
 		o1.setPreis(0, squad.getModelle()*5);
 				 

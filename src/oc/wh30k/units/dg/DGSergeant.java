@@ -10,7 +10,7 @@ import oc.RuestkammerVater;
 public class DGSergeant extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o1a, o1b, o1c, o1d, o2a, o2b, o2c, o3a, o3b, o3c, o4a, o4b, o5a, o5b, o5c, o5d, o5e, 
-		o6a, o6b, o6c, o7a, o7b, o7c, o8a, o8b, o8c, o9a, o9b, o10a, o10b, o10c, o10d, o11a, o11b, o11c, o11d;
+		o6a, o6b, o6c, o7a, o7b, o7c, o8a, o8b, o8c, o8d, o9a, o9b, o10a, o10b, o10c, o10d, o11a, o11b, o11c, o11d;
 	OptionsZaehlerGruppe o4c;
 	
 	boolean isAssault = false;
@@ -57,6 +57,7 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 20));
 			add(o1b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
@@ -68,7 +69,8 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Combat shield", 3));
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
-			add(o1d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+			ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+			add(o1d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
 			}
 		
 		else if (isBike) {
@@ -84,18 +86,22 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 15));
 			add(o2b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
-			add(o2c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+			add(o2c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 			}
 		
 		else if (isBreacher) {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Bolter", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 			add(o3a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
@@ -103,6 +109,7 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 20));
 			add(o3b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
@@ -110,7 +117,8 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Breaching charge", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
-			add(o3c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+			ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+			add(o3c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
 			}
 		
 		else if (isDestroyer) {
@@ -120,6 +128,7 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 20));
 			add(o4a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
@@ -148,11 +157,14 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword & nuncio-vox", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon & nuncio-vox", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist & nuncio-vox", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Power scythe & nuncio-vox", "Deathshroud power scythe & nuncio-vox", 15));
 			add(o5b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Bolter", 2));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 			add(o5c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();			
@@ -164,7 +176,8 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Augury scanner", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
-			add(o5e = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+			ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+			add(o5e = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
 			}
 		
 		else if (isReco) {
@@ -173,17 +186,21 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 15));
 			add(o6a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Bolter", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 			add(o6b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
-			add(o6c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+			add(o6c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 			}
 		
 		else if (isSeeker) {
@@ -191,6 +208,7 @@ public class DGSergeant extends RuestkammerVater {
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 15));
 			add(o7a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();			
@@ -216,40 +234,52 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 15));
 			add(o8b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Bolter", 2));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Augury scanner", 5));
-			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
 			add(o8c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			
+			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+			add(o8d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 			}
 		
 		else if (isTactical) {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Bolter", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Heavy chainsword", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 15));
 			add(o9a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
-			add(o9b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+			ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+			add(o9b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 			}
 		
 		else if (isTerminator) {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 7));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 7));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 7));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 7));
 			ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 7));
 			add(o10a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
@@ -257,6 +287,7 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 5));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Chainfist", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 10));
 			add(o10b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -267,7 +298,8 @@ public class DGSergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Grenade harness", 10));
-			add(o10d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+			add(o10d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 			}
 		
 		else if (isVeteran) {
@@ -282,19 +314,22 @@ public class DGSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
-			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 20));
 			add(o11b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();
 			ogE.addElement(new OptionsGruppeEintrag("Bolter", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 			add(o11c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
-			add(o11d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+			add(o11d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 			}
 		
 		
@@ -306,16 +341,19 @@ public class DGSergeant extends RuestkammerVater {
 		if (isAssault) {
 			o1a.setAktiv(!o1c.isSelected());
 			o1b.setAktiv(!o1c.isSelected());
+			o1d.setAktiv(3, o1a.isSelected(1) && !o1c.isSelected());
 			if(!o1a.isSelected()) o1a.setSelected(0, true);
 			if(!o1b.isSelected()) o1b.setSelected(0, true);
 			}	
 		
 		else if (isBike) {
+			o2c.setAktiv(1, o2a.isSelected(1));
 			if(!o2a.isSelected()) o2a.setSelected(0, true);
 			if(!o2b.isSelected()) o2b.setSelected(0, true);
 			}
 		
 		else if (isBreacher) {
+			o3c.setAktiv(3, o3a.isSelected(1));
 			if(!o3a.isSelected()) o3a.setSelected(0, true);
 			}
 		
@@ -327,12 +365,14 @@ public class DGSergeant extends RuestkammerVater {
 			o5a.setAktiv(!o5b.isSelected());
 			o5c.setAktiv(o5b.isSelected());
 			o5d.setAktiv(o5b.isSelected());
+			o5e.setAktiv(3, o5a.isSelected(1) || o5c.isSelected(1));
 			if(!o5a.isSelected() && !o5b.isSelected()) o5a.setSelected(0, true);
 			//if(!o5b.isSelected()) o5a.setSelected(0, true);
 			if(!o5d.isSelected()) o5d.setSelected(0, true);
 			}
 		
 		else if (isReco) {
+			o6c.setAktiv(1, o6b.isSelected(1));
 			if(!o6a.isSelected()) o6a.setSelected(0, true);
 			if(!o6b.isSelected()) o6b.setSelected(0, true);
 			}
@@ -342,22 +382,26 @@ public class DGSergeant extends RuestkammerVater {
 			}
 		
 		else if (isSupport) {
+			o8d.setAktiv(1, o8c.isSelected(1));
 			if(!o8a.isSelected()) o8a.setSelected(0, true);
 			if(!o8b.isSelected()) o8b.setSelected(0, true);
 			}
 		
 		else if (isTactical) {
+			o9b.setAktiv(2, o9a.isSelected(1));
 			if(!o9a.isSelected()) o9a.setSelected(0, true);
 			}
 		
 		else if (isTerminator) {
 			o10a.setAktiv(!o10c.isSelected());
 			o10b.setAktiv(!o10c.isSelected());
+			o10d.setAktiv(1, o10a.isSelected(1) && !o10c.isSelected());
 			if(!o10a.isSelected()) o10a.setSelected(0, true);
 			if(!o10b.isSelected()) o10b.setSelected(0, true);
 			}
 		
 		else if (isVeteran) {
+			o11d.setAktiv(1, o11c.isSelected(1));
 			if(!o11a.isSelected()) o11a.setSelected(0, true);
 			if(!o11b.isSelected()) o11b.setSelected(0, true);
 			if(!o11c.isSelected()) o11c.setSelected(0, true);

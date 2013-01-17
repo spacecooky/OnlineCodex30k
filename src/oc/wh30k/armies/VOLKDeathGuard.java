@@ -13,13 +13,13 @@ public class VOLKDeathGuard extends BuildaVater {
 		reflectionKennung = "DG";
 		reflectionKennungAllies ="DG";
 
-		String[] HQeinträge = {"", "Legion Praetor", "Legion Centurion", "", "Chaplain", "Forge lord", "Librarian", "Master of signal", "Moritat", "Primus medicae", "Siege breaker", "Vigilator", "", "Legion Command Squad"};
+		String[] HQeinträge = {"", "Legion Praetor", "Legion Centurion", "  Chaplain", "  Forge lord", "  Legion Champion", "  Librarian", "  Master of signal", "  Moritat", "  Primus medicae", "  Siege breaker", "  Vigilator", "", "Deathshroud Terminator Squad", "Legion Command Squad", "", "Section Leader Crysos Morturg", "Marshall Durak Rask"};
 		String[] Eliteeinträge = {"", "Legion Veteran Tactical Squad", "Legion Destroyer Squad", "Legion Terminator Squad", "Techmarine Covenant", "Apothecarion Detachment", "Legion Dreadnought Talon", "Contemptor Dreadnought Talon", "Legion Rapier Weapons Battery"};
 		String[] Standardeinträge = {"", "Legion Tactical Squad", "Legion Assault Squad", "Legion Breacher Siege Squad", "Legion Tactical Support Squad", "Legion Reconnaissance Squad"};
 		String[] Sturmeinträge = {"", "Legion Seeker Squad", "Legion Outrider Squad", "Legion Attack Bike Squadron", "Legion Jetbike Sky Hunter Squadron", "Legion Land Speeder Squadron", "Legion Storm Eagle Assault Gunship"};
 		String[] Unterstützungeinträge = {"", "Legion Heavy Support Squad", "Legion Predator Strike Armour Squadron", "Legion Land Raider Battle Squadron", "Legion Artillery Tank Squadron", "Legion Vindicator", "Legion Spartan Assault Tank", "Legion Caestus Assault Ram"};
 		String[] Befestigungen = {"", "Aegis-Verteidigungslinie", "Himmelsschild-Landeplattform", "Imperiale Bastion", "Festung der Erlösung"};
-		String[] LordsofWar = {"", "Legion Fellblade Super-heavy Tank", "Legion Typhon Heavy Siege Tank", "Legion Thunderhawk Gunship", "Legion Thunderhawk Transporter", "Legion Cerberus Heavy Tank Destroyer", "Legion Malcador Assault Tank"};
+		String[] LordsofWar = {"", "Mortarion the Reaper", "", "Legion Fellblade Super-heavy Tank", "Legion Typhon Heavy Siege Tank", "Legion Thunderhawk Gunship", "Legion Thunderhawk Transporter", "Legion Cerberus Heavy Tank Destroyer", "Legion Malcador Assault Tank"};
 
 		adden(new ChooserGruppe(reflectionKennung, cnt, 0, 1, HQeinträge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;

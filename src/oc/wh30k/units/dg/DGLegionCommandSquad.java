@@ -13,14 +13,13 @@ import oc.RuestkammerStarter;
 public class DGLegionCommandSquad extends Eintrag {
 
 	AnzahlPanel squad;
-	OptionsUpgradeGruppe o1, o2, o4, o5, o6;
+	OptionsUpgradeGruppe o1, o2, o4, o5, o6, o8;
 	OptionsZaehlerGruppe o3, o4a, o4b;
 	OptionsZaehlerGruppe o7a;
 	OptionsZaehlerGruppe o7aStandard;
 	OptionsZaehlerGruppe o7b;
 	OptionsZaehlerGruppe o7bStandard;
 	OptionsZaehlerGruppe o7c;
-	OptionsZaehlerGruppe o8;
 	RuestkammerStarter rkTransport;
 
 	public DGLegionCommandSquad() {
@@ -42,7 +41,8 @@ public class DGLegionCommandSquad extends Eintrag {
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 25));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		
 		seperator();
 		
@@ -55,7 +55,7 @@ public class DGLegionCommandSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Charnabal sabre", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Lightning law", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Lightning claw", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 		add(o4a = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
@@ -90,7 +90,9 @@ public class DGLegionCommandSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
 		add(o7bStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 7));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 7));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 7));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 7));
 		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 7));
 		add(o7b = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE));
 		
@@ -104,13 +106,13 @@ public class DGLegionCommandSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Reaper autocannon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma blaster", 15));
-		add(o8 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+		add(o8 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
 		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(true, false, false, false);
+		rkTransport.initKammer(true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 
@@ -121,7 +123,8 @@ public class DGLegionCommandSquad extends Eintrag {
 	public void refreshen() {
 		
 		if(!o1.isSelected()) o1.setSelected(0, true);
-		o2.setAktiv(!o6.isSelected());
+		o2.setAktiv(0, !o6.isSelected());
+		o2.setAktiv(1, o7b.isSelected("Combi-flamer") || o8.isSelected(0) && o6.isSelected());
 		o3.setAktiv(!o6.isSelected());
 		o4a.setAktiv(!o6.isSelected());
 		o4b.setAktiv(!o6.isSelected());
@@ -140,7 +143,7 @@ public class DGLegionCommandSquad extends Eintrag {
 		
 		int nksubractor=(o7a.getAnzahl()>o8.getAnzahl()?o7a.getAnzahl():o8.getAnzahl());
         
-        o7b.setMaxAnzahl(squad.getModelle()-o7c.getAnzahl());
+        o7b.setMaxAnzahl(squad.getModelle()-o7c.getAnzahl()-o8.getAnzahl());
 		o7a.setMaxAnzahl(squad.getModelle()-o7c.getAnzahl());
 		
 		o7aStandard.setMaxAnzahl(squad.getModelle()-o7a.getAnzahl()-o7c.getAnzahl());

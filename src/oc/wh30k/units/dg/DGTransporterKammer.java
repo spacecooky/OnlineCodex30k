@@ -92,7 +92,9 @@ public class DGTransporterKammer extends RuestkammerVater {
 			seperator();
 
 			ogE.addElement(new OptionsGruppeEintrag("Twin-linked bolter", 5));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));

@@ -54,7 +54,7 @@ public class DGLegionReconnaissanceSquad extends Eintrag {
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
 		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(true, false, false, false);
+		rkTransport.initKammer(true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 
@@ -69,6 +69,11 @@ public class DGLegionReconnaissanceSquad extends Eintrag {
 		o1.setPreis(1, squad.getModelle()*5);
 		o1.setPreis(2, squad.getModelle()*5);
 		o2.setPreis(1, squad.getModelle()*5);
+		
+		rkTransport.getPanel().setLocation(
+				(int) rkTransport.getPanel().getLocation().getX(),
+				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+	    );
 	}
 
 }

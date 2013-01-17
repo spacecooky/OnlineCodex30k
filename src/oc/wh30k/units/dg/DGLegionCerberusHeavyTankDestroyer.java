@@ -24,12 +24,15 @@ public class DGLegionCerberusHeavyTankDestroyer extends Eintrag {
 
 		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 20));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
@@ -41,6 +44,8 @@ public class DGLegionCerberusHeavyTankDestroyer extends Eintrag {
 
 	@Override
 	public void refreshen() {
+		
+		o2.setAktiv(2, o3.isSelected(1) || o3.isSelected(4));
 				
 	}
 

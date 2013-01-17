@@ -9,7 +9,9 @@ import oc.RuestkammerStarter;
 
 public class DGLegionPraetor extends Eintrag {
 
-	RuestkammerStarter Waffen;
+	OptionsUpgradeGruppe o1;
+	RuestkammerStarter Servo;
+	RuestkammerStarter Termi;
 
 	public DGLegionPraetor() {
 		name = "Legion Praetor";
@@ -19,11 +21,25 @@ public class DGLegionPraetor extends Eintrag {
 
 		seperator();
 
-		Waffen = new RuestkammerStarter(ID, randAbstand, cnt, "DGPraetorKammer", "");
-		Waffen.initKammer();
-		Waffen.setButtonText(BuildaHQ.translate("Weapons & Equipment"));
-		add(Waffen);
-		Waffen.setAbwaehlbar(false);
+		ogE.addElement(new OptionsGruppeEintrag("Terminator armour", 35));
+		ogE.addElement(new OptionsGruppeEintrag("Cataphractii armour", 35));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+		seperator();
+		
+		Servo = new RuestkammerStarter(ID, randAbstand, cnt, "DGPraetorServoKammer", "");
+		Servo.initKammer();
+		Servo.setButtonText(BuildaHQ.translate("Weapons & Equipment"));
+		add(Servo);
+		Servo.setAbwaehlbar(false);
+		
+		seperator();
+		
+		Termi = new RuestkammerStarter(ID, randAbstand, cnt, "DGPraetorTermiKammer", "");
+		Termi.initKammer();
+		Termi.setButtonText(BuildaHQ.translate("Terminatorweapons & Equipment"));
+		add(Termi);
+		Termi.setAbwaehlbar(false);
 		
 		
 		complete();
@@ -38,6 +54,8 @@ public class DGLegionPraetor extends Eintrag {
 
 	@Override
 	public void refreshen() {
+		Servo.setAktiv(!o1.isSelected());
+		Termi.setAktiv(o1.isSelected());
 		
 	}
 

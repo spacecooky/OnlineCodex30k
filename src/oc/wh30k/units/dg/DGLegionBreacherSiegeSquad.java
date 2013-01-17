@@ -29,7 +29,8 @@ public class DGLegionBreacherSiegeSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Nuncio-vox", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Legion Vexilla", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		
 		seperator();
 
@@ -65,10 +66,16 @@ public class DGLegionBreacherSiegeSquad extends Eintrag {
 	public void refreshen() {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
         
+        o1.setAktiv(3, o2.isSelected("Flamer"));
         rkTransport.setAktiv(squad.getModelle() <=10);
         
         o1.setPreis(2, squad.getModelle() * 5);
         o2.setMaxAnzahl(squad.getModelle() / 5);
+        
+        rkTransport.getPanel().setLocation(
+				(int) rkTransport.getPanel().getLocation().getX(),
+				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+	    );
 	}
 
 }

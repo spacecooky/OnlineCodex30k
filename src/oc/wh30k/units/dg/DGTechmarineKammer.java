@@ -33,7 +33,9 @@ public class DGTechmarineKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Nuncio-vox", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Augury scanner", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Master-crafted bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Graviton gun", 15));;
@@ -44,7 +46,8 @@ public class DGTechmarineKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Rad grenades", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Cyber familiar", 15));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		
 		seperator();
 		
@@ -78,6 +81,8 @@ public class DGTechmarineKammer  extends RuestkammerVater {
 	public void refreshen() {
 		if (!o1.isSelected()) o1.setSelected(0, true);
 		if (!o4.isSelected()) o4.setSelected(0, true);
+		
+		o3.setAktiv(3, o2.isSelected(3) || o6.isSelected("Flamer"));
 		
 		o6.setMaxAnzahl(o5.getAnzahl());
 	}

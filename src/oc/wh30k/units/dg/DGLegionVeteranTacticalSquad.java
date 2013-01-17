@@ -29,7 +29,8 @@ public class DGLegionVeteranTacticalSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Nuncio-vox", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Legion Vexilla", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 25));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		
 		seperator();
 
@@ -46,7 +47,7 @@ public class DGLegionVeteranTacticalSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Melta gun", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma gun", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Missile launcher", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Missile launcher (+flakk)", 35));
@@ -66,7 +67,7 @@ public class DGLegionVeteranTacticalSquad extends Eintrag {
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
 		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(true, false, false, false);
+		rkTransport.initKammer(true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 
@@ -77,9 +78,16 @@ public class DGLegionVeteranTacticalSquad extends Eintrag {
 	public void refreshen() {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
         
+        o3.setAktiv(3, o1.isSelected("Heavy flamer"));
+        
 		o2.setMaxAnzahl(squad.getModelle() - 1); // die 1 ist für den sarge
 		o4.setMaxAnzahl(squad.getModelle() - 1);
 		o1.setMaxAnzahl(squad.getModelle() / 5);
+		
+		rkTransport.getPanel().setLocation(
+				(int) rkTransport.getPanel().getLocation().getX(),
+				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+	    );
 	}
 
 }

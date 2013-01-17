@@ -32,12 +32,15 @@ public class DGLegionFellbladeSuperheavyTank extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Command tank", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Space Marine Legion Crew", 15));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 5));
 		
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
@@ -52,6 +55,8 @@ public class DGLegionFellbladeSuperheavyTank extends Eintrag {
 				
 		if (!o1.isSelected()) o1.setSelected(0, true);
 		if (!o2.isSelected()) o2.setSelected(0, true);
+		
+		o3.setAktiv(4, o2.isSelected(1) || o4.isSelected(1) || o4.isSelected(4));
 	}
 
 }
