@@ -11,7 +11,7 @@ import oc.RuestkammerStarter;
 public class DGLegionTacticalSupportSquad extends Eintrag {
 
 	AnzahlPanel squad;
-	OptionsUpgradeGruppe o1;
+	OptionsUpgradeGruppe o1, o2;
 	RuestkammerStarter rkBoss;
 	RuestkammerStarter rkTransport;
 
@@ -22,7 +22,12 @@ public class DGLegionTacticalSupportSquad extends Eintrag {
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, 15);
 		add(squad);
+		
+		seperator();
 
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Flamer", 0));
@@ -46,7 +51,7 @@ public class DGLegionTacticalSupportSquad extends Eintrag {
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
 		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(true, false, false, false);
+		rkTransport.initKammer(true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 
@@ -58,11 +63,18 @@ public class DGLegionTacticalSupportSquad extends Eintrag {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
         if (!o1.isSelected()) o1.setSelected(0, true);
         
+        o2.setAktiv(o1.isSelected(0));
+        
 		o1.setPreis(0, 0);
 		o1.setPreis(1, (squad.getModelle()-1) * 5);
 		o1.setPreis(2, (squad.getModelle()-1) * 5);
 		o1.setPreis(3, (squad.getModelle()-1) * 15);
 		o1.setPreis(4, (squad.getModelle()-1) * 15);
+		
+		rkTransport.getPanel().setLocation(
+				(int) rkTransport.getPanel().getLocation().getX(),
+				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+	    );
 	}
 
 }

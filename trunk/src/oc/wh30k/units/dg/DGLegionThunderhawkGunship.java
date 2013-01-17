@@ -31,12 +31,15 @@ public class DGLegionThunderhawkGunship extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Chaff launcher", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured cockpit", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Flare shield", 50));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
@@ -51,6 +54,8 @@ public class DGLegionThunderhawkGunship extends Eintrag {
 				
 		if (!o1.isSelected()) o1.setSelected(0, true);
 		if (!o2.isSelected()) o2.setSelected(0, true);
+		
+		o3.setAktiv(3, o4.isSelected(1) || o4.isSelected(4));
 	}
 
 }

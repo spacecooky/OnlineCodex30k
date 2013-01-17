@@ -28,12 +28,15 @@ public class DGLegionVindicator extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Extra armour", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Machine spirit", 25));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 6));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 7));
 		
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
@@ -46,6 +49,8 @@ public class DGLegionVindicator extends Eintrag {
 	public void refreshen() {
 				
 		if (!o1.isSelected()) o1.setSelected(0, true);
+		
+		o2.setAktiv(6, o3.isSelected(1) || o3.isSelected(4));
 	}
 
 }

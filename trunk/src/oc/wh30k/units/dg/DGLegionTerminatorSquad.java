@@ -11,17 +11,9 @@ import oc.RuestkammerStarter;
 public class DGLegionTerminatorSquad extends Eintrag {
 
 	AnzahlPanel squad;
-	OptionsZaehlerGruppe o1;
-	OptionsZaehlerGruppe o2;
-	OptionsUpgradeGruppe o3;
-	OptionsZaehlerGruppe o4;
-	OptionsZaehlerGruppe o7a;
-	OptionsZaehlerGruppe o7aStandard;
+	OptionsZaehlerGruppe o2, o4, o7a, o7aStandard, o7b, o7bStandard, o7c, o8;
+	OptionsUpgradeGruppe o1, o3;
 	OptionsZaehlerGruppe o7aStandard2;
-	OptionsZaehlerGruppe o7b;
-	OptionsZaehlerGruppe o7bStandard;
-	OptionsZaehlerGruppe o7c;
-	OptionsZaehlerGruppe o8;
 	RuestkammerStarter rkBoss;
 	RuestkammerStarter rkTransport;
 
@@ -33,6 +25,11 @@ public class DGLegionTerminatorSquad extends Eintrag {
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Terminators", 5, 10, 30);
 		add(squad);
 
+		seperator();
+		
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Chem-Munitions"), 0));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Power weapon"), 0));
@@ -49,7 +46,9 @@ public class DGLegionTerminatorSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
 		add(o7bStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 7));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 7));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 7));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 7));
 		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 7));
 		add(o7b = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE));
 		
@@ -90,10 +89,12 @@ public class DGLegionTerminatorSquad extends Eintrag {
 	public void refreshen() {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
         
+        o1.setAktiv(o7b.isSelected("Combi-flamer") || o8.isSelected("Heavy flamer"));
+        
         int subtractor = 1; // boss
 		int nksubractor=(o7a.getAnzahl()>o8.getAnzahl()?o7a.getAnzahl():o8.getAnzahl());
         
-        o7b.setMaxAnzahl(squad.getModelle()-subtractor-o7c.getAnzahl());
+        o7b.setMaxAnzahl(squad.getModelle()-subtractor-o7c.getAnzahl()-o8.getAnzahl());
 		o7a.setMaxAnzahl(squad.getModelle()-subtractor-o7c.getAnzahl());
 		
 		o7aStandard.setMaxAnzahl(squad.getModelle()-subtractor-o7a.getAnzahl()-o7c.getAnzahl());
@@ -116,6 +117,11 @@ public class DGLegionTerminatorSquad extends Eintrag {
 		int offeneFKOptionen=squad.getModelle()-1-o7b.getAnzahl()-o7c.getAnzahl();
 		if(maxAnzahl>0 && offeneFKOptionen<2){
 			o8.setMaxAnzahl(offeneFKOptionen);
+		
+		rkTransport.getPanel().setLocation(
+				(int) rkTransport.getPanel().getLocation().getX(),
+				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+	    );
 		}
 		
 	}

@@ -35,12 +35,15 @@ public class DGLegionSpartanAssaultTank extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Flare shield", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Frag assault launchers", 10));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 7));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 8));
 		
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
@@ -55,6 +58,8 @@ public class DGLegionSpartanAssaultTank extends Eintrag {
 				
 		if (!o1.isSelected()) o1.setSelected(0, true);
 		if (!o2.isSelected()) o2.setSelected(0, true);
+		
+		o3.setAktiv(7, o2.isSelected(1) || o4.isSelected(1) || o4.isSelected(4));
 	}
 
 }

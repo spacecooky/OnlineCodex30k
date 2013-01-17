@@ -27,7 +27,8 @@ public class DGLegionAssaultSquad extends Eintrag {
 
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Combat shields", 3));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
 		seperator();
 
@@ -52,6 +53,8 @@ public class DGLegionAssaultSquad extends Eintrag {
 	@Override
 	public void refreshen() {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
+        
+        o1.setAktiv(2, o2.isSelected("Hand flamer"));
         
         o1.setPreis(0, squad.getModelle() * 5);
         o1.setPreis(1, squad.getModelle() * 3);

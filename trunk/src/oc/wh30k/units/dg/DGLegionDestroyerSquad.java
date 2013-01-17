@@ -30,7 +30,8 @@ public class DGLegionDestroyerSquad extends Eintrag {
 
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Jump packs", 75));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
 		seperator();
 
@@ -53,7 +54,7 @@ public class DGLegionDestroyerSquad extends Eintrag {
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
 		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(true, false, false, false);
+		rkTransport.initKammer(true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 
@@ -62,7 +63,9 @@ public class DGLegionDestroyerSquad extends Eintrag {
 
 	@Override
 	public void refreshen() {
-        if(!rkBoss.isSelected()) {rkBoss.setSelected(true);}        
+        if(!rkBoss.isSelected()) {rkBoss.setSelected(true);}       
+        
+        o3.setAktiv(2, o1.isSelected("Hand flamer"));
        
         if(o3.isSelected("Jump packs")) {
         	rkTransport.setAktiv(false);
@@ -71,6 +74,11 @@ public class DGLegionDestroyerSquad extends Eintrag {
         }
         
 		o1.setMaxAnzahl(squad.getModelle() / 5);
+		
+		rkTransport.getPanel().setLocation(
+				(int) rkTransport.getPanel().getLocation().getX(),
+				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+	    );
 	}
 
 }

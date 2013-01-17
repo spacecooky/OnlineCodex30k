@@ -10,7 +10,7 @@ import oc.RuestkammerVater;
 
 public class DGContemptorKammer  extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1, o2, o5;
+	OptionsUpgradeGruppe o0, o1, o2, o5;
 	OptionsZaehlerGruppe o3, o4;
 
 	public DGContemptorKammer () {
@@ -20,6 +20,11 @@ public class DGContemptorKammer  extends RuestkammerVater {
 	public void initButtons(boolean... defaults) {
 
 
+		seperator();
+		
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o0 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 0));
@@ -66,6 +71,8 @@ public class DGContemptorKammer  extends RuestkammerVater {
 	public void refreshen() {
 			if (!o1.isSelected()) o1.setSelected(0, true);
 			if (!o2.isSelected()) o2.setSelected(0, true);
+			
+			o0.setAktiv(o4.isSelected("Heavy flamer"));
 			
 			int Zaehler1;
 			int Zaehler2;

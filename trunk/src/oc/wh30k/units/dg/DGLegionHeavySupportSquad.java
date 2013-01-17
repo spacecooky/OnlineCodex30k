@@ -26,6 +26,7 @@ public class DGLegionHeavySupportSquad extends Eintrag {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Hardened armour", 25));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Flakk missiles", 50));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		
@@ -55,7 +56,7 @@ public class DGLegionHeavySupportSquad extends Eintrag {
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
 		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(true, false, false, false);
+		rkTransport.initKammer(true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 
@@ -67,7 +68,8 @@ public class DGLegionHeavySupportSquad extends Eintrag {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
         if(!o2.isSelected()) o2.setSelected(0, true);
         
-        o1.setAktiv(1, o2.isSelected("Missile launcher"));
+        o1.setAktiv(1, o2.isSelected(1));
+        o1.setAktiv(2, o2.isSelected(3));
         
         o2.setPreis(2, (squad.getModelle()-1) * 5);
         o2.setPreis(3, (squad.getModelle()-1) * 5);
@@ -75,6 +77,11 @@ public class DGLegionHeavySupportSquad extends Eintrag {
         o2.setPreis(5, (squad.getModelle()-1) * 15);
         o2.setPreis(6, (squad.getModelle()-1) * 10);
         o2.setPreis(7, (squad.getModelle()-1) * 20);
+        
+        rkTransport.getPanel().setLocation(
+				(int) rkTransport.getPanel().getLocation().getX(),
+				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+	    );
 	}
 
 }

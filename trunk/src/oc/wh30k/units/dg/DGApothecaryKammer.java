@@ -28,14 +28,17 @@ public class DGApothecaryKammer  extends RuestkammerVater {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Augury scanner", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 10));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		
         sizeSetzen();
 	}
@@ -43,6 +46,8 @@ public class DGApothecaryKammer  extends RuestkammerVater {
 	@Override
 	public void refreshen() {
 		if (!o1.isSelected()) o1.setSelected(0, true);
+		
+		o3.setAktiv(1, o2.isSelected(1));
 	}
         
 }

@@ -27,7 +27,8 @@ public class DGLegionOutriderSquad extends Eintrag {
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 15));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		
 		seperator();
 
@@ -60,6 +61,8 @@ public class DGLegionOutriderSquad extends Eintrag {
 	public void refreshen() {
         
 		if (!o3.isSelected()) o3.setSelected(0, true);
+		
+		o1.setAktiv(1, o2.isSelected("Hand flamer") || o3.isSelected(1));
 		
 		o1.setPreis(0, squad.getModelle()*5);
 		

@@ -34,11 +34,14 @@ public class DGRaiderKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Frag assault launchers", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Explorator Augury Web", 50));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 6));	
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 7));	
 						
 		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
@@ -60,6 +63,7 @@ public class DGRaiderKammer  extends RuestkammerVater {
 			
 			o2.setAktiv(5, o1.isSelected(0));
 			o2.setAktiv(6, o1.isSelected(1));
+			o2.setAktiv(7, o4.isSelected(1) || o4.isSelected(4) || o5.isSelected(1));
 			o5.setAktiv(o1.isSelected(1));
 		
 	}

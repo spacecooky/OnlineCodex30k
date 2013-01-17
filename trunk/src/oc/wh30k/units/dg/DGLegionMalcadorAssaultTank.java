@@ -42,13 +42,16 @@ public class DGLegionMalcadorAssaultTank extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Flare shield", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Command tank", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Space Marine Legion Crew", 15));
-		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 5));
+		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
+		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 6));
 		
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
 		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
@@ -61,6 +64,8 @@ public class DGLegionMalcadorAssaultTank extends Eintrag {
 		if (!o1.isSelected()) o1.setSelected(0, true);
 		if (!o2.isSelected()) o2.setSelected(0, true);
 		if (!o3.isSelected()) o3.setSelected(0, true);
+		
+		o4.setAktiv(5, o3.isSelected(2) || o5.isSelected(2) || o5.isSelected(5));
 	}
 
 }
