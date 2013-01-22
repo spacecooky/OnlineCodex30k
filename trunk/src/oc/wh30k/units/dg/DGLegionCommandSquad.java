@@ -141,6 +141,12 @@ public class DGLegionCommandSquad extends Eintrag {
 		o4a.setMaxAnzahl(squad.getModelle());
 		o4b.setMaxAnzahl(squad.getModelle()-1);
 		
+		o5.setPreis(0, squad.getModelle() * 15);
+        o5.setPreis(1, squad.getModelle() * 20);
+        o5.setPreis(2, squad.getModelle() * 35);
+        o6.setPreis(0, squad.getModelle() * 15);
+        o6.setPreis(1, squad.getModelle() * 15);
+		
 		int nksubractor=(o7a.getAnzahl()>o8.getAnzahl()?o7a.getAnzahl():o8.getAnzahl());
         
         o7b.setMaxAnzahl(squad.getModelle()-o7c.getAnzahl()-o8.getAnzahl());

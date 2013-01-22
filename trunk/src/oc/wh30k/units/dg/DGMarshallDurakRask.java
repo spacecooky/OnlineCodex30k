@@ -11,6 +11,8 @@ public class DGMarshallDurakRask extends Eintrag {
 
 		add(ico = new oc.Picture("oc/wh40k/images/xy.jpg"));
 
+		BuildaHQ.addToInformationVector("DGPraetor", 1);
+
 		seperator();
 
 		complete();
@@ -19,6 +21,13 @@ public class DGMarshallDurakRask extends Eintrag {
 	@Override
 	public void refreshen() {
         setUnikat(true);
+	}
+	
+	@Override
+	public void deleteYourself() {
+		
+		BuildaHQ.addToInformationVector("DGPraetor", -1);
+		super.deleteYourself();
 	}
 
 }
