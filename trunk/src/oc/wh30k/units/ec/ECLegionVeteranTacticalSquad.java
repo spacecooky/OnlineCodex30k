@@ -56,8 +56,8 @@ public class ECLegionVeteranTacticalSquad extends Eintrag {
 
 		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "ECSergeant", "Veteran Sergeant");
 		rkBoss.setGrundkosten(0);
-		//Assault, Bike, Breacher, Destroyer, Heavy, Reco, Seeker, Support, Tactical, Terminator, Veteran
-		rkBoss.initKammer(false, false, false, false, false, false, false, false, false, false, true);
+		//Assault, Bike, Breacher, Destroyer, Heavy, Reco, Seeker, Support, Tactical, Terminator, Veteran, Palatine
+		rkBoss.initKammer(false, false, false, false, false, false, false, false, false, false, true, false);
 		rkBoss.setAbwaehlbar(false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);
