@@ -10,7 +10,8 @@ import oc.RuestkammerVater;
 public class ECSergeant extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o1a, o1b, o1c, o1d, o2a, o2b, o2c, o3a, o3b, o3c, o4a, o4b, o5a, o5b, o5c, o5d, o5e, 
-		o6a, o6b, o6c, o7a, o7b, o7c, o8a, o8b, o8c, o8d, o9a, o9b, o10a, o10b, o10c, o10d, o11a, o11b, o11c, o11d;
+		o6a, o6b, o6c, o7a, o7b, o7c, o8a, o8b, o8c, o8d, o9a, o9b, o10a, o10b, o10c, o10d, o11a, o11b, o11c, o11d,
+		o12a, o12b, o12c;
 	OptionsZaehlerGruppe o4c;
 	
 	boolean isAssault = false;
@@ -24,6 +25,7 @@ public class ECSergeant extends RuestkammerVater {
 	boolean isTactical = false;
 	boolean isTerminator = false;
 	boolean isVeteran = false;
+	boolean isPalatine = false;
 
 	public ECSergeant() {
 		grundkosten = 0;
@@ -43,6 +45,7 @@ public class ECSergeant extends RuestkammerVater {
 		if(defaults[8]) isTactical = true;
 		if(defaults[9]) isTerminator = true;
 		if(defaults[10]) isVeteran = true;
+		if(defaults[11]) isPalatine = true;
 				
 		if (isAssault) {
 			
@@ -312,6 +315,24 @@ public class ECSergeant extends RuestkammerVater {
 			add(o11d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			}
 		
+		else if (isPalatine) {
+			
+			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
+			add(o12a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			
+			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Charnabal sabre", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Power sword", 5));
+			ogE.addElement(new OptionsGruppeEintrag("Power lance", 5));
+			add(o12b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			
+			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
+			add(o12c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			}
+		
 		
 		sizeSetzen();
 	}
@@ -376,6 +397,11 @@ public class ECSergeant extends RuestkammerVater {
 			if(!o11a.isSelected()) o11a.setSelected(0, true);
 			if(!o11b.isSelected()) o11b.setSelected(0, true);
 			if(!o11c.isSelected()) o11c.setSelected(0, true);
+			}
+		
+		else if (isPalatine) {
+			if(!o12a.isSelected()) o12a.setSelected(0, true);
+			if(!o12b.isSelected()) o12b.setSelected(0, true);
 			}
 	}
 

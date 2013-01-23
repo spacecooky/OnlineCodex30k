@@ -31,13 +31,17 @@ public class ECPalatineBladeSquad extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Power sword", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Power lance", 5));
-		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 5));
+		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "ECSergeant", "Palatine Prefector");
+		rkBoss.setGrundkosten(0);
+		//Assault, Bike, Breacher, Destroyer, Heavy, Reco, Seeker, Support, Tactical, Terminator, Veteran, Palatine
+		rkBoss.initKammer(false, false, false, false, false, false, false, false, false, false, false, true);
+		rkBoss.setAbwaehlbar(false);
+		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
+		add(rkBoss);
 		
 		seperator();
 
@@ -52,7 +56,7 @@ public class ECPalatineBladeSquad extends Eintrag {
 
 	@Override
 	public void refreshen() {
-        
+		if(!rkBoss.isSelected()) {rkBoss.setSelected(true);}
         
 	}
 
