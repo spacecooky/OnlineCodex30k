@@ -72,8 +72,8 @@ public class SHLegionTerminatorSquad extends Eintrag {
 		seperator();
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Transport");
-		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(false, false, true, true);
+		//Rhino, Pod, Dreadclaw, Phobos, Spartan
+		rkTransport.initKammer(false, false, false, true, true);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 

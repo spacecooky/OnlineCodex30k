@@ -6,12 +6,14 @@ import oc.OptionsEinzelZaehler;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 import oc.RuestkammerVater;
 
 public class SHContemptorKammer  extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o0, o1, o2, o5;
 	OptionsZaehlerGruppe o3, o4;
+	RuestkammerStarter rkTransport;
 
 	public SHContemptorKammer () {
             grundkosten = 175;
@@ -58,6 +60,14 @@ public class SHContemptorKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Extra armour", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", "Carapace-mounted havoc launcher", 15));
 		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));	
+		
+		seperator();
+
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Transport");
+		//Rhino, Pod, Dreadclaw, Phobos, Spartan
+		rkTransport.initKammer(false, false, true, false, false);
+		rkTransport.setButtonText("Dedicated transport");
+		add(rkTransport);
 		
         sizeSetzen();
 	}

@@ -54,8 +54,8 @@ public class SHDreadnoughtKammer  extends RuestkammerVater {
 		seperator();
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Transport");
-		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(false, true, false, false);
+		//Rhino, Pod, Dreadclaw, Phobos, Spartan
+		rkTransport.initKammer(false, true, true, false, false);
 		rkTransport.setButtonText("Dedicated transport");
 		add(rkTransport);
 		
