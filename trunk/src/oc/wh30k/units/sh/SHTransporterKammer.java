@@ -21,9 +21,10 @@ public class SHTransporterKammer extends RuestkammerVater {
 
 	boolean offerRhino = false;
 	boolean offerDropPod = false;
+	boolean offerDread = false;
 	boolean offerRaider = false;
 	boolean offerSpartan = false;
-
+	
 	public SHTransporterKammer() {
 		grundkosten = 0;
 	}
@@ -33,14 +34,18 @@ public class SHTransporterKammer extends RuestkammerVater {
 
 		this.offerRhino = defaults[0];
         this.offerDropPod = defaults[1];
-        this.offerRaider = defaults[2];
-        this.offerSpartan = defaults[3];		
-
+        this.offerDread = defaults[2];
+        this.offerRaider = defaults[3];
+        this.offerSpartan = defaults[4];
+        
 		if (this.offerRhino) {
 			ogE.addElement(new OptionsGruppeEintrag("Rhino", 35));
 		}
 		if (this.offerDropPod) {
 			ogE.addElement(new OptionsGruppeEintrag("Drop Pod", 35));
+		}
+		if (this.offerDread) {
+			ogE.addElement(new OptionsGruppeEintrag("Dreadclaw", 85));
 		}
 		if (this.offerRaider) {
 			ogE.addElement(new OptionsGruppeEintrag("Land Raider Phobos", 250));
@@ -61,6 +66,10 @@ public class SHTransporterKammer extends RuestkammerVater {
 		
 		
 		OptionsVater[] pod = new OptionsVater[]{
+		};
+		
+		
+		OptionsVater[] dread = new OptionsVater[]{
 		};
 
 
@@ -85,7 +94,7 @@ public class SHTransporterKammer extends RuestkammerVater {
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Frag assault launchers", 10)
 		};
 		
-		add(switcher = new OptionsPanelSwitcher(randAbstand, cnt, rhino, pod, raider, spartan));
+		add(switcher = new OptionsPanelSwitcher(randAbstand, cnt, rhino, pod, dread, raider, spartan));
 		
 		// If Rhino should be available, offer weapons for selection
 		if(offerRhino || offerRaider || offerSpartan) {
@@ -115,10 +124,12 @@ public class SHTransporterKammer extends RuestkammerVater {
 			switcher.forceSwitchPanel(0);
 		} else if (typ.isSelected("Drop Pod")) {
 			switcher.forceSwitchPanel(1);
-		} else if (typ.isSelected("Land Raider Phobos")) {
+		} else if (typ.isSelected("Dreadclaw")) {
 			switcher.forceSwitchPanel(2);
-		} else {
+		} else if (typ.isSelected("Land Raider Phobos")) {
 			switcher.forceSwitchPanel(3);
+		} else {
+			switcher.forceSwitchPanel(4);
 		}
 
 		if(offerRhino || offerRaider || offerSpartan) {
