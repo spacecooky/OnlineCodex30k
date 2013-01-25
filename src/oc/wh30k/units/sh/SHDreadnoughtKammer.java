@@ -11,8 +11,8 @@ import oc.RuestkammerVater;
 
 public class SHDreadnoughtKammer  extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o0, o1, o2;
-	OptionsZaehlerGruppe o3, o4;
+	OptionsUpgradeGruppe o1, o2, o5;
+	OptionsZaehlerGruppe o3, o4, o6;
 	RuestkammerStarter rkTransport;
 
 	public SHDreadnoughtKammer () {
@@ -26,7 +26,7 @@ public class SHDreadnoughtKammer  extends RuestkammerVater {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", "Twin-linked autocannon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", "Twin-linked autocannon", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Twin missile launcher", "Twin-linked missile launcher", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Flamestorm cannon", 15));
@@ -49,8 +49,16 @@ public class SHDreadnoughtKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Plasma blaster", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Graviton gun", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Melta gun", 15));
-		add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+		add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));		
+		seperator();
 		
+		ogE.addElement(new OptionsGruppeEintrag("Extra Armour", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Frag assault launchers", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
+		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));	
+		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missiles", 10));
+		add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));		
 		seperator();
 
 		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Transport");
@@ -66,6 +74,8 @@ public class SHDreadnoughtKammer  extends RuestkammerVater {
 	public void refreshen() {
 			if (!o1.isSelected()) o1.setSelected(0, true);
 			if (!o2.isSelected()) o2.setSelected(0, true);
+			
+			o6.setAktiv(!o5.isSelected(3));
 						
 			int Zaehler1;
 			int Zaehler2;
