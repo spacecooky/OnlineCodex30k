@@ -1,4 +1,4 @@
-package oc.wh30k.units.sh;
+package oc.wh30k.units.we;
 
 import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
@@ -7,12 +7,12 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
-public class SHPraetorServoKammer extends RuestkammerVater {
+public class WEPraetorServoKammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6, o7, o8;
+	OptionsUpgradeGruppe o1, o2, o2a, o2b, o3, o4, o5, o6, o7, o8;
 	OptionsUpgradeGruppe termi, termiFK, termiNK;
 	
-	public SHPraetorServoKammer() {
+	public WEPraetorServoKammer() {
 		grundkosten = 0;
 	}
 
@@ -27,12 +27,26 @@ public class SHPraetorServoKammer extends RuestkammerVater {
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
+		ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
+		add(o2a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		o2a.setSelected(0, true);
+		
+		ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", 0));
+		add(o2b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		o2b.setSelected(0, true);
+		
+		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Volkite Serpenta", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Archaeotech pistol", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy chainsword", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Charnabal sabre", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Power weapon", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Barb-hook lash", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Excoriator chainaxe", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Meteor hammer", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Twin Falax blades", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Power fist", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 25));
@@ -70,7 +84,15 @@ public class SHPraetorServoKammer extends RuestkammerVater {
 
 	@Override
 	public void refreshen() {
+		o2.setAktiv(!o2a.isSelected() || !o2b.isSelected());
+		o3.setAktiv(!o2a.isSelected() && !o2b.isSelected());
 		
+		boolean legal =((o2a.isSelected() && o2b.isSelected()) || (o2a.isSelected() && o2.isSelected()) || (o2b.isSelected() && o2.isSelected()) || o3.isSelected());
+		
+		o2a.setLegal(legal);
+		o2b.setLegal(legal);
+		o2.setLegal(legal);
+		o3.setLegal(legal);
 		
 			
 	}

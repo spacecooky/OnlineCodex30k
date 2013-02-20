@@ -1,4 +1,4 @@
-package oc.wh30k.units.sh;
+package oc.wh30k.units.we;
 
 import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
@@ -7,12 +7,12 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
-public class SHConsulTermiKammer extends RuestkammerVater {
+public class WEPraetorTermiKammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o7, o8;
-	OptionsUpgradeGruppe termiFK, termiNK;
+	OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6, o7, o8;
+	OptionsUpgradeGruppe termi, termiFK, termiNK;
 	
-	public SHConsulTermiKammer() {
+	public WEPraetorTermiKammer() {
 		grundkosten = 0;
 	}
 
@@ -34,15 +34,19 @@ public class SHConsulTermiKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Lightning claw", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Chain fist", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Paragon blade", 20));
 		add(termiNK = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Pair of lightning claws", 20));
 		add(o7 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
 
-		/*seperator();
+		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Sonic Shrieker", 5));
-		add(o8 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));*/
+		ogE.addElement(new OptionsGruppeEintrag("Digital lasers", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Iron halo", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Master-crafted weapon", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Grenade harness", 10));
+		add(o8 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 4));
 
 		
 		
