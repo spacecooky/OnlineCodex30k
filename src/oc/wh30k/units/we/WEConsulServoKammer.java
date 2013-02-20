@@ -1,4 +1,4 @@
-package oc.wh30k.units.sh;
+package oc.wh30k.units.we;
 
 import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
-public class SHConsulServoKammer extends RuestkammerVater {
+public class WEConsulServoKammer extends RuestkammerVater {
 
 	OptionsUpgradeGruppe 	o1a, o1b, o1c, o1d, o1e, o1f,
 							o2a, o2b, o2c, o2d, o2e, o2f,
@@ -27,7 +27,7 @@ public class SHConsulServoKammer extends RuestkammerVater {
 	boolean isSiege = false;
 	boolean isVigilator = false;
 
-	public SHConsulServoKammer() {
+	public WEConsulServoKammer() {
 		grundkosten = 0;
 	}
 
@@ -56,11 +56,16 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			add(o1a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();		
+			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Volkite Serpenta", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Heavy chainsword", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Charnabal sabre", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Barb-hook lash", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Excoriator chainaxe", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Meteor hammer", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Twin Falax blades", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 20));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 20));			
 			ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 25));
@@ -99,11 +104,16 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			add(o2a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();		
+			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Volkite Serpenta", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Heavy chainsword", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Charnabal sabre", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Barb-hook lash", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Excoriator chainaxe", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Meteor hammer", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Twin Falax blades", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 20));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 20));
 			
@@ -177,11 +187,16 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			add(o4a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Volkite Serpenta", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Heavy chainsword", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Charnabal sabre", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Barb-hook lash", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Excoriator chainaxe", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Meteor hammer", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Twin Falax blades", 15));
 			add(o4b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 						
 			seperator();		
@@ -207,11 +222,16 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			add(o5a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();		
+			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Volkite Serpenta", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Heavy chainsword", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Charnabal sabre", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Barb-hook lash", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Excoriator chainaxe", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Meteor hammer", 15));
+			ogE.addElement(new OptionsGruppeEintrag("Twin Falax blades", 15));
 			add(o5b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
 			seperator();		

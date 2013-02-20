@@ -1,4 +1,4 @@
-package oc.wh30k.units.sh;
+package oc.wh30k.units.we;
 
 import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
@@ -7,12 +7,12 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
-public class SHConsulTermiKammer extends RuestkammerVater {
+public class WEConsulTermiKammer extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o7, o8;
 	OptionsUpgradeGruppe termiFK, termiNK;
 	
-	public SHConsulTermiKammer() {
+	public WEConsulTermiKammer() {
 		grundkosten = 0;
 	}
 

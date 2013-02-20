@@ -35,7 +35,6 @@ public class ECPraetorServoKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Power weapon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Power fist", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 20));
-		ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Paragon blade", 25));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));

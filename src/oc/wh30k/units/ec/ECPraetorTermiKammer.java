@@ -32,7 +32,6 @@ public class ECPraetorTermiKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Power weapon", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Power fist", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Lightning claw", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Deathshroud power scythe", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Chain fist", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Paragon blade", 20));
