@@ -157,8 +157,8 @@ public class OnlineCodex extends BuildaPanel {
 			new IconedText("Death Guard", "oc/wh30k/images/VSDeathGuard.gif"),
 			new IconedText("Emperor's Children", "oc/wh30k/images/VSEmperorsChildren.gif"),
 			new IconedText("Sons of Horus", "oc/wh30k/images/VSSonsofHorus.gif"),
-			new IconedText("World Eaters", "oc/wh30k/images/VSWorldEaters.gif"),
-			new IconedText("Ordo Reductor", "oc/wh30k/images/VSOrdoReductor.gif")
+			new IconedText("World Eaters", "oc/wh30k/images/VSWorldEaters.gif")/*,
+			new IconedText("Ordo Reductor", "oc/wh30k/images/VSOrdoReductor.gif")*/
 	};
 	
 	//private final JComboBox buildaChooser = new JComboBox(buildazWh40k);
