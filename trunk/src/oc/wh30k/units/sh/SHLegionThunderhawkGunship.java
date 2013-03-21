@@ -32,19 +32,6 @@ public class SHLegionThunderhawkGunship extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Armoured cockpit", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Flare shield", 50));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
-		
-		seperator();
-
-		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 20));
-		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
 		complete();
 	}
 

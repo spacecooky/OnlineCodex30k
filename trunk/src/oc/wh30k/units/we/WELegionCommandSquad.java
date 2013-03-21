@@ -13,8 +13,8 @@ import oc.RuestkammerStarter;
 public class WELegionCommandSquad extends Eintrag {
 
 	AnzahlPanel squad;
-	OptionsUpgradeGruppe o1, o2, o4, o5, o6, o8;
-	OptionsZaehlerGruppe o3, o4a, o4b;
+	OptionsUpgradeGruppe o1, o2, o5, o6, o8;
+	OptionsZaehlerGruppe o3, o4, o4a, o4b, o4z;
 	OptionsZaehlerGruppe o7a;
 	OptionsZaehlerGruppe o7aStandard;
 	OptionsZaehlerGruppe o7b;
@@ -33,23 +33,25 @@ public class WELegionCommandSquad extends Eintrag {
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Chosen", 3, 5, 20);
 		add(squad);
 
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Legion Standard Bearer", 0));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 25));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Combat shield", 5));
 		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
-		seperator();
+		seperator();		
+		ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
+		add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
+		ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
+		add(o4z = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Heavy chainsword", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Charnabal sabre", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
@@ -126,6 +128,8 @@ public class WELegionCommandSquad extends Eintrag {
 		o3.setAktiv(!o6.isSelected());
 		o4a.setAktiv(!o6.isSelected());
 		o4b.setAktiv(!o6.isSelected());
+		o4.setAktiv(!o6.isSelected());
+		o4z.setAktiv(!o6.isSelected());
 		o5.setAktiv(!o6.isSelected());
 		
 		o7a.setAktiv(o6.isSelected());
@@ -136,6 +140,9 @@ public class WELegionCommandSquad extends Eintrag {
 		o8.setAktiv(o6.isSelected());
 		
 		o3.setMaxAnzahl(squad.getModelle());
+		o4.setMaxAnzahl(squad.getModelle()-o4z.getAnzahl());
+		o4.setAnzahl(0, o4.getMaxAnzahl());
+		o4z.setMaxAnzahl(squad.getModelle());
 		o4a.setMaxAnzahl(squad.getModelle());
 		o4b.setMaxAnzahl(squad.getModelle()-1);
 		
