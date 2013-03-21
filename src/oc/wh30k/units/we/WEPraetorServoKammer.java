@@ -9,8 +9,8 @@ import oc.RuestkammerVater;
 
 public class WEPraetorServoKammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1, o2, o2a, o2b, o3, o4, o5, o6, o7, o8;
-	OptionsUpgradeGruppe termi, termiFK, termiNK;
+	OptionsUpgradeGruppe o1, o2a, o2b, o3, o4, o5, o6, o7, o8;
+	OptionsZaehlerGruppe o2;
 	
 	public WEPraetorServoKammer() {
 		grundkosten = 0;
@@ -28,7 +28,7 @@ public class WEPraetorServoKammer extends RuestkammerVater {
 		
 		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 		add(o2a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		o2a.setSelected(0, true);
 		
@@ -51,20 +51,19 @@ public class WEPraetorServoKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Paragon blade", 25));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+		
+		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Pair of lightning claws", 25));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Digital lasers", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Master-crafted weapon", 15));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Combat shield", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Refractor field", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Boarding shield", 10));
@@ -72,7 +71,6 @@ public class WEPraetorServoKammer extends RuestkammerVater {
 		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Jump pack", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Space Marine bike", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Legion jetbike", 45));
@@ -84,10 +82,23 @@ public class WEPraetorServoKammer extends RuestkammerVater {
 
 	@Override
 	public void refreshen() {
-		o2.setAktiv(!o2a.isSelected() || !o2b.isSelected());
-		o3.setAktiv(!o2a.isSelected() && !o2b.isSelected());
+		int substractor = 0;
+		int klauen = 0;
+		int waffen = 0;
 		
-		boolean legal =((o2a.isSelected() && o2b.isSelected()) || (o2a.isSelected() && o2.isSelected()) || (o2b.isSelected() && o2.isSelected()) || o3.isSelected());
+		if(o2a.isSelected() && o2b.isSelected()) { substractor = 2; }
+		else if(o2a.isSelected() || o2b.isSelected()) { substractor = 1; }
+		else if(!o2a.isSelected() && !o2b.isSelected()) { substractor = 0; }
+		
+		if(o3.isSelected()) { klauen = 2; }
+		else if(!o3.isSelected()) { klauen = 0; }
+		
+		waffen = 2 - substractor - klauen;
+		if(waffen < 0) waffen = 0;
+		
+		o2.setMaxAnzahl(waffen);
+		
+		boolean legal = ((o2a.isSelected()?1:0) + (o2b.isSelected()?1:0) + o2.getAnzahl() + klauen) ==2;
 		
 		o2a.setLegal(legal);
 		o2b.setLegal(legal);

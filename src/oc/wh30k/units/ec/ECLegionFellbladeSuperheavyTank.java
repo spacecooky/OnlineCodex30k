@@ -28,7 +28,7 @@ public class ECLegionFellbladeSuperheavyTank extends Eintrag {
 		
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Command tank", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Space Marine Legion Crew", 15));
