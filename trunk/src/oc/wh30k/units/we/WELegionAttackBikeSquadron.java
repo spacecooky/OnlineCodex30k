@@ -39,7 +39,7 @@ public class WELegionAttackBikeSquadron extends Eintrag {
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Chainswords", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Chainsaxes", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Chainaxes", 0));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		

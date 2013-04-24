@@ -19,6 +19,7 @@ public class WELegionTacticalSupportSquad extends Eintrag {
 		name = "Legion Tactical Support Squad\n";
 		grundkosten = 25;
 		überschriftSetzen = true;
+		setCountToMinimum(false);
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, 15);
 		add(squad);

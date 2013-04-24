@@ -14,6 +14,7 @@ public class DGMoritat extends Eintrag {
 	public DGMoritat() {
 		name = "Moritat";
 		grundkosten = 85;
+		setCountToMinimum(false);
 
 		seperator();
 		

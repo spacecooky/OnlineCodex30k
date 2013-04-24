@@ -161,7 +161,7 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			
 			seperator();
 			ogE.addElement(new OptionsGruppeEintrag("Force axe", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Force staff", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Force stave", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Force sword", 0));
 			add(o3x = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			o3x.setSelected(0, true);
@@ -377,6 +377,7 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			int substractor = 0;
 			int waffen = 0;
 			
+			if(!o3x.isSelected()) {o3x.setSelected(0, true);}
 			if(o3x.isSelected() && o3y.isSelected()) { substractor = 2; }
 			else if(o3x.isSelected() || o3y.isSelected()) { substractor = 1; }
 			else if(!o3x.isSelected() && !o3y.isSelected()) { substractor = 0; }
@@ -388,7 +389,6 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			
 			boolean legal = ((o3x.isSelected()?1:0) + (o3y.isSelected()?1:0) + o3b.getAnzahl()) ==2;
 			
-			o3x.setLegal(legal);
 			o3y.setLegal(legal);
 			o3b.setLegal(legal);
 			}	

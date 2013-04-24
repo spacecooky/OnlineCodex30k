@@ -20,6 +20,7 @@ public class DGDeathshroudTerminatorSquad extends Eintrag {
 		name = "Deathshroud Terminator Squad\n";
 		grundkosten = 10;
 		überschriftSetzen = true;
+		this.setEintragsCNT(0);
 
 		BuildaHQ.addToInformationVector("DGLegionCommandSquad", 1);
 		

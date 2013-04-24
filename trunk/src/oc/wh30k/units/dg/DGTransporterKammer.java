@@ -55,8 +55,8 @@ public class DGTransporterKammer extends RuestkammerVater {
 		OptionsVater[] rhino = new OptionsVater[]{
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", 10),
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dozer blade", 5),
-			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Auxiliary drive", 15),
-			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Extra armour", 15)				
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Auxiliary drive", 10),
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Extra armour", 10)				
 		};
 		
 		

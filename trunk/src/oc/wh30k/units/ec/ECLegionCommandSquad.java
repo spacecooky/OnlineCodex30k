@@ -13,7 +13,7 @@ import oc.RuestkammerStarter;
 public class ECLegionCommandSquad extends Eintrag {
 
 	AnzahlPanel squad;
-	OptionsUpgradeGruppe o1, o2, o4, o5, o6, o8;
+	OptionsUpgradeGruppe o1, o1b, o2, o4, o5, o6, o8;
 	OptionsZaehlerGruppe o3, o4a, o4b;
 	OptionsZaehlerGruppe o7a;
 	OptionsZaehlerGruppe o7aStandard;
@@ -25,6 +25,7 @@ public class ECLegionCommandSquad extends Eintrag {
 	public ECLegionCommandSquad() {
 		name = "Legion Command Squad";
 		grundkosten = 40;
+		this.setEintragsCNT(0);
 		        
 		BuildaHQ.addToInformationVector("ECLegionCommandSquad", 1);
 
@@ -37,6 +38,8 @@ public class ECLegionCommandSquad extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Legion Standard Bearer", 0));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		ogE.addElement(new OptionsGruppeEintrag("Grenade harness", 10));
+		add(o1b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
 		
 		seperator();
 		
@@ -122,11 +125,13 @@ public class ECLegionCommandSquad extends Eintrag {
 	public void refreshen() {
 		
 		if(!o1.isSelected()) o1.setSelected(0, true);
+		o1b.setAktiv(o6.isSelected());
 		o2.setAktiv(0, !o6.isSelected());
 		o3.setAktiv(!o6.isSelected());
 		o4a.setAktiv(!o6.isSelected());
 		o4b.setAktiv(!o6.isSelected());
 		o5.setAktiv(!o6.isSelected());
+		rkTransport.setAktiv(!o5.isSelected());
 		
 		o7a.setAktiv(o6.isSelected());
 		o7aStandard.setAktiv(o6.isSelected());

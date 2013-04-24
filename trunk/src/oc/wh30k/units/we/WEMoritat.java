@@ -14,6 +14,7 @@ public class WEMoritat extends Eintrag {
 	public WEMoritat() {
 		name = "Moritat";
 		grundkosten = 85;
+		setCountToMinimum(false);
 
 		seperator();
 		

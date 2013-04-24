@@ -18,6 +18,8 @@ public class DGSiegebreaker extends Eintrag {
 		name = "Siege breaker";
 		grundkosten = 95;
 
+		BuildaHQ.addToInformationVector("DGSiege", 1);
+
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Phosphex bomb", 10));
@@ -41,7 +43,8 @@ public class DGSiegebreaker extends Eintrag {
 		seperator();
 		
 		Termi = new RuestkammerStarter(ID, randAbstand, cnt, "DGConsulTermiKammer", "");
-		Termi.initKammer();
+		//Consul, Librarian
+		Termi.initKammer(true, false);
 		Termi.setButtonText(BuildaHQ.translate("Terminatorweapons & Equipment"));
 		add(Termi);
 		Termi.setAbwaehlbar(false);
@@ -50,7 +53,12 @@ public class DGSiegebreaker extends Eintrag {
 		complete();
 	}
 
-	
+	@Override
+	public void deleteYourself() {
+		
+		BuildaHQ.addToInformationVector("DGSiege", -1);
+		super.deleteYourself();
+	}
 
 	@Override
 	public void refreshen() {

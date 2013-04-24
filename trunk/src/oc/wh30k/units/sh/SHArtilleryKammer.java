@@ -34,7 +34,15 @@ public class SHArtilleryKammer extends RuestkammerVater {
 
 		seperator();
 
-		OptionsVater[] imp = new OptionsVater[]{
+		OptionsVater[] basilisk = new OptionsVater[]{
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", 10),
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dozer blade", 5),
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Auxiliary drive", 10),
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Extra armour", 10),	
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Twin-linked bolter", 5),
+		};
+		
+		OptionsVater[] medusa = new OptionsVater[]{
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", 10),
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dozer blade", 5),
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Auxiliary drive", 10),
@@ -51,9 +59,10 @@ public class SHArtilleryKammer extends RuestkammerVater {
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hyperios missiles", "Hyperios air-defence missiles", 0),
 		};
 		
-		add(switcher = new OptionsPanelSwitcher(randAbstand, cnt, imp, whirlwind));
-		
-		
+		add(switcher = new OptionsPanelSwitcher(randAbstand, cnt, basilisk, medusa, whirlwind));
+			
+		ogE.addElement(new OptionsGruppeEintrag("Phosphex shells", 0));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		sizeSetzen();
 	}
@@ -63,12 +72,21 @@ public class SHArtilleryKammer extends RuestkammerVater {
 		if (!typ.isSelected()) {
 			typ.setSelected(0, true);
 		}
-
-		if (!typ.isSelected("Whirlwind")) {
+		
+		if (typ.isSelected("Legion Basilisk")) {
 			switcher.forceSwitchPanel(0);
-		} else {
+		} else if (typ.isSelected("Legion Medusa")) {
 			switcher.forceSwitchPanel(1);
+		} else {
+			switcher.forceSwitchPanel(2);
 		}
+		
+		int phosphex = BuildaHQ.getCountFromInformationVector("SHSiege");
+		o1.setAktiv (typ.isSelected(1) && phosphex >0);
+		o1.getPanel().setLocation(
+			(int) switcher.getPanel().getLocation().getX(),
+			(int) switcher.getPanel().getLocation().getY() + switcher.getPanel().getSize().height + 8
+		);
 				
 	}
 	

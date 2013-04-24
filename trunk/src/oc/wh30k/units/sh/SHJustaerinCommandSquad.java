@@ -21,6 +21,7 @@ public class SHJustaerinCommandSquad extends Eintrag {
 		name = "Justaerin Terminator Squad\n";
 		grundkosten = 90;
 		überschriftSetzen = true;
+		this.setEintragsCNT(0);
 		
 		BuildaHQ.addToInformationVector("SHLegionCommandSquad", 1);
 

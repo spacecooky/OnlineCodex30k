@@ -47,7 +47,7 @@ public class WEDreadnoughtKammer  extends RuestkammerVater {
 		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));	
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma blaster", 20));
-		ogE.addElement(new OptionsGruppeEintrag("Graviton gun", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Graviton gun", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Melta gun", 15));
 		add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));		
 		seperator();

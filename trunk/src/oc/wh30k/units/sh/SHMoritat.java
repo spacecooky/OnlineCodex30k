@@ -14,6 +14,7 @@ public class SHMoritat extends Eintrag {
 	public SHMoritat() {
 		name = "Moritat";
 		grundkosten = 85;
+		setCountToMinimum(false);
 
 		seperator();
 		
