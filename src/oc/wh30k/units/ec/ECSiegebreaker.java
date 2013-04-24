@@ -18,6 +18,8 @@ public class ECSiegebreaker extends Eintrag {
 		name = "Siege breaker";
 		grundkosten = 95;
 
+		BuildaHQ.addToInformationVector("ECSiege", 1);
+
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Phosphex bomb", 10));
@@ -41,7 +43,8 @@ public class ECSiegebreaker extends Eintrag {
 		seperator();
 		
 		Termi = new RuestkammerStarter(ID, randAbstand, cnt, "ECConsulTermiKammer", "");
-		Termi.initKammer();
+		//Consul, Librarian
+		Termi.initKammer(true, false);
 		Termi.setButtonText(BuildaHQ.translate("Terminatorweapons & Equipment"));
 		add(Termi);
 		Termi.setAbwaehlbar(false);
@@ -50,7 +53,12 @@ public class ECSiegebreaker extends Eintrag {
 		complete();
 	}
 
-	
+	@Override
+	public void deleteYourself() {
+		
+		BuildaHQ.addToInformationVector("ECSiege", -1);
+		super.deleteYourself();
+	}
 
 	@Override
 	public void refreshen() {

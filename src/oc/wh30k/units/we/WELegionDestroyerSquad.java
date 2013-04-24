@@ -35,12 +35,13 @@ public class WELegionDestroyerSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Missile launcher (rad)", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Volkite Serpenta", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Hand flamer", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Chainswords", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Chainsaxes", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Chainaxes", 0));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();

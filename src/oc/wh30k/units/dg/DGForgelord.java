@@ -36,7 +36,8 @@ public class DGForgelord extends Eintrag {
 		seperator();
 		
 		Termi = new RuestkammerStarter(ID, randAbstand, cnt, "DGConsulTermiKammer", "");
-		Termi.initKammer();
+		//Consul, Librarian
+		Termi.initKammer(true, false);
 		Termi.setButtonText(BuildaHQ.translate("Terminatorweapons & Equipment"));
 		add(Termi);
 		Termi.setAbwaehlbar(false);

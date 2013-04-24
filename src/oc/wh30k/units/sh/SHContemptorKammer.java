@@ -38,7 +38,7 @@ public class SHContemptorKammer  extends RuestkammerVater {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Dreadnought ccw", "Dreadnought close combat weapon", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Chainfist", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 10));		
+		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 0));		
 		ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", "Twin-linked autocannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Assault cannon", "Kheres Pattern assault cannon", 15));

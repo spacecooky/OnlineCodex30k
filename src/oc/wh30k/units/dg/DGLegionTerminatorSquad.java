@@ -12,7 +12,7 @@ public class DGLegionTerminatorSquad extends Eintrag {
 
 	AnzahlPanel squad;
 	OptionsZaehlerGruppe o2, o4, o7a, o7aStandard, o7b, o7bStandard, o7c, o8;
-	OptionsUpgradeGruppe o1, o3;
+	OptionsUpgradeGruppe o1, o0;
 	OptionsZaehlerGruppe o7aStandard2;
 	RuestkammerStarter rkBoss;
 	RuestkammerStarter rkTransport;
@@ -25,8 +25,10 @@ public class DGLegionTerminatorSquad extends Eintrag {
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Terminators", 5, 10, 30);
 		add(squad);
 
-		seperator();
-		
+		seperator();	
+		ogE.addElement(new OptionsGruppeEintrag("Cataphractii armour", "Cataphractii Terminator armour", 0));
+		add(o0 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+				
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Chem-Munitions"), 0));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		

@@ -37,7 +37,7 @@ public class WELegionMalcadorAssaultTank extends Eintrag {
 		
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Flare shield", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Command tank", 25));
@@ -46,7 +46,7 @@ public class WELegionMalcadorAssaultTank extends Eintrag {
 		
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));

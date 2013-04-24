@@ -32,7 +32,7 @@ public class WELegionAssaultSquad extends Eintrag {
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Chainswords", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Chainsaxes", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Chainaxes", 0));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();

@@ -65,7 +65,7 @@ public class SHLegionOutriderSquad extends Eintrag {
 		
 		o2.setMaxAnzahl(squad.getModelle()/3);
 		
-		o3.setPreis(1, squad.getModelle()*10);
+		o3.setPreis(1, squad.getModelle()*15);
 		o3.setPreis(2, squad.getModelle()*25);
 		o3.setPreis(3, squad.getModelle()*25);
 	}

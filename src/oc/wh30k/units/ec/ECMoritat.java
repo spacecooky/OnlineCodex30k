@@ -14,6 +14,7 @@ public class ECMoritat extends Eintrag {
 	public ECMoritat() {
 		name = "Moritat";
 		grundkosten = 85;
+		setCountToMinimum(false);
 
 		seperator();
 		

@@ -38,11 +38,11 @@ public class DGRaiderKammer  extends RuestkammerVater {
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 7));	
 						
 		seperator();
-		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 20));

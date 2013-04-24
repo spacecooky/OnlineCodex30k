@@ -38,6 +38,7 @@ public class DGLegionDestroyerSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Missile launcher (rad)", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Volkite Serpenta", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Hand flamer", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 		seperator();

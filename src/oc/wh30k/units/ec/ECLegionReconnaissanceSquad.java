@@ -11,7 +11,8 @@ import oc.RuestkammerStarter;
 public class ECLegionReconnaissanceSquad extends Eintrag {
 
 	AnzahlPanel squad;
-	OptionsUpgradeGruppe o1, o2;
+	OptionsUpgradeGruppe o1;
+	OptionsZaehlerGruppe o2, o2Standard;
 	RuestkammerStarter rkBoss;
 	RuestkammerStarter rkTransport;
 
@@ -34,11 +35,11 @@ public class ECLegionReconnaissanceSquad extends Eintrag {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Bolter", 0));
+		add(o2Standard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		ogE.addElement(new OptionsGruppeEintrag("Sniper rifle", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Space Marine shotgun", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Combat blade", 0));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
 		seperator();
 
@@ -64,11 +65,14 @@ public class ECLegionReconnaissanceSquad extends Eintrag {
 	@Override
 	public void refreshen() {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
-        if (!o2.isSelected()) o2.setSelected(0, true);
         
 		o1.setPreis(1, squad.getModelle()*5);
 		o1.setPreis(2, squad.getModelle()*5);
-		o2.setPreis(1, squad.getModelle()*5);
+		
+		int subtractor = 1; // boss        
+        o2.setMaxAnzahl(squad.getModelle()-subtractor);
+        o2Standard.setMaxAnzahl(squad.getModelle()-subtractor-o2.getAnzahl());
+		o2Standard.setAnzahl(0,o2Standard.getMaxAnzahl());
 		
 		rkTransport.getPanel().setLocation(
 				(int) rkTransport.getPanel().getLocation().getX(),

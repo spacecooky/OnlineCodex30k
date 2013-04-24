@@ -45,15 +45,7 @@ public class VOLKSonsofHorus extends BuildaVater {
 		
 		/*
 		noAllies.clear();
-		noAllies.add("BA");
-		noAllies.add("CD");
-		noAllies.add("CM");
-		noAllies.add("DE");
-		noAllies.add("OR");
-		noAllies.add("TY");
-		noAllies.add("RH");
-		noAllies.add("DM");
-		noAllies.add("TL");
+		//noAllies.add("BA");
 		*/
 		complete();
 	}

@@ -57,7 +57,7 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
@@ -85,7 +85,7 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
@@ -124,7 +124,7 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
@@ -154,7 +154,7 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword & nuncio-vox", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe & nuncio-vox", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Chainaxe & nuncio-vox", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon & nuncio-vox", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist & nuncio-vox", 15));
 			add(o5b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -182,7 +182,7 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			add(o6a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -227,7 +227,7 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
@@ -302,7 +302,7 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainsaxe", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
