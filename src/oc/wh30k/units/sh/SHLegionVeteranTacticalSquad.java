@@ -64,7 +64,7 @@ public class SHLegionVeteranTacticalSquad extends Eintrag {
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Dreadclaw, Phobos, Spartan
 		rkTransport.initKammer(true, true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");

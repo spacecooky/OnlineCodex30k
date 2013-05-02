@@ -53,7 +53,7 @@ public class DGLegionBreacherSiegeSquad extends Eintrag {
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Phobos, Spartan
 		rkTransport.initKammer(false, false, true, false);
 		rkTransport.setButtonText("Dedicated transport");

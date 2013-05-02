@@ -24,9 +24,9 @@ public class WEContemptorKammer  extends RuestkammerVater {
 
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy bolter", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", "Twin-linked autocannon", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked autocannon", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Assault cannon", "Kheres Pattern assault cannon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Twin-linked lascannon", 25));
@@ -39,7 +39,7 @@ public class WEContemptorKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Dreadnought ccw", "Dreadnought close combat weapon", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Chainfist", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 0));		
-		ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", "Twin-linked autocannon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked autocannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Assault cannon", "Kheres Pattern assault cannon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Twin-linked lascannon", 25));
@@ -63,7 +63,7 @@ public class WEContemptorKammer  extends RuestkammerVater {
 		
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "WETransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "WETransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Dreadclaw, Phobos, Spartan
 		rkTransport.initKammer(false, false, true, false, false);
 		rkTransport.setButtonText("Dedicated transport");

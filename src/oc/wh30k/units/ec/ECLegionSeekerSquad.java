@@ -50,7 +50,7 @@ public class ECLegionSeekerSquad extends Eintrag {
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "ECTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "ECTransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Phobos, Spartan
 		rkTransport.initKammer(true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");

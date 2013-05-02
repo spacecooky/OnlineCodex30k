@@ -113,7 +113,7 @@ public class DGLegionCommandSquad extends Eintrag {
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Phobos, Spartan
 		rkTransport.initKammer(true, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");

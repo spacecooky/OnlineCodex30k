@@ -67,7 +67,7 @@ public class ECTechmarineKammer  extends RuestkammerVater {
 		
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "ECTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "ECTransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Phobos, Spartan
 		rkTransport.initKammer(true, false, false, false);
 		rkTransport.setButtonText("Dedicated transport");

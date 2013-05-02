@@ -17,7 +17,7 @@ public class ECLegionMalcadorAssaultTank extends Eintrag {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Battle cannon", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", "Twin-linked lascannon", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked lascannon", 0));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
@@ -46,7 +46,7 @@ public class ECLegionMalcadorAssaultTank extends Eintrag {
 		
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin-linked", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked bolter", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));

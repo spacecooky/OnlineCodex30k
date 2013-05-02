@@ -18,7 +18,7 @@ public class SHLegionStormEagleAssaultGunship extends Eintrag {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy bolter", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Twin multi-melta", "Twin-linked multi-melta", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Missile launcher", 5));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -27,7 +27,7 @@ public class SHLegionStormEagleAssaultGunship extends Eintrag {
 
 		ogE.addElement(new OptionsGruppeEintrag("4 Tempest rockets", 0));
 		ogE.addElement(new OptionsGruppeEintrag("4 Hellstrike missiles", 20));
-		ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", "Twin-linked lascannon", 40));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked lascannon", 40));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();

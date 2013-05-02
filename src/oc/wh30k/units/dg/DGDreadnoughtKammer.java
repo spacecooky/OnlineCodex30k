@@ -24,10 +24,10 @@ public class DGDreadnoughtKammer  extends RuestkammerVater {
 
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy bolter", "Twin-linked heavy bolter", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", "Twin-linked autocannon", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Twin missile launcher", "Twin-linked missile launcher", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked autocannon", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked missile launcher", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Flamestorm cannon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Twin-linked lascannon", 25));
@@ -38,8 +38,8 @@ public class DGDreadnoughtKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Dreadnought ccw", "Dreadnought close combat weapon", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Chainfist", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Siege Wrecker", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", "Twin-linked autocannon", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Twin missile launcher", "Twin-linked missile launcher", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked autocannon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked missile launcher", 15));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));	
 		seperator();
 
@@ -62,7 +62,7 @@ public class DGDreadnoughtKammer  extends RuestkammerVater {
 		add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));		
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Phobos, Spartan
 		rkTransport.initKammer(false, true, false, false);
 		rkTransport.setButtonText("Dedicated transport");

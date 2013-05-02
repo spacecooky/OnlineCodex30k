@@ -34,10 +34,10 @@ public class ORMagosReductorCallebDecima extends Eintrag {
 		
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "ORTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "ORTransporterKammer", "Mechanicum Land Raider");
 		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(true, true, true, false);
-		rkTransport.setButtonText("Dedicated transport");
+		rkTransport.initKammer();
+		rkTransport.setButtonText("Mechanicum Land Raider");
 		add(rkTransport);
 
 		complete();

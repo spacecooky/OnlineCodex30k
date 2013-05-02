@@ -62,7 +62,7 @@ public class SHJustaerinCommandSquad extends Eintrag {
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Dreadclaw, Phobos, Spartan
 		rkTransport.initKammer(false, false, true, true, false);
 		rkTransport.setButtonText("Dedicated transport");

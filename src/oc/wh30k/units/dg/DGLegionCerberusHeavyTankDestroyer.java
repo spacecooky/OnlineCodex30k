@@ -29,7 +29,7 @@ public class DGLegionCerberusHeavyTankDestroyer extends Eintrag {
 		
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin-linked", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked bolter", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
