@@ -19,7 +19,7 @@ public class VOLKEmperorsChildren extends BuildaVater {
 		String[] Sturmeinträge = {"", "Legion Seeker Squad", "Legion Outrider Squad", "Legion Attack Bike Squadron", "Legion Jetbike Sky Hunter Squadron", "Legion Land Speeder Squadron", "Legion Storm Eagle Assault Gunship"};
 		String[] Unterstützungeinträge = {"", "Legion Heavy Support Squad", "Legion Predator Strike Armour Squadron", "Legion Land Raider Battle Squadron", "Legion Artillery Tank Squadron", "Legion Vindicator", "Legion Spartan Assault Tank", "Legion Caestus Assault Ram"};
 		String[] Befestigungen = {"", "Aegis-Verteidigungslinie", "Himmelsschild-Landeplattform", "Imperiale Bastion", "Festung der Erlösung"};
-		String[] LordsofWar = {"", "Fulgrim the Illuminator", "", "Legion Fellblade Super-heavy Tank", "Legion Typhon Heavy Siege Tank", "Legion Thunderhawk Gunship", "Legion Thunderhawk Transporter", "Legion Cerberus Heavy Tank Destroyer", "Legion Malcador Assault Tank"};
+		String[] LordsofWar = {"", "Fulgrim the Illuminator", "", "Legion Fellblade Super-heavy Tank", "Legion Typhon Heavy Siege Tank", "Legion Thunderhawk Gunship", "Legion Thunderhawk Transporter", "Legion Cerberus Heavy Tank Destroyer", "Legion Malcador Assault Tank", "Imperial Avenger Strike Fighter"};
 
 		adden(new ChooserGruppe(reflectionKennung, cnt, 0, 1, HQeinträge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;

@@ -74,7 +74,7 @@ public class WELegionTerminatorSquad extends Eintrag {
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "WETransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "WETransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Dreadclaw, Phobos, Spartan
 		rkTransport.initKammer(false, false, false, true, true);
 		rkTransport.setButtonText("Dedicated transport");

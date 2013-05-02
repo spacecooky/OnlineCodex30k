@@ -67,7 +67,7 @@ public class WETechmarineKammer  extends RuestkammerVater {
 		
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "WETransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "WETransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Dreadclaw, Phobos, Spartan
 		rkTransport.initKammer(true, true, false, true, false);
 		rkTransport.setButtonText("Dedicated transport");

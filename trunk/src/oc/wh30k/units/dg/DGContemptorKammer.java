@@ -27,9 +27,9 @@ public class DGContemptorKammer  extends RuestkammerVater {
 		
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy bolter", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", "Twin-linked autocannon", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked autocannon", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Assault cannon", "Kheres Pattern assault cannon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Twin-linked lascannon", 25));
@@ -42,7 +42,7 @@ public class DGContemptorKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Dreadnought ccw", "Dreadnought close combat weapon", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Chainfist", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 0));		
-		ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", "Twin-linked autocannon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked autocannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Assault cannon", "Kheres Pattern assault cannon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Twin-linked lascannon", 25));

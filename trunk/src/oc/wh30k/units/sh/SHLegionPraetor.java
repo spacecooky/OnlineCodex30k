@@ -9,7 +9,7 @@ import oc.RuestkammerStarter;
 
 public class SHLegionPraetor extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+	OptionsUpgradeGruppe o0, o1;
 	RuestkammerStarter Servo;
 	RuestkammerStarter Termi;
 
@@ -19,6 +19,14 @@ public class SHLegionPraetor extends Eintrag {
 
 		BuildaHQ.addToInformationVector("SHPraetor", 1);
 
+		seperator();
+
+		ogE.addElement(new OptionsGruppeEintrag("Angel's wrath", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Armoured spearhead", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Orbital assault", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Pride of the Legion", 0));
+		add(o0 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Terminator armour", 35));

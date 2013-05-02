@@ -30,6 +30,7 @@ public class ORMechanicumThallaxCohort extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Upgrade: Destructor", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Upgrade: Icatian", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Upgrade: Ferrox", 25));
+		ogE.addElement(new OptionsGruppeEintrag("Upgrade: Empyrite", 25));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
@@ -50,10 +51,10 @@ public class ORMechanicumThallaxCohort extends Eintrag {
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "ORTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "ORTransporterKammer", "Mechanicum Land Raider");
 		//Rhino, Pod, Phobos, Spartan
-		rkTransport.initKammer(true, true, true, false);
-		rkTransport.setButtonText("Dedicated transport");
+		rkTransport.initKammer();
+		rkTransport.setButtonText("Mechanicum Land Raider");
 		add(rkTransport);
 
 		complete();

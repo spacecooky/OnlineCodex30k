@@ -22,8 +22,8 @@ public class SHLegionSpartanAssaultTank extends Eintrag {
 		
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", "Twin-linked heavy flamer", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy bolter", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy flamer", 0));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
@@ -39,7 +39,7 @@ public class SHLegionSpartanAssaultTank extends Eintrag {
 		
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin-linked", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked bolter", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));

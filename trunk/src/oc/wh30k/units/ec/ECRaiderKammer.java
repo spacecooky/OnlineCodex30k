@@ -37,7 +37,7 @@ public class ECRaiderKammer  extends RuestkammerVater {
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 6));	
 						
 		seperator();
-		ogE.addElement(new OptionsGruppeEintrag("Twin-linked", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked bolter", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
@@ -48,8 +48,8 @@ public class ECRaiderKammer  extends RuestkammerVater {
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 20));
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", "Twin-linked heavy flamer", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy bolter", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy flamer", 20));
 		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		

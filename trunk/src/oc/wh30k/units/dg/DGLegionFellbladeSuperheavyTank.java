@@ -1,6 +1,7 @@
 package oc.wh30k.units.dg;
 
 import oc.BuildaHQ;
+import oc.BuildaVater;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
@@ -13,6 +14,8 @@ public class DGLegionFellbladeSuperheavyTank extends Eintrag {
 	public DGLegionFellbladeSuperheavyTank() {
 		name = "Legion Fellblade Super-heavy Tank";
 		grundkosten = 525;
+        
+		//BuildaHQ.addToInformationVector("DGLordsofWar", 1);
 		
 		seperator();
 
@@ -22,8 +25,8 @@ public class DGLegionFellbladeSuperheavyTank extends Eintrag {
 		
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", "Twin-linked heavy bolter", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", "Twin-linked heavy flamer", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy bolter", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked heavy flamer", 0));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
@@ -37,7 +40,7 @@ public class DGLegionFellbladeSuperheavyTank extends Eintrag {
 		
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin-linked", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Twin-linked bolter", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 10));
@@ -49,7 +52,7 @@ public class DGLegionFellbladeSuperheavyTank extends Eintrag {
 
 		complete();
 	}
-
+	
 	@Override
 	public void refreshen() {
 				
@@ -57,6 +60,20 @@ public class DGLegionFellbladeSuperheavyTank extends Eintrag {
 		if (!o2.isSelected()) o2.setSelected(0, true);
 		
 		o3.setAktiv(4, o2.isSelected(1) || o4.isSelected(1) || o4.isSelected(4));
+	
+		/*int selectedSquads = BuildaHQ.getCountFromInformationVector("DGLordsofWar");
+		double possibleSquads = (myBuilder.getKosten()/2000);
+		if(selectedSquads > possibleSquads) {
+			setFehlermeldung("Lords of War > " + possibleSquads + "!");
+		} else {
+			setFehlermeldung("");
+		}
+	}
+
+	@Override
+	public void deleteYourself() {
+		BuildaHQ.addToInformationVector("DGLordsofWar", -1);
+		super.deleteYourself();*/
 	}
 
 }

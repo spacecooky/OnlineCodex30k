@@ -68,7 +68,7 @@ public class DGTechmarineKammer  extends RuestkammerVater {
 		
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Transport");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DGTransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Phobos, Spartan
 		rkTransport.initKammer(true, false, false, false);
 		rkTransport.setButtonText("Dedicated transport");
