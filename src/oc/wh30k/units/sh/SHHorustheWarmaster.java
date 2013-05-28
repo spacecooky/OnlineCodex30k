@@ -2,8 +2,12 @@ package oc.wh30k.units.sh;
 
 import oc.BuildaHQ;
 import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class SHHorustheWarmaster extends Eintrag {
+	
+	OptionsUpgradeGruppe o0;
 
 	public SHHorustheWarmaster() {
 		name = "Horus the Warmaster";
@@ -17,7 +21,15 @@ public class SHHorustheWarmaster extends Eintrag {
 		BuildaHQ.getChooserGruppe(2).removeSpezialAuswahl("Justaerin Terminator Squad");
 		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Legion Veteran Tactical Squad");
 		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Justaerin Terminator Squad");
+		
+		seperator();
 
+		ogE.addElement(new OptionsGruppeEintrag("Angel's wrath", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Armoured spearhead", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Orbital assault", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Pride of the Legion", 0));
+		add(o0 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+				
 		complete();
 	}
 
