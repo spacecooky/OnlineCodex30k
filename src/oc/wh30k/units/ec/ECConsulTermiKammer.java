@@ -53,7 +53,7 @@ public class ECConsulTermiKammer extends RuestkammerVater {
 			add(o8 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
 			}
 
-		else if (isConsul) {
+		else if (isLibrarian) {
 			ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 7));
 			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 7));
