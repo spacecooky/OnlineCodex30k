@@ -24,13 +24,13 @@ public class ORMagosReductorCallebDecima extends Eintrag {
 		
 		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Servo-automata", 12));
-		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
+		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 5));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Lascutter", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Flamer", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Rotor cannon", 10));
-		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 4));
+		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 5));
 		
 		seperator();
 

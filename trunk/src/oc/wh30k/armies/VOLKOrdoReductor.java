@@ -14,12 +14,12 @@ public class VOLKOrdoReductor extends BuildaVater {
 		reflectionKennungAllies ="OR";
 
 		String[] HQeinträge = {"", "Magos Reductor Calleb Decima"};
-		String[] Eliteeinträge = {""};
+		String[] Eliteeinträge = {"", "Techmarine Covenant"};
 		String[] Standardeinträge = {"", "Mechanicum Thallax Cohort"};
-		String[] Sturmeinträge = {""};
-		String[] Unterstützungeinträge = {""};
+		String[] Sturmeinträge = {"", "Imperial Avenger Strike Fighter"};
+		String[] Unterstützungeinträge = {"", "Legion Artillery Tank Squadron"};
 		String[] Befestigungen = {"", "Aegis-Verteidigungslinie", "Himmelsschild-Landeplattform", "Imperiale Bastion", "Festung der Erlösung"};
-		String[] LordsofWar = {"", "Imperial Avenger Strike Fighter", "Warhound Scout Titan", "Reaver Battle Titan"};
+		String[] LordsofWar = {"", "Warhound Scout Titan", "Reaver Battle Titan"};
 
 		adden(new ChooserGruppe(reflectionKennung, cnt, 0, 1, HQeinträge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
