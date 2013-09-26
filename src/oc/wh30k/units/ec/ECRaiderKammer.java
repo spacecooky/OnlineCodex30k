@@ -60,6 +60,7 @@ public class ECRaiderKammer  extends RuestkammerVater {
 	public void refreshen() {
 			if (!o1.isSelected()) o1.setSelected(0, true);
 			
+			o2.setAktiv(4, !o1.isSelected(2));
 			o2.setAktiv(5, o1.isSelected(0));
 			o2.setAktiv(6, o1.isSelected(1));
 			o5.setAktiv(o1.isSelected(1));
