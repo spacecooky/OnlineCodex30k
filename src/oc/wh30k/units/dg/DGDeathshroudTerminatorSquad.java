@@ -52,8 +52,11 @@ public class DGDeathshroudTerminatorSquad extends Eintrag {
         
         int selectedSquads = BuildaHQ.getCountFromInformationVector("DGLegionCommandSquad");
 		int possibleSquads = BuildaHQ.getCountFromInformationVector("DGPraetor");
+		int TermiLegal = BuildaHQ.getCountFromInformationVector("DGTermiPraetor");
 		if(selectedSquads > possibleSquads) {
 			setFehlermeldung("Command Squads > " + possibleSquads + "!");
+		} else if(selectedSquads > TermiLegal) {
+			setFehlermeldung("Praetor armour!");
 		} else {
 			setFehlermeldung("");
 		}

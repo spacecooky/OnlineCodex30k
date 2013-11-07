@@ -32,7 +32,7 @@ public class DGLegionPraetor extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Terminator armour", 35));
 		ogE.addElement(new OptionsGruppeEintrag("Cataphractii armour", 35));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+		
 		seperator();
 		
 		Servo = new RuestkammerStarter(ID, randAbstand, cnt, "DGPraetorServoKammer", "");
@@ -48,8 +48,7 @@ public class DGLegionPraetor extends Eintrag {
 		Termi.setButtonText(BuildaHQ.translate("Terminatorweapons & Equipment"));
 		add(Termi);
 		Termi.setAbwaehlbar(false);
-		
-		
+				
 		complete();
 	}
 
@@ -57,6 +56,7 @@ public class DGLegionPraetor extends Eintrag {
 	public void deleteYourself() {
 		
 		BuildaHQ.addToInformationVector("DGPraetor", -1);
+		if (o1.isSelected()) {BuildaHQ.addToInformationVector("DGTermiPraetor", -1);}
 		super.deleteYourself();
 	}
 
@@ -64,6 +64,18 @@ public class DGLegionPraetor extends Eintrag {
 	public void refreshen() {
 		Servo.setAktiv(!o1.isSelected());
 		Termi.setAktiv(o1.isSelected());
+		
+		if (o1.isSelected()) {
+		BuildaHQ.addToInformationVector("DGTermiPraetor", 1);	
+		}
+		else {
+		BuildaHQ.addToInformationVector("DGTermiPraetor", -1);	
+		}
+		
+		int TermiLegal = BuildaHQ.getCountFromInformationVector("DGTermiPraetor");
+		if (TermiLegal < 0) {
+			BuildaHQ.setInformationVectorValue("DGTermiPraetor", 0);
+		}
 		
 	}
 

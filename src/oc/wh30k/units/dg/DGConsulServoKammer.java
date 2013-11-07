@@ -371,7 +371,7 @@ public class DGConsulServoKammer extends RuestkammerVater {
 			if(waffen < 0) waffen = 0;
 			
 			o2b.setMaxAnzahl(waffen);
-			o2d.setAktiv(2, o2a.isSelected(1));
+			o2d.setAktiv(1, o2a.isSelected(1));
 			
 			boolean legal = ((o2x.isSelected()?1:0) + (o2y.isSelected()?1:0) + o2b.getAnzahl() + klauen) ==2;
 			
