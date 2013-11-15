@@ -13,7 +13,7 @@ public class VOLKOrdoReductor extends BuildaVater {
 		reflectionKennung = "OR";
 		reflectionKennungAllies ="OR";
 
-		String[] HQeinträge = {"", "Magos Reductor Calleb Decima"};
+		String[] HQeinträge = {"", "Archmagos", "Magos Reductor", "", "Magos Reductor Calleb Decima"};
 		String[] Eliteeinträge = {"", "Techmarine Covenant"};
 		String[] Standardeinträge = {"", "Mechanicum Thallax Cohort"};
 		String[] Sturmeinträge = {"", "Imperial Avenger Strike Fighter"};

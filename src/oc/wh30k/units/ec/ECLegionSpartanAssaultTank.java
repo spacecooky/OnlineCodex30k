@@ -31,11 +31,10 @@ public class ECLegionSpartanAssaultTank extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Dozer blade", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Auxiliary drive", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Extra armour", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Flare shield", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Frag assault launchers", 10));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 7));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 6));
 		
 		seperator();
 

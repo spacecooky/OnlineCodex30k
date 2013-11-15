@@ -31,12 +31,11 @@ public class DGLegionSpartanAssaultTank extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Dozer blade", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Auxiliary drive", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Extra armour", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured ceramite", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Flare shield", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Frag assault launchers", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Chem-Munitions", 0));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 8));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 7));
 		
 		seperator();
 
@@ -59,7 +58,7 @@ public class DGLegionSpartanAssaultTank extends Eintrag {
 		if (!o1.isSelected()) o1.setSelected(0, true);
 		if (!o2.isSelected()) o2.setSelected(0, true);
 		
-		o3.setAktiv(7, o2.isSelected(1) || o4.isSelected(1) || o4.isSelected(4));
+		o3.setAktiv(6, o2.isSelected(1) || o4.isSelected(1) || o4.isSelected(4));
 	}
 
 }
