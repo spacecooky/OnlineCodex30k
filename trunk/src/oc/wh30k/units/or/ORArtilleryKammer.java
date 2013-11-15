@@ -61,9 +61,9 @@ public class ORArtilleryKammer extends RuestkammerVater {
 		
 		add(switcher = new OptionsPanelSwitcher(randAbstand, cnt, basilisk, medusa, whirlwind));
 			
-		ogE.addElement(new OptionsGruppeEintrag("Phosphex shells", 0));
+		/*ogE.addElement(new OptionsGruppeEintrag("Phosphex shells", 0));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+*/
 		sizeSetzen();
 	}
 
@@ -80,14 +80,14 @@ public class ORArtilleryKammer extends RuestkammerVater {
 		} else {
 			switcher.forceSwitchPanel(2);
 		}
-		
+		/*
 		int phosphex = BuildaHQ.getCountFromInformationVector("ORSiege");
 		o1.setAktiv (typ.isSelected(1) && phosphex >0);
 		o1.getPanel().setLocation(
 			(int) switcher.getPanel().getLocation().getX(),
 			(int) switcher.getPanel().getLocation().getY() + switcher.getPanel().getSize().height + 8
 		);
-				
+		*/		
 	}
 	
 }
