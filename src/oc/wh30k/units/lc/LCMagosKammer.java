@@ -1,4 +1,4 @@
-package oc.wh30k.units.or;
+package oc.wh30k.units.lc;
 
 import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
@@ -7,12 +7,11 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
-public class ORMagosKammer extends RuestkammerVater {
+public class LCMagosKammer extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o1, o1a, o2, o2a, o3, o3a, o4, o5;
-	OptionsZaehlerGruppe o6, o7;
 	
-	public ORMagosKammer() {
+	public LCMagosKammer() {
 		grundkosten = 0;
 	}
 
@@ -70,16 +69,7 @@ public class ORMagosKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Infravisor", 5));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		ogE.addElement(new OptionsGruppeEintrag("Abeyant", 25));
-		ogE.addElement(new OptionsGruppeEintrag("Rad grenades", 10));
-		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
-		
-		seperator();
-		ogE.addElement(new OptionsGruppeEintrag("Phosphex bomb", 10));
-		add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
-		
-		seperator();
-		ogE.addElement(new OptionsGruppeEintrag("Breaching charge", 10));
-		add(o7 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
+		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		
 		sizeSetzen();
