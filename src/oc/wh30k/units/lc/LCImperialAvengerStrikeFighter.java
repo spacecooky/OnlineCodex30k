@@ -6,12 +6,12 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 
-public class ORImperialAvengerStrikeFighter extends Eintrag {
+public class LCImperialAvengerStrikeFighter extends Eintrag {
 
 	OptionsUpgradeGruppe o2;
 	OptionsZaehlerGruppe o1;
 
-	public ORImperialAvengerStrikeFighter() {
+	public LCImperialAvengerStrikeFighter() {
 		name = "Imperial Avenger Strike Fighter";
 		grundkosten = 150;
 		
