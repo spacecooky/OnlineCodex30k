@@ -16,7 +16,7 @@ public class VOLKLegioCybernetica extends BuildaVater {
 		String[] HQeinträge = {"", "Archmagos", "Magos Dominus"};
 		String[] Eliteeinträge = {"", "Enginseer Auxillia", "Myrmidon Secutors"};
 		String[] Standardeinträge = {"", "Mechanicum Thallax Cohort", "Legio Cybernetica Castellax Class Battle-Automata", "Tech-thrall Adsecularis"};
-		String[] Sturmeinträge = {"", "Primaris-Lightning Strike Fighter", "Imperial Avenger Strike Fighter", "Legion Storm Eagle Assault Gunship", "Sentry Gun", "Mechanicum Thallax Cohort Ferrox"};
+		String[] Sturmeinträge = {"", "Primaris-Lightning Strike Fighter", "Imperial Avenger Strike Fighter", "Legion Storm Eagle Assault Gunship", "Tarantula Sentry Gun Battery", "Mechanicum Thallax Cohort Ferrox"};
 		String[] Unterstützungeinträge = {"", "Myrmidon Destructors", "Mechanicum Thallax Cohort Icarian"};
 		String[] Befestigungen = {"", "Aegis-Verteidigungslinie", "Himmelsschild-Landeplattform", "Imperiale Bastion", "Festung der Erlösung"};
 		String[] LordsofWar = {""};

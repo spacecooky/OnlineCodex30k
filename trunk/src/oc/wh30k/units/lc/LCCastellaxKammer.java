@@ -30,8 +30,7 @@ public class LCCastellaxKammer  extends RuestkammerVater {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Bolter", 0));
-		add(o2a = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-		
+		add(o2a = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));		
 		ogE.addElement(new OptionsGruppeEintrag("Flamer", 5));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		

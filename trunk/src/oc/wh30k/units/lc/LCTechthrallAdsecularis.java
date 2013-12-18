@@ -16,6 +16,7 @@ public class LCTechthrallAdsecularis extends Eintrag {
 		name = "Tech-thrall Adsecularis\n";
 		grundkosten = 35;
 		überschriftSetzen = true;
+		setCountToMinimum(false);
 
 		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Frag grenades", 5));

@@ -9,7 +9,7 @@ import oc.RuestkammerVater;
 
 public class LCMyrmidonKammer extends RuestkammerVater {
 
-	OptionsZaehlerGruppe 	o1;
+	OptionsZaehlerGruppe 	o1a, o1;
 	OptionsUpgradeGruppe 	o2;
 	
 	boolean isSecutor = false;
@@ -29,6 +29,7 @@ public class LCMyrmidonKammer extends RuestkammerVater {
 			
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Maxim bolter", 10));
+			add(o1a = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 			ogE.addElement(new OptionsGruppeEintrag("Volkite Charger", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Graviton gun", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Irad-cleanser", 20));
@@ -52,9 +53,9 @@ public class LCMyrmidonKammer extends RuestkammerVater {
 
 	@Override
 	public void refreshen() {
-		if (isSecutor) {
-			boolean legal = (o1.getAnzahl() == o1.getMaxAnzahl());
-			o1.setLegal(legal);
+		if (isSecutor) {			
+			o1a.setMaxAnzahl(2-o1.getAnzahl());
+			o1a.setAnzahl(0, o1a.getMaxAnzahl());
 			}	
 		
 		else if (isDestructor) {

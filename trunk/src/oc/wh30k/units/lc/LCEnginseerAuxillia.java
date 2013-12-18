@@ -11,58 +11,60 @@ import oc.RuestkammerStarter;
 public class LCEnginseerAuxillia extends Eintrag {
 
 	AnzahlPanel squad;
-	OptionsUpgradeGruppe o1, o2;
-	OptionsZaehlerGruppe o3, o4, o5;
-	RuestkammerStarter rkTransport;
+	OptionsUpgradeGruppe o1;
+	OptionsZaehlerGruppe o2;
+	RuestkammerStarter t1, t2;
 
 	public LCEnginseerAuxillia() {
 		name = "Enginseer Auxillia\n";
 		grundkosten = 25;
-		überschriftSetzen = true;
-
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Enginseer", 1, 2, 20);
-		add(squad);
+		überschriftSetzen = true;				
+		
+		seperator();
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Servo-automata", 4, 8, 5);
 		add(squad);
-
-		seperator();
-
-		ogE.addElement(new OptionsGruppeEintrag("Nuncio-vox", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Augury scanner", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Cortex Controller", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Graviton gun", 5));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 5));
 		
 		seperator();
-
-		//ogE.addElement(new OptionsGruppeEintrag("Close combat weapon", 0));
-		//add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy chainblade", 5));
-		add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "LCEnginseerKammer", "Enginseer Adept");
+		t1.initKammer();		
+		t1.setAbwaehlbar(false);
+		add(t1);		
 
 		seperator();
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "LCEnginseerKammer", "Enginseer Adept");		
+		t2.initKammer();
+		add(t2);
+
+		seperator();
+		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Cyber-familiar", 15));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		
-		ogE.addElement(new OptionsGruppeEintrag("Multi-laser", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Phase-plasma fusil", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Irad cleanser", 10));
+		seperator();
+		ogE.addElement(new OptionsGruppeEintrag("Las-lock", 1));
+		ogE.addElement(new OptionsGruppeEintrag("Servo-arm", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Flamer", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Rotor cannon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Photon thruster", 25));
-		add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
 		complete();
 	}
 
 	@Override
 	public void refreshen() {
-        o1.setPreis(0, squad.getModelle()*5);
-		 
-        o4.setMaxAnzahl(squad.getModelle());
-        o5.setMaxAnzahl(squad.getModelle()/3);
+		int selections = t1.getSelectedAsInt() + t2.getSelectedAsInt();
 		
-		//o3.setMaxAnzahl(squad.getModelle()-o4.getAnzahl());
-		//o3.setAnzahl(0, o4.getMaxAnzahl()-o4.getAnzahl());
-		
+		o1.setPreis(0, selections*5);
+		o1.setPreis(1, selections*15);
+        
+        o2.setMaxAnzahl(squad.getModelle());
+        
+        t2.getPanel().setLocation(t2.getPanel().getX(), t1.getPanel().getY() + t1.getPanel().getHeight() + 10);
+        o1.getPanel().setLocation(o1.getPanel().getX(), t2.getPanel().getY() + t2.getPanel().getHeight() + 10);
+        o2.getPanel().setLocation(o2.getPanel().getX(), o1.getPanel().getY() + o1.getPanel().getHeight() + 10);
+        		
 	}
 
 }
