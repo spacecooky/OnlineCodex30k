@@ -68,7 +68,7 @@ public class ORMagosKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Cyber-familiar", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Infravisor", 5));
-		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 5));
 		ogE.addElement(new OptionsGruppeEintrag("Abeyant", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Rad grenades", 10));
 		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));

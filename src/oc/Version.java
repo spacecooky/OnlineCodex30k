@@ -7,10 +7,10 @@ public class Version {
 	// CHANGE ON ANY UPDATE!
 
 	private static int year = 2013;
-	private static int month = 9;
-	private static int day = 26;
-	private static int hour = 17;
-	private static int minute = 26;
+	private static int month = 12;
+	private static int day = 10;
+	private static int hour = 12;
+	private static int minute = 00;
 
 	/*********************************************************************/
 

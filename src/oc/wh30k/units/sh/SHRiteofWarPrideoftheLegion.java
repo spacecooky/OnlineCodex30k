@@ -31,6 +31,13 @@ public class SHRiteofWarPrideoftheLegion extends Eintrag {
 	@Override
 	public void refreshen() {		
 						
+		int possibleSquads = BuildaHQ.getCountFromInformationVector("SHPraetor");
+		if(1 > possibleSquads) {
+			setFehlermeldung("Requirements not met!");
+		} else {
+			setFehlermeldung("");
+		}
+						
 		setUnikat(true);				
 	}
 	

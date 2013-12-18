@@ -42,6 +42,7 @@ public class VOLKSonsofHorus extends BuildaVater {
 		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Pride of the Legion");
 		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Legion Veteran Tactical Squad");
 		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Justaerin Terminator Squad");
+		BuildaHQ.getChooserGruppe(4).addSpezialAuswahl("Reaver Attack Squad");
 		BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("Deathstorm Drop Pod");
 
 		nameDerArtDerArmee = "Sons of Horus";

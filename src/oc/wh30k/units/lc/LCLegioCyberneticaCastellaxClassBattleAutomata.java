@@ -27,21 +27,19 @@ public class LCLegioCyberneticaCastellaxClassBattleAutomata extends Eintrag {
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
 		seperator();
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "LCCastellaxKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "LCCastellaxKammer", "Castellax");
 		t1.initKammer();
-		t1.setButtonText("Castellax Class Battle-Automata");
+		t1.setAbwaehlbar(false);
 		add(t1);
 
 		seperator();
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "LCCastellaxKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "LCCastellaxKammer", "Castellax");
 		t2.initKammer();
-		t2.setButtonText("Castellax Class Battle-Automata");
 		add(t2);
 
 		seperator();
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "LCCastellaxKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "LCCastellaxKammer", "Castellax");
 		t3.initKammer();
-		t3.setButtonText("Castellax Class Battle-Automata");
 		add(t3);
 
 		complete();
@@ -50,7 +48,7 @@ public class LCLegioCyberneticaCastellaxClassBattleAutomata extends Eintrag {
 	
 	public void refreshen() {
             int selections = t1.getSelectedAsInt() + t2.getSelectedAsInt() + t3.getSelectedAsInt();
-            
+                                    
             if (!o1.isSelected()) {
             	o2.setPreis(0, selections);
             	o2.setPreis(1, selections*5);
@@ -64,10 +62,7 @@ public class LCLegioCyberneticaCastellaxClassBattleAutomata extends Eintrag {
                 o2.setPreis(3, 15);
             }
             
-			t1.setLegal(selections > 0);
-            
-            t1.setAktiv(t1.isSelected() || selections < 3);
-            t2.setAktiv(t1.isSelected() && selections < 3 && !o1.isSelected());
+			t2.setAktiv(t1.isSelected() && selections < 3 && !o1.isSelected());
             t3.setAktiv(t2.isSelected() && selections < 3 && !o1.isSelected());
 
             t2.getPanel().setLocation(t2.getPanel().getX(), t1.getPanel().getY() + t1.getPanel().getHeight() + 10);

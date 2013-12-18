@@ -13,66 +13,57 @@ public class LCMyrmidonDestructors extends Eintrag {
         überschriftSetzen = true;
 
 		seperator();
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonLordKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonLordKammer", "Myrmidon Lord");
 		t1.initKammer(false, true);
-		t1.setButtonText("Myrmidon Lord");
 		t1.setAbwaehlbar(false);
 		add(t1);		
 
 		seperator();
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t2.initKammer(false, true);
-		t2.setButtonText("Myrmidon Secutor");
 		t2.setAbwaehlbar(false);
 		add(t2);
 
 		seperator();
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t3.initKammer(false, true);
-		t3.setButtonText("Myrmidon Secutor");
 		t3.setAbwaehlbar(false);
 		add(t3);
 
 		seperator();
-		t4 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "", 1);
+		t4 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t4.initKammer(false, true);
-		t4.setButtonText("Myrmidon Secutor");
 		add(t4);
 
 		seperator();
-		t5 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "", 1);
+		t5 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t5.initKammer(false, true);
-		t5.setButtonText("Myrmidon Secutor");
 		add(t5);
 
 		seperator();
-		t6 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "", 1);
+		t6 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t6.initKammer(false, true);
-		t6.setButtonText("Myrmidon Secutor");
 		add(t6);
 
 		seperator();
-		t7 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "", 1);
+		t7 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t7.initKammer(false, true);
-		t7.setButtonText("Myrmidon Secutor");
 		add(t7);
 
 		seperator();
-		t8 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "", 1);
+		t8 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t8.initKammer(false, true);
 		t8.setButtonText("Myrmidon Secutor");
 		add(t8);
 
 		seperator();
-		t9 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "", 1);
+		t9 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t9.initKammer(false, true);
-		t9.setButtonText("Myrmidon Secutor");
 		add(t9);
 
 		seperator();
-		t10 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "", 1);
+		t10 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t10.initKammer(false, true);
-		t10.setButtonText("Myrmidon Secutor");
 		add(t10);
 
 		complete();
