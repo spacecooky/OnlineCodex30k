@@ -17,30 +17,27 @@ public class SHLegionArtilleryTankSquadron extends Eintrag {
 		grundkosten = 0;
         überschriftSetzen = true;
 
-        seperator();
-        		
+        seperator();        		
         ogE.addElement(new OptionsGruppeEintrag("Command tank", 25));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         		
         seperator();
-
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHArtilleryKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHArtilleryKammer", "Legion Artillery Tank");
 		t1.initKammer();
-		t1.setButtonText("Legion Artillery Tank");
+		t1.setAbwaehlbar(false);
+		t1.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t1);
 
 		seperator();
-
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHArtilleryKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHArtilleryKammer", "Legion Artillery Tank");
 		t2.initKammer();
-		t2.setButtonText("Legion Artillery Tank");
+		t2.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t2);
 
 		seperator();
-
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHArtilleryKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHArtilleryKammer", "Legion Artillery Tank");
 		t3.initKammer();
-		t3.setButtonText("Legion Artillery Tank");
+		t3.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t3);
 
 		complete();
@@ -60,7 +57,7 @@ public class SHLegionArtilleryTankSquadron extends Eintrag {
             t3.getPanel().setLocation(t3.getPanel().getX(), t2.getPanel().getY() + t2.getPanel().getHeight() + 10);
     
             setUnikat(true);  
-            o1.setAktiv(t3.isSelected());
+            o1.setAktiv(selections == 3);
 	}
 	
 }

@@ -12,27 +12,25 @@ public class SHApothecarionDetachment extends Eintrag {
 	public SHApothecarionDetachment() {
 		name = "Apothecarion Detachment";
 		grundkosten = 0;
-                überschriftSetzen = true;
+        überschriftSetzen = true;
 
 		seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHApothecaryKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHApothecaryKammer", "Apothecary");
 		t1.initKammer();
-		t1.setButtonText("Apothecary");
+		t1.setAbwaehlbar(false);
 		add(t1);
 
 		seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHApothecaryKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHApothecaryKammer", "Apothecary");
 		t2.initKammer();
-		t2.setButtonText("Apothecary");
 		add(t2);
 
 		seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHApothecaryKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHApothecaryKammer", "Apothecary");
 		t3.initKammer();
-		t3.setButtonText("Apothecary");
 		add(t3);
 
 		complete();

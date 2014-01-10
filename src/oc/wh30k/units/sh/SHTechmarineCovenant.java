@@ -15,24 +15,19 @@ public class SHTechmarineCovenant extends Eintrag {
                 überschriftSetzen = true;
 
 		seperator();
-
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHTechmarineKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHTechmarineKammer", "Techmarine");
 		t1.initKammer();
-		t1.setButtonText("Techmarine");
+		t1.setAbwaehlbar(false);
 		add(t1);
 
 		seperator();
-
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHTechmarineKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHTechmarineKammer", "Techmarine");
 		t2.initKammer();
-		t2.setButtonText("Techmarine");
 		add(t2);
 
 		seperator();
-
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHTechmarineKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHTechmarineKammer", "Techmarine");
 		t3.initKammer();
-		t3.setButtonText("Techmarine");
 		add(t3);
 
 		complete();

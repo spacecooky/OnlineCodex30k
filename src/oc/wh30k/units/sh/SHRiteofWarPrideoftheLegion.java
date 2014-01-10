@@ -22,6 +22,12 @@ public class SHRiteofWarPrideoftheLegion extends Eintrag {
 		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Armoured spearhead");
 		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Orbital assault");
 		//BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Pride of the Legion");
+		
+		BuildaHQ.getChooserGruppe(2).removeSpezialAuswahl("Legion Veteran Tactical Squad");
+		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Legion Veteran Tactical Squad");
+		
+		BuildaHQ.getChooserGruppe(2).removeSpezialAuswahl("Legion Terminator Squad");
+		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Legion Terminator Squad");
 
 		
 		complete();
@@ -50,6 +56,12 @@ public class SHRiteofWarPrideoftheLegion extends Eintrag {
 		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Armoured spearhead");
 		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Orbital assault");
 		//BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Pride of the Legion");
+		
+		BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Legion Veteran Tactical Squad");
+		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Legion Veteran Tactical Squad");
+		
+		BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Legion Terminator Squad");
+		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Legion Terminator Squad");
 		super.deleteYourself();
 	}
 

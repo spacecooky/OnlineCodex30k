@@ -40,8 +40,8 @@ public class SHLegionAssaultSquad extends Eintrag {
 
 		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "SHSergeant", "Assault Sergeant");
 		rkBoss.setGrundkosten(0);
-		//Assault, Bike, Breacher, Destroyer, Heavy, Reco, Seeker, Support, Tactical, Terminator, Veteran
-		rkBoss.initKammer(true, false, false, false, false, false, false, false, false, false, false);
+		//Assault, Bike, Breacher, Destroyer, Heavy, Reaver, Reco, Seeker, Support, Tactical, Terminator, Veteran
+		rkBoss.initKammer(true, false, false, false, false, false, false, false, false, false, false, false);
 		rkBoss.setAbwaehlbar(false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);

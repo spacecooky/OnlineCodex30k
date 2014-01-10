@@ -15,7 +15,8 @@ public class SHLegionTerminatorSquad extends Eintrag {
 	OptionsUpgradeGruppe o1, o0;
 	OptionsZaehlerGruppe o7aStandard2;
 	RuestkammerStarter rkBoss;
-	RuestkammerStarter rkTransport;
+	RuestkammerStarter rkTransportPhobos;
+	RuestkammerStarter rkTransportSpartan;
 
 	public SHLegionTerminatorSquad() {
 		name = "Legion Terminator Squad\n";
@@ -31,54 +32,52 @@ public class SHLegionTerminatorSquad extends Eintrag {
 		
 		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Power weapon"), 0));
-		add(o7aStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
-		
+		add(o7aStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));		
 		ogE.addElement(new OptionsGruppeEintrag("Power fist", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Lightning claw", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Chain fist", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 10));
 		add(o7a = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
-		add(o7bStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
-		
+		add(o7bStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));		
 		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 7));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 7));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 7));
 		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 7));
 		add(o7b = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Pair of lightning claws", 15));
 		add(o7c = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		seperator();
-			
+		seperator();			
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Reaper autocannon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma blaster", 15));
 		add(o8 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
-
 		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "SHSergeant", "Terminator Sergeant");
 		rkBoss.setGrundkosten(0);
-		//Assault, Bike, Breacher, Destroyer, Heavy, Reco, Seeker, Support, Tactical, Terminator, Veteran
-		rkBoss.initKammer(false, false, false, false, false, false, false, false, false, true, false);
+		//Assault, Bike, Breacher, Destroyer, Heavy, Reaver, Reco, Seeker, Support, Tactical, Terminator, Veteran
+		rkBoss.initKammer(false, false, false, false, false, false, false, false, false, false, true, false);
 		rkBoss.setAbwaehlbar(false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);
 
 		seperator();
+		rkTransportPhobos = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerPhobos", "Legion Land Raider Phobos\n");
+		rkTransportPhobos.initKammer();
+		rkTransportPhobos.setButtonText("Legion Land Raider Phobos");
+		add(rkTransportPhobos);
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Dedicated transport");
-		//Rhino, Pod, Dreadclaw, Phobos, Spartan
-		rkTransport.initKammer(false, false, false, true, true);
-		rkTransport.setButtonText("Dedicated transport");
-		add(rkTransport);
+		seperator();
+		rkTransportSpartan = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerSpartan", "Spartan Assault Tank\n");
+		rkTransportSpartan.initKammer();
+		rkTransportSpartan.setButtonText("Spartan Assault Tank");
+		add(rkTransportSpartan);
 
 		complete();
 	}
@@ -112,13 +111,26 @@ public class SHLegionTerminatorSquad extends Eintrag {
 		
 		int offeneFKOptionen=squad.getModelle()-1-o7b.getAnzahl()-o7c.getAnzahl();
 		if(maxAnzahl>0 && offeneFKOptionen<2){
-			o8.setMaxAnzahl(offeneFKOptionen);
-		
-		rkTransport.getPanel().setLocation(
-				(int) rkTransport.getPanel().getLocation().getX(),
-				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
-	    );
+		o8.setMaxAnzahl(offeneFKOptionen);
 		}
+		
+		rkTransportPhobos.setAktiv(squad.getModelle() <=5 && !rkTransportSpartan.isSelected()
+	        	&& BuildaHQ.getCountFromInformationVector("SHRoW") != 1);
+	        
+		rkTransportSpartan.setAktiv(squad.getModelle() <=10 && !rkTransportPhobos.isSelected()
+	        	&& BuildaHQ.getCountFromInformationVector("SHRoW") != 1);
+	        
+		rkTransportPhobos.getPanel().setLocation(
+				(int) rkTransportPhobos.getPanel().getLocation().getX(),
+				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+		);
+	        
+		rkTransportSpartan.getPanel().setLocation(
+				(int) rkTransportSpartan.getPanel().getLocation().getX(),
+				(int) rkTransportPhobos.getPanel().getLocation().getY() + rkTransportPhobos.getPanel().getSize().height + 5
+		);
+	        
+		
 		
 	}
 

@@ -7,25 +7,25 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
 
-public class SHRiteofWarOrbitalassault extends Eintrag {
+public class SHRiteofWarTheBlackReaving extends Eintrag {
 
 	//OptionsUpgradeGruppe o1;
 
-	public SHRiteofWarOrbitalassault() {
-		name = "Rite of War Orbital assault";
+	public SHRiteofWarTheBlackReaving() {
+		name = "Rite of War The Black Reaving";
 		überschriftSetzen = true;
 		this.setEintragsCNT(0);
 		
-		BuildaHQ.setInformationVectorValue("SHRoW", 3);
+		BuildaHQ.setInformationVectorValue("SHRoW", 5);
 
 		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Angel's wrath");
 		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Armoured spearhead");
-		//BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Orbital assault");
+		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Orbital assault");
 		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Pride of the Legion");
-		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War The Black Reaving");
+		//BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War The Black Reaving");
 		
-		BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("Deathstorm Drop Pod");
-		BuildaHQ.getChooserGruppe(4).addSpezialAuswahl("Deathstorm Drop Pod");
+		BuildaHQ.getChooserGruppe(4).removeSpezialAuswahl("Reaver Attack Squad");
+		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Reaver Attack Squad");
 
 		
 		complete();
@@ -36,7 +36,7 @@ public class SHRiteofWarOrbitalassault extends Eintrag {
 	public void refreshen() {		
 						
 		int possibleSquads = BuildaHQ.getCountFromInformationVector("SHPraetor");
-		if(1 > possibleSquads) {
+		if(BuildaHQ.getCountFromInformationVector("SHPraetor") < 1 || BuildaHQ.getCountFromInformationVector("SHSignal") < 1 ) {
 			setFehlermeldung("Requirements not met!");
 		} else {
 			setFehlermeldung("");
@@ -52,12 +52,12 @@ public class SHRiteofWarOrbitalassault extends Eintrag {
 		
 		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Angel's wrath");
 		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Armoured spearhead");
-		//BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Orbital assault");
-		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Pride of the Legion");
-		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War The Black Reaving");
+		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Orbital assault");
+		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Rite of War Pride of the Legion");
+		//BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War The Black Reaving");
 		
-		BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("Deathstorm Drop Pod");
-		BuildaHQ.getChooserGruppe(4).removeSpezialAuswahl("Deathstorm Drop Pod");
+		BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Reaver Attack Squad");
+		BuildaHQ.getChooserGruppe(4).addSpezialAuswahl("Reaver Attack Squad");
 		super.deleteYourself();
 	}
 

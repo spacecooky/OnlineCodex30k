@@ -15,7 +15,8 @@ public class SHJustaerinCommandSquad extends Eintrag {
 	OptionsUpgradeGruppe o1, o3;
 	OptionsZaehlerGruppe o7aStandard2;
 	RuestkammerStarter rkBoss;
-	RuestkammerStarter rkTransport;
+	RuestkammerStarter rkTransportPhobos;
+	RuestkammerStarter rkTransportDreadclaw;
 
 	public SHJustaerinCommandSquad() {
 		name = "Justaerin Terminator Squad\n";
@@ -28,45 +29,43 @@ public class SHJustaerinCommandSquad extends Eintrag {
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Justaerin Terminators", 3, 10, 45);
 		add(squad);
 
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Power weapon"), 0));
-		add(o7aStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
-		
+		add(o7aStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));		
 		ogE.addElement(new OptionsGruppeEintrag("Power fist", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Lightning claw", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Chain fist", 10));
 		add(o7a = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
-		add(o7bStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
-		
+		add(o7bStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));		
 		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 7));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 7));
 		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 7));
 		add(o7b = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Pair of lightning claws", 15));
 		add(o7c = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		seperator();
-			
+		seperator();			
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Reaper autocannon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 25));
 		add(o8 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
+		rkTransportPhobos = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerPhobos", "Legion Land Raider Phobos\n");
+		rkTransportPhobos.initKammer();
+		rkTransportPhobos.setButtonText("Legion Land Raider Phobos");
+		add(rkTransportPhobos);
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Dedicated transport");
-		//Rhino, Pod, Dreadclaw, Phobos, Spartan
-		rkTransport.initKammer(false, false, true, true, false);
-		rkTransport.setButtonText("Dedicated transport");
-		add(rkTransport);
+		seperator();
+		rkTransportDreadclaw = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerDreadclaw", "Dreadclaw Drop Pod\n");
+		rkTransportDreadclaw.initKammer();
+		rkTransportDreadclaw.setButtonText("Dreadclaw Drop Pod");
+		add(rkTransportDreadclaw);
 
 		complete();
 	}
@@ -100,6 +99,17 @@ public class SHJustaerinCommandSquad extends Eintrag {
 		if(maxAnzahl>0 && offeneFKOptionen<2){
 			o8.setMaxAnzahl(offeneFKOptionen);
 		}
+		
+		rkTransportPhobos.setAktiv(squad.getModelle() <=5 && !rkTransportDreadclaw.isSelected()
+	        	&& BuildaHQ.getCountFromInformationVector("SHRoW") != 1);
+	        
+		rkTransportDreadclaw.setAktiv(squad.getModelle() <=5 && !rkTransportPhobos.isSelected()
+	        	&& BuildaHQ.getCountFromInformationVector("SHRoW") != 1);
+	        
+		rkTransportDreadclaw.getPanel().setLocation(
+				(int) rkTransportDreadclaw.getPanel().getLocation().getX(),
+				(int) rkTransportPhobos.getPanel().getLocation().getY() + rkTransportPhobos.getPanel().getSize().height + 5
+		);
 		
 	}
 	

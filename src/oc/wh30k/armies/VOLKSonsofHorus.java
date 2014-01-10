@@ -13,8 +13,8 @@ public class VOLKSonsofHorus extends BuildaVater {
 		reflectionKennung = "SH";
 		reflectionKennungAllies ="SH";
 
-		String[] HQeinträge = {"", "Legion Praetor", "Legion Centurion", "  Chaplain", "  Forge lord", "  Legion Champion", "  Librarian", "  Master of signal", "  Moritat", "  Primus medicae", "  Siege breaker", "  Vigilator", "", "Legion Command Squad", "Justaerin Command Squad", "", "Ezekyle Abaddon", "Garviel Loken", ""};
-		String[] Eliteeinträge = {"", "Legion Mortis Dreadnought", "Contemptor-Mortis Dreadnought", "Legion Destroyer Squad", "Legion Terminator Squad", "Techmarine Covenant", "Apothecarion Detachment", "Legion Dreadnought Talon", "Contemptor Dreadnought Talon", "Legion Rapier Weapons Battery", ""};
+		String[] HQeinträge = {"", "Legion Praetor", "Legion Centurion", "  Chaplain", "  Forge lord", "  Legion Champion", "  Librarian", "  Master of signal", "  Moritat", "  Primus medicae", "  Siege breaker", "  Vigilator", "", "Legion Command Squad", "Justaerin Command Squad", "", "Ezekyle Abaddon", "Garviel Loken", "Maloghurst The Twisted", ""};
+		String[] Eliteeinträge = {"", "Legion Mortis Dreadnought", "Contemptor-Mortis Dreadnought", "Legion Destroyer Squad", "Techmarine Covenant", "Apothecarion Detachment", "Legion Dreadnought Talon", "Contemptor Dreadnought Talon", "Legion Rapier Weapons Battery"};
 		String[] Standardeinträge = {"", "Legion Tactical Squad", "Legion Assault Squad", "Legion Breacher Siege Squad", "Legion Tactical Support Squad", "Legion Reconnaissance Squad"};
 		String[] Sturmeinträge = {"", "Tarantula Sentry Gun Battery", "Primaris-Lightning Strike Fighter", "Legion Javelin Attack Speeder Squadron", "Legion Seeker Squad", "Legion Outrider Squad", "Legion Attack Bike Squadron", "Legion Jetbike Sky Hunter Squadron", "Legion Land Speeder Squadron", "Legion Storm Eagle Assault Gunship"};
 		String[] Unterstützungeinträge = {"", "Legion Whirlwind Scorpius", "Legion Sicaran Battle Tank", "Legion Heavy Support Squad", "Legion Predator Strike Armour Squadron", "Legion Land Raider Battle Squadron", "Legion Artillery Tank Squadron", "Legion Vindicator", "Legion Spartan Assault Tank", "Legion Caestus Assault Ram"};
@@ -40,6 +40,8 @@ public class VOLKSonsofHorus extends BuildaVater {
 		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Armoured spearhead");
 		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Orbital assault");
 		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War Pride of the Legion");
+		BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Rite of War The Black Reaving");
+		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Legion Terminator Squad");
 		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Legion Veteran Tactical Squad");
 		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Justaerin Terminator Squad");
 		BuildaHQ.getChooserGruppe(4).addSpezialAuswahl("Reaver Attack Squad");
