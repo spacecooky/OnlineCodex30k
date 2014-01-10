@@ -1,38 +1,43 @@
 package oc.wh30k.units.sh;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
 import oc.RuestkammerStarter;
+import oc.OptionsUpgradeGruppe;
 
 public class SHContemptorDreadnoughtTalon extends Eintrag {
 
 	RuestkammerStarter t1;
 	RuestkammerStarter t2;
 	RuestkammerStarter t3;
+	OptionsUpgradeGruppe o1, o2;
 
 	public SHContemptorDreadnoughtTalon() {
 		name = "Contemptor Dreadnought Talon";
 		grundkosten = 0;
-                überschriftSetzen = true;
+        überschriftSetzen = true;
 
 		seperator();
+		ogE.addElement(new OptionsGruppeEintrag("Dreadclaw Drop Pod", 85));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		ogE.addElement(new OptionsGruppeEintrag("Dreadnought Drop Pod", 65));
+		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHContemptorKammer", "", 1);
+		seperator();
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHContemptorKammer", "Contemptor Dreadnought");
 		t1.initKammer();
-		t1.setButtonText("Contemptor Dreadnought");
+		t1.setAbwaehlbar(false);
 		add(t1);
 
 		seperator();
-
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHContemptorKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHContemptorKammer", "Contemptor Dreadnought");
 		t2.initKammer();
-		t2.setButtonText("Contemptor Dreadnought");
 		add(t2);
 
 		seperator();
-
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHContemptorKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHContemptorKammer", "Contemptor Dreadnought");
 		t3.initKammer();
-		t3.setButtonText("Contemptor Dreadnought");
 		add(t3);
 
 		complete();
@@ -50,6 +55,11 @@ public class SHContemptorDreadnoughtTalon extends Eintrag {
 
             t2.getPanel().setLocation(t2.getPanel().getX(), t1.getPanel().getY() + t1.getPanel().getHeight() + 10);
             t3.getPanel().setLocation(t3.getPanel().getX(), t2.getPanel().getY() + t2.getPanel().getHeight() + 10);
-            }
+    
+            o1.setAktiv(!o2.isSelected() && BuildaHQ.getCountFromInformationVector("SHRoW") == 3);
+            o2.setAktiv(!o1.isSelected() && selections == 1);
+            
+            o1.setPreis(0, selections * 85);
+	}
 
 }

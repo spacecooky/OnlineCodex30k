@@ -10,7 +10,8 @@ import oc.RuestkammerVater;
 public class SHSergeant extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o1a, o1b, o1c, o1d, o2a, o2b, o2c, o3a, o3b, o3c, o4a, o4b, o5a, o5b, o5c, o5d, o5e, 
-		o6a, o6b, o6c, o7a, o7b, o7c, o8a, o8b, o8c, o8d, o9a, o9b, o10a, o10b, o10c, o10d, o11a, o11b, o11c, o11d;
+						 o6a, o6b, o6c, o7a, o7b, o7c, o8a, o8b, o8c, o8d, o9a, o9b, o10a, o10b, o10c, o10d, 
+						 o11a, o11b, o11c, o11d, o12a, o12b, o12c;
 	OptionsZaehlerGruppe o4c;
 	
 	boolean isAssault = false;
@@ -18,6 +19,7 @@ public class SHSergeant extends RuestkammerVater {
 	boolean isBreacher = false;
 	boolean isDestroyer = false;
 	boolean isHeavy = false;
+	boolean isReaver = false;
 	boolean isReco = false;
 	boolean isSeeker = false;
 	boolean isSupport = false;
@@ -37,12 +39,13 @@ public class SHSergeant extends RuestkammerVater {
 		if(defaults[2]) isBreacher = true;
 		if(defaults[3]) isDestroyer = true;
 		if(defaults[4]) isHeavy = true;
-		if(defaults[5]) isReco = true;
-		if(defaults[6]) isSeeker = true;
-		if(defaults[7]) isSupport = true;
-		if(defaults[8]) isTactical = true;
-		if(defaults[9]) isTerminator = true;
-		if(defaults[10]) isVeteran = true;
+		if(defaults[5]) isReaver = true;
+		if(defaults[6]) isReco = true;
+		if(defaults[7]) isSeeker = true;
+		if(defaults[8]) isSupport = true;
+		if(defaults[9]) isTactical = true;
+		if(defaults[10]) isTerminator = true;
+		if(defaults[11]) isVeteran = true;
 				
 		if (isAssault) {
 			
@@ -169,6 +172,30 @@ public class SHSergeant extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Augury scanner", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
 			add(o5e = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+			}
+		
+		else if (isReaver) {
+			
+			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Boltgun", "Boltgun with Banestrike shells", 5));
+			ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 7));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", "Combi-flamer with Banestrike shells", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", "Combi-melta with Banestrike shells", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", "Combi-plasma with Banestrike shells", 10));
+			add(o12a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			
+			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Chain axe", 1));
+			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
+			add(o12b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			
+			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
+			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Hand flamer", 5));
+			add(o12c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 			}
 		
 		else if (isReco) {
@@ -345,6 +372,10 @@ public class SHSergeant extends RuestkammerVater {
 			if(!o5a.isSelected() && !o5b.isSelected()) o5a.setSelected(0, true);
 			//if(!o5b.isSelected()) o5a.setSelected(0, true);
 			if(!o5d.isSelected()) o5d.setSelected(0, true);
+			}
+		
+		else if (isReaver) {
+			if(!o12b.isSelected()) o12b.setSelected(0, true);
 			}
 		
 		else if (isReco) {

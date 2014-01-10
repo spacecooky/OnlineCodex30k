@@ -8,43 +8,59 @@ import oc.OptionsZaehlerGruppe;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
-public class SHLegionTacticalSquad extends Eintrag {
+public class SHReaverAttackSquad extends Eintrag {
 
 	AnzahlPanel squad;
-	OptionsZaehlerGruppe o5;
-	OptionsUpgradeGruppe o1, o2, o3;
+	OptionsUpgradeGruppe o1, o5;
+	OptionsZaehlerGruppe o2, o3, o4a, o4;
 	RuestkammerStarter rkBoss;
 	RuestkammerStarter rkTransportEagle;
 	RuestkammerStarter rkTransportPhobos;
 	RuestkammerStarter rkTransportPod;
 	RuestkammerStarter rkTransportProteus;
 	RuestkammerStarter rkTransportRhino;
+	RuestkammerStarter rkTransportDreadclaw;
 
-	public SHLegionTacticalSquad() {
-		name = "Legion Tactical Squad\n";
-		grundkosten = 50;
+	public SHReaverAttackSquad() {
+		name = "Reaver Attack Squad\n";
+		grundkosten = 60;
 		überschriftSetzen = true;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 10, 20, 10);
+		squad = new AnzahlPanel(ID, randAbstand, cnt, "Reavers", 5, 15, 15);
 		add(squad);
 
 		seperator();
-		ogE.addElement(new OptionsGruppeEintrag("Legion Vexilla", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Nuncio Vox", 10));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+		ogE.addElement(new OptionsGruppeEintrag("Jump packs", 50));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
-		ogE.addElement(new OptionsGruppeEintrag("Bolters", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Chainswords", 0));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		ogE.addElement(new OptionsGruppeEintrag("Additional chainswords", 2));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		ogE.addElement(new OptionsGruppeEintrag("Boltgun", "Boltgun with Banestrike shells", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 7));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", "Combi-flamer with Banestrike shells", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-melta", "Combi-melta with Banestrike shells", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", "Combi-plasma with Banestrike shells", 10));
+		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		
 		seperator();
-		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "SHSergeant", "Tactical Sergeant");
+		ogE.addElement(new OptionsGruppeEintrag("Flamer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Meltagun", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Plasma gun", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
+		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+		
+		seperator();
+		ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
+		add(o4a = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
+		ogE.addElement(new OptionsGruppeEintrag("Chain axe", 1));
+		ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
+		add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
+
+		seperator();
+		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "SHSergeant", "Reaver Chieftain");
 		rkBoss.setGrundkosten(0);
 		//Assault, Bike, Breacher, Destroyer, Heavy, Reaver, Reco, Seeker, Support, Tactical, Terminator, Veteran
-		rkBoss.initKammer(false, false, false, false, false, false, false, false, false, true, false, false);
+		rkBoss.initKammer(false, false, false, false, false, true, false, false, false, false, false, false);
 		rkBoss.setAbwaehlbar(false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);
@@ -79,51 +95,76 @@ public class SHLegionTacticalSquad extends Eintrag {
 		rkTransportRhino.setButtonText("Legion Rhino Armoured Carrier");
 		add(rkTransportRhino);
 
+		seperator();
+		rkTransportDreadclaw = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerDreadclaw", "Dreadclaw Drop Pod\n");
+		rkTransportDreadclaw.initKammer();
+		rkTransportDreadclaw.setButtonText("Dreadclaw Drop Pod");
+		add(rkTransportDreadclaw);
+
 		complete();
 	}
 
 	@Override
 	public void refreshen() {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
-        if(!o3.isSelected() && !o2.isSelected(1)) o2.setSelected(0, true);
-        
-        o2.setAktiv(1, !o3.isSelected());
-        o3.setAktiv(!o2.isSelected(1));
-        
-        o3.setPreis(0, squad.getModelle() * 2);
+                
+		o2.setMaxAnzahl(squad.getModelle() - o3.getAnzahl() -1);
+		o3.setMaxAnzahl(squad.getModelle() /5);
+		o4a.setMaxAnzahl(squad.getModelle() - o4.getAnzahl() -1);
+		o4a.setAnzahl(0, o4a.getMaxAnzahl());
+		o4.setMaxAnzahl(squad.getModelle() -1);	      
         
         rkTransportPod.setAktiv(squad.getModelle() <=10 && !rkTransportRhino.isSelected() 
         		&& !rkTransportEagle.isSelected() 
         		&& !rkTransportPhobos.isSelected() 
         		&& !rkTransportProteus.isSelected() 
-        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 3);
+        		&& !rkTransportDreadclaw.isSelected()  
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 3
+        		&& !o1.isSelected());
         
         rkTransportEagle.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
         		&& !rkTransportRhino.isSelected() 
         		&& !rkTransportPhobos.isSelected() 
         		&& !rkTransportProteus.isSelected() 
-        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 1);
+        		&& !rkTransportDreadclaw.isSelected()  
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 1
+                && !o1.isSelected());
         
         rkTransportPhobos.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
         		&& !rkTransportEagle.isSelected() 
         		&& !rkTransportRhino.isSelected() 
         		&& !rkTransportProteus.isSelected() 
-        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 2);
+        		&& !rkTransportDreadclaw.isSelected()  
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 2
+                && !o1.isSelected());
         
         rkTransportProteus.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
         		&& !rkTransportEagle.isSelected() 
         		&& !rkTransportPhobos.isSelected() 
         		&& !rkTransportRhino.isSelected()
-        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 2);
+        		&& !rkTransportDreadclaw.isSelected()  
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 2
+                && !o1.isSelected());
         
         rkTransportRhino.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
         		&& !rkTransportEagle.isSelected() 
         		&& !rkTransportPhobos.isSelected() 
         		&& !rkTransportProteus.isSelected()
+        		&& !rkTransportDreadclaw.isSelected()  
         		&& BuildaHQ.getCountFromInformationVector("SHRoW") != 1
-        		&& BuildaHQ.getCountFromInformationVector("SHRoW") != 3);
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") != 3
+                && !o1.isSelected());
         
-        rkTransportPod.getPanel().setLocation(
+        rkTransportDreadclaw.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected()      		
+        		&& !rkTransportRhino.isSelected()
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") != 1
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") != 3
+                && !o1.isSelected());
+		
+		rkTransportPod.getPanel().setLocation(
 				(int) rkTransportPod.getPanel().getLocation().getX(),
 				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
 		);
@@ -147,6 +188,12 @@ public class SHLegionTacticalSquad extends Eintrag {
 				(int) rkTransportRhino.getPanel().getLocation().getX(),
 				(int) rkTransportProteus.getPanel().getLocation().getY() + rkTransportProteus.getPanel().getSize().height + 5
 	    );
+        
+        rkTransportDreadclaw.getPanel().setLocation(
+				(int) rkTransportDreadclaw.getPanel().getLocation().getX(),
+				(int) rkTransportRhino.getPanel().getLocation().getY() + rkTransportRhino.getPanel().getSize().height + 5
+	    );
+		
 	}
 
 }

@@ -21,9 +21,9 @@ public class SHRaiderKammer  extends RuestkammerVater {
 
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Land Raider Phobos", 250));
-		ogE.addElement(new OptionsGruppeEintrag("Land Raider Proteus", 200));
-		ogE.addElement(new OptionsGruppeEintrag("Land Raider Achilles", 300));
+		ogE.addElement(new OptionsGruppeEintrag("Phobos pattern", 250));
+		ogE.addElement(new OptionsGruppeEintrag("Proteus pattern", 200));
+		ogE.addElement(new OptionsGruppeEintrag("Achilles pattern", 300));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();

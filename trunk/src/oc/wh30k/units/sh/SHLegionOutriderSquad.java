@@ -48,8 +48,8 @@ public class SHLegionOutriderSquad extends Eintrag {
 
 		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "SHSergeant", "Outrider Sergeant");
 		rkBoss.setGrundkosten(15);
-		//Assault, Bike, Breacher, Destroyer, Heavy, Reco, Seeker, Support, Tactical, Terminator, Veteran
-		rkBoss.initKammer(false, true, false, false, false, false, false, false, false, false, false);
+		//Assault, Bike, Breacher, Destroyer, Heavy, Reaver, Reco, Seeker, Support, Tactical, Terminator, Veteran
+		rkBoss.initKammer(false, true, false, false, false, false, false, false, false, false, false, false);
 		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(rkBoss);
 

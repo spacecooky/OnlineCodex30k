@@ -24,23 +24,21 @@ public class SHLegionPredatorStrikeArmourSquadron extends Eintrag {
         		
         seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHPredatorKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHPredatorKammer", "Legion Predator");
 		t1.initKammer();
-		t1.setButtonText("Legion Predator");
+		t1.setAbwaehlbar(false);
 		add(t1);
 
 		seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHPredatorKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHPredatorKammer", "Legion Predator");
 		t2.initKammer();
-		t2.setButtonText("Legion Predator");
 		add(t2);
 
 		seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHPredatorKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHPredatorKammer", "Legion Predator");
 		t3.initKammer();
-		t3.setButtonText("Legion Predator");
 		add(t3);
 
 		complete();

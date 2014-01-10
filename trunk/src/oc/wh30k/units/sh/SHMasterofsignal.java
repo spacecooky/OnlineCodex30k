@@ -15,6 +15,7 @@ public class SHMasterofsignal extends Eintrag {
 		name = "Master of signal";
 		grundkosten = 85;
 
+		BuildaHQ.addToInformationVector("SHSignal", 1);
 		
 		Servo = new RuestkammerStarter(ID, randAbstand, cnt, "SHConsulServoKammer", "");
 		//Centurion, Champion, Chaplain, Forge, Librarian, Master, Moritat, Primus, Siege, Vigilator
@@ -27,7 +28,12 @@ public class SHMasterofsignal extends Eintrag {
 		complete();
 	}
 
-	
+	@Override
+	public void deleteYourself() {
+		
+		BuildaHQ.addToInformationVector("SHSignal", -1);
+		super.deleteYourself();
+	}
 
 	@Override
 	public void refreshen() {

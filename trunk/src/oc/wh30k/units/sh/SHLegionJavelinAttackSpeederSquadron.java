@@ -13,29 +13,27 @@ public class SHLegionJavelinAttackSpeederSquadron extends Eintrag {
 	RuestkammerStarter t3;
 
 	public SHLegionJavelinAttackSpeederSquadron() {
-		name = "Legion Predator Strike Armour Squadron";
+		name = "Legion Javelin Attack Speeder Squadron";
 		grundkosten = 0;
         überschriftSetzen = true;
 
         seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHJavelinKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHJavelinKammer", "Javelin Attack Speeder");
 		t1.initKammer();
-		t1.setButtonText("Javelin Attack Speeder");
+		t1.setAbwaehlbar(false);
 		add(t1);
 
 		seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHJavelinKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHJavelinKammer", "Javelin Attack Speeder");
 		t2.initKammer();
-		t2.setButtonText("Javelin Attack Speeder");
 		add(t2);
 
 		seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHJavelinKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHJavelinKammer", "Javelin Attack Speeder");
 		t3.initKammer();
-		t3.setButtonText("Javelin Attack Speeder");
 		add(t3);
 
 		complete();

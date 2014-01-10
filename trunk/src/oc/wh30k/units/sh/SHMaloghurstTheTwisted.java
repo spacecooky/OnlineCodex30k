@@ -5,22 +5,22 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class SHHorustheWarmaster extends Eintrag {
+public class SHMaloghurstTheTwisted extends Eintrag {
 	
 	OptionsUpgradeGruppe o0;
 
-	public SHHorustheWarmaster() {
-		name = "Horus the Warmaster";
-		grundkosten = 500;
+	public SHMaloghurstTheTwisted() {
+		name = "Maloghurst The Twisted";
+		grundkosten = 140;
 
 		add(ico = new oc.Picture("oc/wh40k/images/xy.jpg"));
 
 		BuildaHQ.addToInformationVector("SHPraetor", 1);
 
 		BuildaHQ.getChooserGruppe(2).removeSpezialAuswahl("Legion Veteran Tactical Squad");
-		BuildaHQ.getChooserGruppe(2).removeSpezialAuswahl("Justaerin Terminator Squad");
+		BuildaHQ.getChooserGruppe(4).removeSpezialAuswahl("Reaver Attack Squad");
 		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Legion Veteran Tactical Squad");
-		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Justaerin Terminator Squad");
+		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Reaver Attack Squad");
 				
 		complete();
 	}
@@ -35,9 +35,9 @@ public class SHHorustheWarmaster extends Eintrag {
 		
 		BuildaHQ.addToInformationVector("SHPraetor", -1);
 		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Legion Veteran Tactical Squad");
-		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Justaerin Terminator Squad");
+		BuildaHQ.getChooserGruppe(4).addSpezialAuswahl("Reaver Attack Squad");
 		BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Legion Veteran Tactical Squad");
-		BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Justaerin Terminator Squad");
+		BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Reaver Attack Squad");
 		super.deleteYourself();
 	}
 

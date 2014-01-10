@@ -53,7 +53,6 @@ public class LCMyrmidonDestructors extends Eintrag {
 		seperator();
 		t8 = new RuestkammerStarter(ID, randAbstand, cnt, "LCMyrmidonKammer", "Myrmidon Destructor");
 		t8.initKammer(false, true);
-		t8.setButtonText("Myrmidon Secutor");
 		add(t8);
 
 		seperator();

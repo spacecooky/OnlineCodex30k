@@ -8,7 +8,7 @@ import oc.RuestkammerStarter;
 public class LCLegioCyberneticaCastellaxClassBattleAutomata extends Eintrag {
 
 	OptionsUpgradeGruppe o1, o2;
-	RuestkammerStarter t1, t2, t3;
+	RuestkammerStarter t1, t2, t3, t4, t5;
 
 	public LCLegioCyberneticaCastellaxClassBattleAutomata() {
 		name = "Legio Cybernetica Castellax Class Battle-Automata";
@@ -42,12 +42,23 @@ public class LCLegioCyberneticaCastellaxClassBattleAutomata extends Eintrag {
 		t3.initKammer();
 		add(t3);
 
+		seperator();
+		t4 = new RuestkammerStarter(ID, randAbstand, cnt, "LCCastellaxKammer", "Castellax");
+		t4.initKammer();
+		add(t4);
+
+		seperator();
+		t5 = new RuestkammerStarter(ID, randAbstand, cnt, "LCCastellaxKammer", "Castellax");
+		t5.initKammer();
+		add(t5);
+
 		complete();
 	}
 
 	
 	public void refreshen() {
-            int selections = t1.getSelectedAsInt() + t2.getSelectedAsInt() + t3.getSelectedAsInt();
+            int selections = t1.getSelectedAsInt() + t2.getSelectedAsInt() + t3.getSelectedAsInt()
+            		 + t4.getSelectedAsInt() + t5.getSelectedAsInt();
                                     
             if (!o1.isSelected()) {
             	o2.setPreis(0, selections);
@@ -62,11 +73,15 @@ public class LCLegioCyberneticaCastellaxClassBattleAutomata extends Eintrag {
                 o2.setPreis(3, 15);
             }
             
-			t2.setAktiv(t1.isSelected() && selections < 3 && !o1.isSelected());
-            t3.setAktiv(t2.isSelected() && selections < 3 && !o1.isSelected());
+			t2.setAktiv(t1.isSelected() && !o1.isSelected());
+            t3.setAktiv(t2.isSelected() && !o1.isSelected());
+            t4.setAktiv(t3.isSelected() && !o1.isSelected());
+            t5.setAktiv(t4.isSelected() && !o1.isSelected());
 
-            t2.getPanel().setLocation(t2.getPanel().getX(), t1.getPanel().getY() + t1.getPanel().getHeight() + 10);
-            t3.getPanel().setLocation(t3.getPanel().getX(), t2.getPanel().getY() + t2.getPanel().getHeight() + 10);
+            t2.getPanel().setLocation(t2.getPanel().getX(), t1.getPanel().getY() + t1.getPanel().getHeight() + 5);
+            t3.getPanel().setLocation(t3.getPanel().getX(), t2.getPanel().getY() + t2.getPanel().getHeight() + 5);
+            t4.getPanel().setLocation(t4.getPanel().getX(), t3.getPanel().getY() + t3.getPanel().getHeight() + 5);
+            t5.getPanel().setLocation(t5.getPanel().getX(), t4.getPanel().getY() + t4.getPanel().getHeight() + 5);
             
 
             }

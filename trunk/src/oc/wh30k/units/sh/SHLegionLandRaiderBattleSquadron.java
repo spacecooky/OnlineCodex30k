@@ -17,30 +17,27 @@ public class SHLegionLandRaiderBattleSquadron extends Eintrag {
 		grundkosten = 0;
         überschriftSetzen = true;
 
-        seperator();
-        		
+        seperator();        		
         ogE.addElement(new OptionsGruppeEintrag("Command tank", 25));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         		
         seperator();
-
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHRaiderKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHRaiderKammer", "Legion Land Raider");
 		t1.initKammer();
-		t1.setButtonText("Legion Land Raider");
+		t1.setAbwaehlbar(false);
+		t1.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t1);
 
 		seperator();
-
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHRaiderKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHRaiderKammer", "Legion Land Raider");
 		t2.initKammer();
-		t2.setButtonText("Legion Land Raider");
+		t2.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t2);
 
 		seperator();
-
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHRaiderKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHRaiderKammer", "Legion Land Raider");
 		t3.initKammer();
-		t3.setButtonText("Legion Land Raider");
+		t3.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t3);
 
 		complete();
@@ -59,7 +56,7 @@ public class SHLegionLandRaiderBattleSquadron extends Eintrag {
             t2.getPanel().setLocation(t2.getPanel().getX(), t1.getPanel().getY() + t1.getPanel().getHeight() + 10);
             t3.getPanel().setLocation(t3.getPanel().getX(), t2.getPanel().getY() + t2.getPanel().getHeight() + 10);
             
-            o1.setAktiv(t3.isSelected());
+            o1.setAktiv(selections == 3);
 	}
 	
 		

@@ -13,7 +13,6 @@ public class SHDreadnoughtKammer  extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o1, o2, o5;
 	OptionsZaehlerGruppe o3, o4, o6;
-	RuestkammerStarter rkTransport;
 
 	public SHDreadnoughtKammer () {
             grundkosten = 125;
@@ -58,14 +57,7 @@ public class SHDreadnoughtKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
 		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));	
 		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missiles", 10));
-		add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));		
-		seperator();
-
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Dedicated transport");
-		//Rhino, Pod, Dreadclaw, Phobos, Spartan
-		rkTransport.initKammer(false, true, true, false, false);
-		rkTransport.setButtonText("Dedicated transport");
-		add(rkTransport);
+		add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));	
 		
         sizeSetzen();
 	}
