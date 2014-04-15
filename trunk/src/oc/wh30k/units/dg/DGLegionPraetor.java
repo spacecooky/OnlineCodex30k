@@ -19,13 +19,13 @@ public class DGLegionPraetor extends Eintrag {
 
 		BuildaHQ.addToInformationVector("DGPraetor", 1);
 		
-		seperator();
+		/*seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Angel's wrath", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured spearhead", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Orbital assault", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Pride of the Legion", 0));
-		add(o0 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		add(o0 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));*/
 		
 		seperator();
 

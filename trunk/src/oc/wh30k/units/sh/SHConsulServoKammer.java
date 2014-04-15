@@ -83,7 +83,8 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
-			add(o1d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+			ogE.addElement(new OptionsGruppeEintrag("Banestrike ammunition", 5));
+			add(o1d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 					
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Combat shield", 5));
@@ -134,7 +135,8 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
-			add(o2d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			ogE.addElement(new OptionsGruppeEintrag("Banestrike ammunition", 5));
+			add(o2d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 					
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Combat shield", 5));
@@ -184,7 +186,8 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
-			add(o3c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+			ogE.addElement(new OptionsGruppeEintrag("Banestrike ammunition", 5));
+			add(o3c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 					
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Combat shield", 5));
@@ -263,7 +266,8 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Melta-bombs", 5));
-			add(o5c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			ogE.addElement(new OptionsGruppeEintrag("Banestrike ammunition", 5));
+			add(o5c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Scout armour", 0));
 			add(o5d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -339,6 +343,7 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			if(waffen < 0) waffen = 0;
 			
 			o1b.setMaxAnzahl(waffen);
+			o1d.setAktiv(2, o1a.isSelected(0) || o1a.isSelected(1) || o1a.isSelected(2) || o1a.isSelected(3));
 			
 			boolean legal = ((o1x.isSelected()?1:0) + (o1y.isSelected()?1:0) + o1b.getAnzahl() + klauen) ==2;
 			
@@ -364,6 +369,7 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			if(waffen < 0) waffen = 0;
 			
 			o2b.setMaxAnzahl(waffen);
+			o2d.setAktiv(1, o2a.isSelected(0) || o2a.isSelected(1) || o2a.isSelected(2) || o2a.isSelected(3));
 			
 			boolean legal = ((o2x.isSelected()?1:0) + (o2y.isSelected()?1:0) + o2b.getAnzahl() + klauen) ==2;
 			
@@ -386,6 +392,7 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			if(waffen < 0) waffen = 0;
 			
 			o3b.setMaxAnzahl(waffen);
+			o3c.setAktiv(2, o3a.isSelected(0) || o3a.isSelected(1) || o3a.isSelected(2) || o3a.isSelected(3));
 			
 			boolean legal = ((o3x.isSelected()?1:0) + (o3y.isSelected()?1:0) + o3b.getAnzahl()) ==2;
 			
@@ -425,6 +432,7 @@ public class SHConsulServoKammer extends RuestkammerVater {
 			if(waffen < 0) waffen = 0;
 			
 			o5b.setMaxAnzahl(waffen);
+			o5c.setAktiv(1, o5a.isSelected(0));
 			
 			boolean legal = ((o5x.isSelected()?1:0) + (o5y.isSelected()?1:0) + o5b.getAnzahl()) ==2;
 			

@@ -56,7 +56,8 @@ public class SHPraetorServoKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Digital lasers", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Master-crafted weapon", 15));
-		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+		ogE.addElement(new OptionsGruppeEintrag("Banestrike ammunition", 5));
+		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		
 		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Combat shield", 5));
@@ -92,6 +93,7 @@ public class SHPraetorServoKammer extends RuestkammerVater {
 		if(waffen < 0) waffen = 0;
 		
 		o2.setMaxAnzahl(waffen);
+		o4.setAktiv(3, o1.isSelected(0) || o1.isSelected(1) || o1.isSelected(2) || o1.isSelected(3));
 		
 		boolean legal = ((o2a.isSelected()?1:0) + (o2b.isSelected()?1:0) + o2.getAnzahl() + klauen) ==2;
 		

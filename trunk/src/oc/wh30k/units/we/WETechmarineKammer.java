@@ -13,7 +13,11 @@ public class WETechmarineKammer  extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o1, o2, o3, o4;
 	OptionsZaehlerGruppe o5, o6;
-	RuestkammerStarter rkTransport;
+	RuestkammerStarter rkTransportEagle;
+	RuestkammerStarter rkTransportPhobos;
+	RuestkammerStarter rkTransportPod;
+	RuestkammerStarter rkTransportProteus;
+	RuestkammerStarter rkTransportRhino;
 
 	public WETechmarineKammer () {
             grundkosten = 45;
@@ -23,13 +27,11 @@ public class WETechmarineKammer  extends RuestkammerVater {
 
 
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Power axe", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 15));;
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Nuncio-vox", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Augury scanner", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Master-crafted bolter", 5));
@@ -41,21 +43,18 @@ public class WETechmarineKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Graviton gun", 15));;
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Rad grenades", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Cyber familiar", 15));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Servo-arm", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Conversion beamer", 35));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Servo-automata", 12));
 		add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		
@@ -66,12 +65,34 @@ public class WETechmarineKammer  extends RuestkammerVater {
 		add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 4));
 		
 		seperator();
+		rkTransportPod = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerPod", "Legion Drop Pod\n");
+		rkTransportPod.initKammer();
+		rkTransportPod.setButtonText("Legion Drop Pod");
+		add(rkTransportPod);
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "WETransporterKammer", "Dedicated transport");
-		//Rhino, Pod, Dreadclaw, Phobos, Spartan
-		rkTransport.initKammer(true, true, false, true, false);
-		rkTransport.setButtonText("Dedicated transport");
-		add(rkTransport);
+		seperator();
+		rkTransportEagle = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerEagle", "Legion Storm Eagle Assault Gunship\n");
+		rkTransportEagle.initKammer();
+		rkTransportEagle.setButtonText("Legion Storm Eagle Assault Gunship");
+		add(rkTransportEagle);
+
+		seperator();
+		rkTransportPhobos = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerPhobos", "Legion Land Raider Phobos\n");
+		rkTransportPhobos.initKammer();
+		rkTransportPhobos.setButtonText("Legion Land Raider Phobos");
+		add(rkTransportPhobos);
+
+		seperator();
+		rkTransportProteus = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerProteus", "Legion Land Raider Proteus\n");
+		rkTransportProteus.initKammer();
+		rkTransportProteus.setButtonText("Legion Land Raider Proteus");
+		add(rkTransportProteus);
+
+		seperator();
+		rkTransportRhino = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerRhino", "Legion Rhino Armoured Carrier\n");
+		rkTransportRhino.initKammer();
+		rkTransportRhino.setButtonText("Legion Rhino Armoured Carrier");
+		add(rkTransportRhino);
 		
         sizeSetzen();
 	}
@@ -82,6 +103,57 @@ public class WETechmarineKammer  extends RuestkammerVater {
 		if (!o4.isSelected()) o4.setSelected(0, true);
 				
 		o6.setMaxAnzahl(o5.getAnzahl());
+		
+		rkTransportPod.setAktiv(!rkTransportRhino.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected() 
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") == 3);
+        
+        rkTransportEagle.setAktiv(!rkTransportPod.isSelected() 
+        		&& !rkTransportRhino.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected() 
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") == 1);
+        
+        rkTransportPhobos.setAktiv(!rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportRhino.isSelected() 
+        		&& !rkTransportProteus.isSelected() 
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") == 2);
+        
+        rkTransportProteus.setAktiv(!rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportRhino.isSelected()
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") == 2);
+        
+        rkTransportRhino.setAktiv(!rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected()
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") != 1
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") != 3);
+        
+        rkTransportEagle.getPanel().setLocation(
+				(int) rkTransportEagle.getPanel().getLocation().getX(),
+				(int) rkTransportPod.getPanel().getLocation().getY() + rkTransportPod.getPanel().getSize().height + 5
+		);
+        
+        rkTransportPhobos.getPanel().setLocation(
+				(int) rkTransportPhobos.getPanel().getLocation().getX(),
+				(int) rkTransportEagle.getPanel().getLocation().getY() + rkTransportEagle.getPanel().getSize().height + 5
+		);
+        
+        rkTransportProteus.getPanel().setLocation(
+				(int) rkTransportProteus.getPanel().getLocation().getX(),
+				(int) rkTransportPhobos.getPanel().getLocation().getY() + rkTransportPhobos.getPanel().getSize().height + 5
+		);
+        
+        rkTransportRhino.getPanel().setLocation(
+				(int) rkTransportRhino.getPanel().getLocation().getX(),
+				(int) rkTransportProteus.getPanel().getLocation().getY() + rkTransportProteus.getPanel().getSize().height + 5
+	    );
 	}
         
 }

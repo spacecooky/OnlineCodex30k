@@ -16,23 +16,24 @@ public class WETechmarineCovenant extends Eintrag {
 
 		seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "WETechmarineKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "WETechmarineKammer", "Techmarine");
 		t1.initKammer();
-		t1.setButtonText("Techmarine");
+		t1.setAbwaehlbar(false);
+		t1.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t1);
 
 		seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "WETechmarineKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "WETechmarineKammer", "Techmarine");
 		t2.initKammer();
-		t2.setButtonText("Techmarine");
+		t2.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t2);
 
 		seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "WETechmarineKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "WETechmarineKammer", "Techmarine");
 		t3.initKammer();
-		t3.setButtonText("Techmarine");
+		t3.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t3);
 
 		complete();
