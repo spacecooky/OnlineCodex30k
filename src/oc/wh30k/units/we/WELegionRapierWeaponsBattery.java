@@ -15,24 +15,22 @@ public class WELegionRapierWeaponsBattery extends Eintrag {
                 überschriftSetzen = true;
 
 		seperator();
-
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "WERapierKammer", "", 1);
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "WERapierKammer", "Rapier carrier");
 		t1.initKammer();
-		t1.setButtonText("Rapier carrier");
+		t1.setAbwaehlbar(false);
+		t1.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t1);
 
 		seperator();
-
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "WERapierKammer", "", 1);
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "WERapierKammer", "Rapier carrier");
 		t2.initKammer();
-		t2.setButtonText("Rapier carrier");
+		t2.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t2);
 
 		seperator();
-
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "WERapierKammer", "", 1);
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "WERapierKammer", "Rapier carrier");
 		t3.initKammer();
-		t3.setButtonText("Rapier carrier");
+		t3.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t3);
 
 		complete();

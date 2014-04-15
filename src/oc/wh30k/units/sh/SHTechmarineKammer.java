@@ -27,13 +27,11 @@ public class SHTechmarineKammer  extends RuestkammerVater {
 
 
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Power axe", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 15));;
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Nuncio-vox", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Augury scanner", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Master-crafted bolter", 5));
@@ -45,21 +43,18 @@ public class SHTechmarineKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Graviton gun", 15));;
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Rad grenades", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Cyber familiar", 15));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Servo-arm", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Conversion beamer", 35));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Servo-automata", 12));
 		add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 		
@@ -69,8 +64,6 @@ public class SHTechmarineKammer  extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Rotor cannon", 10));
 		add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 4));
 		
-		seperator();
-
 		seperator();
 		rkTransportPod = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerPod", "Legion Drop Pod\n");
 		rkTransportPod.initKammer();

@@ -14,7 +14,11 @@ public class WELegionSeekerSquad extends Eintrag {
 	OptionsUpgradeGruppe o1;
 	OptionsZaehlerGruppe o2, o3;
 	RuestkammerStarter rkBoss;
-	RuestkammerStarter rkTransport;
+	RuestkammerStarter rkTransportEagle;
+	RuestkammerStarter rkTransportPhobos;
+	RuestkammerStarter rkTransportPod;
+	RuestkammerStarter rkTransportProteus;
+	RuestkammerStarter rkTransportRhino;
 
 	public WELegionSeekerSquad() {
 		name = "Legion Seeker Squad\n";
@@ -50,11 +54,35 @@ public class WELegionSeekerSquad extends Eintrag {
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "WETransporterKammer", "Dedicated transport");
-		//Rhino, Pod, Dreadclaw, Phobos, Spartan
-		rkTransport.initKammer(true, true, true, true, false);
-		rkTransport.setButtonText("Dedicated transport");
-		add(rkTransport);
+		seperator();
+		rkTransportPod = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerPod", "Legion Drop Pod\n");
+		rkTransportPod.initKammer();
+		rkTransportPod.setButtonText("Legion Drop Pod");
+		add(rkTransportPod);
+
+		seperator();
+		rkTransportEagle = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerEagle", "Legion Storm Eagle Assault Gunship\n");
+		rkTransportEagle.initKammer();
+		rkTransportEagle.setButtonText("Legion Storm Eagle Assault Gunship");
+		add(rkTransportEagle);
+
+		seperator();
+		rkTransportPhobos = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerPhobos", "Legion Land Raider Phobos\n");
+		rkTransportPhobos.initKammer();
+		rkTransportPhobos.setButtonText("Legion Land Raider Phobos");
+		add(rkTransportPhobos);
+
+		seperator();
+		rkTransportProteus = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerProteus", "Legion Land Raider Proteus\n");
+		rkTransportProteus.initKammer();
+		rkTransportProteus.setButtonText("Legion Land Raider Proteus");
+		add(rkTransportProteus);
+
+		seperator();
+		rkTransportRhino = new RuestkammerStarter(ID, randAbstand, cnt, "WETransportKammerRhino", "Legion Rhino Armoured Carrier\n");
+		rkTransportRhino.initKammer();
+		rkTransportRhino.setButtonText("Legion Rhino Armoured Carrier");
+		add(rkTransportRhino);
 
 		complete();
 	}
@@ -70,9 +98,60 @@ public class WELegionSeekerSquad extends Eintrag {
 		o2.setMaxAnzahl(squad.getModelle()-subtractor-o3.getAnzahl());
 		o2.setAnzahl(0, o3.getMaxAnzahl()-o3.getAnzahl());
 		
-		rkTransport.getPanel().setLocation(
-				(int) rkTransport.getPanel().getLocation().getX(),
+		rkTransportPod.setAktiv(squad.getModelle() <=10 && !rkTransportRhino.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected()   
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") == 3);
+        
+        rkTransportEagle.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
+        		&& !rkTransportRhino.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected()    
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") == 1);
+        
+        rkTransportPhobos.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportRhino.isSelected() 
+        		&& !rkTransportProteus.isSelected()   
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") == 2);
+        
+        rkTransportProteus.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportRhino.isSelected()     
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") == 2);
+        
+        rkTransportRhino.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected()   
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") != 1
+        		&& BuildaHQ.getCountFromInformationVector("WERoW") != 3);
+        
+        rkTransportPod.getPanel().setLocation(
+				(int) rkTransportPod.getPanel().getLocation().getX(),
 				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+		);
+        
+        rkTransportEagle.getPanel().setLocation(
+				(int) rkTransportEagle.getPanel().getLocation().getX(),
+				(int) rkTransportPod.getPanel().getLocation().getY() + rkTransportPod.getPanel().getSize().height + 5
+		);
+        
+        rkTransportPhobos.getPanel().setLocation(
+				(int) rkTransportPhobos.getPanel().getLocation().getX(),
+				(int) rkTransportEagle.getPanel().getLocation().getY() + rkTransportEagle.getPanel().getSize().height + 5
+		);
+        
+        rkTransportProteus.getPanel().setLocation(
+				(int) rkTransportProteus.getPanel().getLocation().getX(),
+				(int) rkTransportPhobos.getPanel().getLocation().getY() + rkTransportPhobos.getPanel().getSize().height + 5
+		);
+        
+        rkTransportRhino.getPanel().setLocation(
+				(int) rkTransportRhino.getPanel().getLocation().getX(),
+				(int) rkTransportProteus.getPanel().getLocation().getY() + rkTransportProteus.getPanel().getSize().height + 5
 	    );
 	}
 

@@ -1,4 +1,4 @@
-package oc.wh30k.units.sh;
+package oc.wh30k.units.we;
 
 import oc.BuildaHQ;
 import oc.Eintrag;
@@ -7,13 +7,12 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
 
-public class SHContemptorMortisDreadnought extends Eintrag {
+public class WEContemptorMortisDreadnought extends Eintrag {
 
 	OptionsUpgradeGruppe o1, o2, o4;
 	OptionsZaehlerGruppe o3;
-	//RuestkammerStarter rkTransport;
 
-	public SHContemptorMortisDreadnought () {
+	public WEContemptorMortisDreadnought () {
 		name = "Contemptor-Mortis Dreadnought";
 		grundkosten = 155;
 
@@ -31,12 +30,6 @@ public class SHContemptorMortisDreadnought extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", 15));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		seperator();
-
-		/*rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Dedicated transport");
-		//Rhino, Pod, Dreadclaw, Phobos, Spartan
-		rkTransport.initKammer(false, true, true, false, false);
-		rkTransport.setButtonText("Dedicated transport");
-		add(rkTransport);*/
 		
         complete();
 	}

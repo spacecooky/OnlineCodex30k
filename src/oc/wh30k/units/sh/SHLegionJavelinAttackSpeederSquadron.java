@@ -18,22 +18,22 @@ public class SHLegionJavelinAttackSpeederSquadron extends Eintrag {
         überschriftSetzen = true;
 
         seperator();
-
 		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "SHJavelinKammer", "Javelin Attack Speeder");
 		t1.initKammer();
 		t1.setAbwaehlbar(false);
+		t1.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t1);
 
 		seperator();
-
 		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "SHJavelinKammer", "Javelin Attack Speeder");
 		t2.initKammer();
+		t2.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t2);
 
 		seperator();
-
 		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "SHJavelinKammer", "Javelin Attack Speeder");
 		t3.initKammer();
+		t3.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t3);
 
 		complete();

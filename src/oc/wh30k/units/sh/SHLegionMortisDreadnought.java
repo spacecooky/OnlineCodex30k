@@ -11,7 +11,7 @@ public class SHLegionMortisDreadnought extends Eintrag {
 
 	OptionsUpgradeGruppe o1, o2, o4;
 	OptionsZaehlerGruppe o3;
-	RuestkammerStarter rkTransport;
+	//RuestkammerStarter rkTransport;
 
 	public SHLegionMortisDreadnought () {
 		name = "Legion Mortis Dreadnought";
@@ -36,11 +36,11 @@ public class SHLegionMortisDreadnought extends Eintrag {
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Dedicated transport");
+		/*rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Dedicated transport");
 		//Rhino, Pod, Dreadclaw, Phobos, Spartan
 		rkTransport.initKammer(false, true, true, false, false);
 		rkTransport.setButtonText("Dedicated transport");
-		add(rkTransport);
+		add(rkTransport);*/
 		
         complete();
 	}

@@ -20,7 +20,12 @@ public class SHLegionCommandSquad extends Eintrag {
 	OptionsZaehlerGruppe o7b;
 	OptionsZaehlerGruppe o7bStandard;
 	OptionsZaehlerGruppe o7c;
-	RuestkammerStarter rkTransport;
+	RuestkammerStarter rkTransportEagle;
+	RuestkammerStarter rkTransportDreadclaw;
+	RuestkammerStarter rkTransportPhobos;
+	RuestkammerStarter rkTransportPod;
+	RuestkammerStarter rkTransportProteus;
+	RuestkammerStarter rkTransportRhino;
 
 	public SHLegionCommandSquad() {
 		name = "Legion Command Squad";
@@ -30,29 +35,24 @@ public class SHLegionCommandSquad extends Eintrag {
 		BuildaHQ.addToInformationVector("SHLegionCommandSquad", 1);
 
 		seperator();
-
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Chosen", 3, 5, 20);
 		add(squad);
 
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Legion Standard Bearer", 0));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		ogE.addElement(new OptionsGruppeEintrag("Grenade harness", 10));
 		add(o1b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 25));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Combat shield", 5));
 		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Heavy chainsword", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Charnabal sabre", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
@@ -61,8 +61,7 @@ public class SHLegionCommandSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
 		add(o4a = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 10));
 		add(o4b = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
@@ -76,8 +75,7 @@ public class SHLegionCommandSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Cataphractii armour", "Cataphractii Terminator armour", 15));
 		add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Power weapon"), 0));
 		add(o7aStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 		
@@ -87,8 +85,7 @@ public class SHLegionCommandSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 10));
 		add(o7a = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
 		add(o7bStandard = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 		
@@ -98,25 +95,51 @@ public class SHLegionCommandSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 7));
 		add(o7b = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE));
 		
-		seperator();
-		
+		seperator();		
 		ogE.addElement(new OptionsGruppeEintrag("Pair of lightning claws", 15));
 		add(o7c = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		seperator();
-			
+		seperator();			
 		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Reaper autocannon", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma blaster", 15));
 		add(o8 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
+		rkTransportPod = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerPod", "Legion Drop Pod\n");
+		rkTransportPod.initKammer();
+		rkTransportPod.setButtonText("Legion Drop Pod");
+		add(rkTransportPod);
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransporterKammer", "Dedicated transport");
-		//Rhino, Pod, Dreadclaw, Phobos, Spartan
-		rkTransport.initKammer(true, true, true, true, false);
-		rkTransport.setButtonText("Dedicated transport");
-		add(rkTransport);
+		seperator();
+		rkTransportEagle = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerEagle", "Legion Storm Eagle Assault Gunship\n");
+		rkTransportEagle.initKammer();
+		rkTransportEagle.setButtonText("Legion Storm Eagle Assault Gunship");
+		add(rkTransportEagle);
+
+		seperator();
+		rkTransportPhobos = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerPhobos", "Legion Land Raider Phobos\n");
+		rkTransportPhobos.initKammer();
+		rkTransportPhobos.setButtonText("Legion Land Raider Phobos");
+		add(rkTransportPhobos);
+
+		seperator();
+		rkTransportProteus = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerProteus", "Legion Land Raider Proteus\n");
+		rkTransportProteus.initKammer();
+		rkTransportProteus.setButtonText("Legion Land Raider Proteus");
+		add(rkTransportProteus);
+
+		seperator();
+		rkTransportRhino = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerRhino", "Legion Rhino Armoured Carrier\n");
+		rkTransportRhino.initKammer();
+		rkTransportRhino.setButtonText("Legion Rhino Armoured Carrier");
+		add(rkTransportRhino);
+
+		seperator();
+		rkTransportDreadclaw = new RuestkammerStarter(ID, randAbstand, cnt, "SHTransportKammerDreadclaw", "Dreadclaw Drop Pod\n");
+		rkTransportDreadclaw.initKammer();
+		rkTransportDreadclaw.setButtonText("Dreadclaw Drop Pod");
+		add(rkTransportDreadclaw);
 
 		complete();
 	}
@@ -131,7 +154,6 @@ public class SHLegionCommandSquad extends Eintrag {
 		o4a.setAktiv(!o6.isSelected());
 		o4b.setAktiv(!o6.isSelected());
 		o5.setAktiv(!o6.isSelected());
-		rkTransport.setAktiv(!o5.isSelected());
 		
 		o7a.setAktiv(o6.isSelected());
 		o7aStandard.setAktiv(o6.isSelected());
@@ -181,6 +203,72 @@ public class SHLegionCommandSquad extends Eintrag {
 		} else {
 			setFehlermeldung("");
 		}
+		
+		rkTransportPod.setAktiv(squad.getModelle() <=10 && !rkTransportRhino.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected()         		
+        		&& !rkTransportDreadclaw.isSelected()
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 3);
+        
+        rkTransportEagle.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
+        		&& !rkTransportRhino.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected()         		
+        		&& !rkTransportDreadclaw.isSelected()
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 1);
+        
+        rkTransportPhobos.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportRhino.isSelected() 
+        		&& !rkTransportProteus.isSelected()        		
+        		&& !rkTransportDreadclaw.isSelected() 
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 2);
+        
+        rkTransportProteus.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportRhino.isSelected()        		
+        		&& !rkTransportDreadclaw.isSelected()
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") == 2);
+        
+        rkTransportRhino.setAktiv(squad.getModelle() <=10 && !rkTransportPod.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected()        		
+        		&& !rkTransportDreadclaw.isSelected()
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") != 1
+        		&& BuildaHQ.getCountFromInformationVector("SHRoW") != 3);
+        
+        rkTransportDreadclaw.setAktiv(squad.getModelle() <=10 && !rkTransportRhino.isSelected() 
+        		&& !rkTransportEagle.isSelected() 
+        		&& !rkTransportPhobos.isSelected() 
+        		&& !rkTransportProteus.isSelected()        		
+        		&& !rkTransportRhino.isSelected());
+        
+        rkTransportEagle.getPanel().setLocation(
+				(int) rkTransportEagle.getPanel().getLocation().getX(),
+				(int) rkTransportPod.getPanel().getLocation().getY() + rkTransportPod.getPanel().getSize().height + 5
+		);
+        
+        rkTransportPhobos.getPanel().setLocation(
+				(int) rkTransportPhobos.getPanel().getLocation().getX(),
+				(int) rkTransportEagle.getPanel().getLocation().getY() + rkTransportEagle.getPanel().getSize().height + 5
+		);
+        
+        rkTransportProteus.getPanel().setLocation(
+				(int) rkTransportProteus.getPanel().getLocation().getX(),
+				(int) rkTransportPhobos.getPanel().getLocation().getY() + rkTransportPhobos.getPanel().getSize().height + 5
+		);
+        
+        rkTransportRhino.getPanel().setLocation(
+				(int) rkTransportRhino.getPanel().getLocation().getX(),
+				(int) rkTransportProteus.getPanel().getLocation().getY() + rkTransportProteus.getPanel().getSize().height + 5
+	    );
+        rkTransportDreadclaw.getPanel().setLocation(
+				(int) rkTransportDreadclaw.getPanel().getLocation().getX(),
+				(int) rkTransportRhino.getPanel().getLocation().getY() + rkTransportRhino.getPanel().getSize().height + 5
+	    );
 	}
 
 	@Override

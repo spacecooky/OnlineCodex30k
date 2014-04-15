@@ -19,30 +19,27 @@ public class SHLegionPraetor extends Eintrag {
 
 		BuildaHQ.addToInformationVector("SHPraetor", 1);
 
-		seperator();
+		/*seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Angel's wrath", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Armoured spearhead", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Orbital assault", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Pride of the Legion", 0));
-		add(o0 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		add(o0 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));*/
 		
 		seperator();
-
 		ogE.addElement(new OptionsGruppeEintrag("Terminator armour", 35));
 		ogE.addElement(new OptionsGruppeEintrag("Cataphractii armour", 35));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
-		
+		seperator();		
 		Servo = new RuestkammerStarter(ID, randAbstand, cnt, "SHPraetorServoKammer", "");
 		Servo.initKammer();
 		Servo.setButtonText(BuildaHQ.translate("Weapons & Equipment"));
 		add(Servo);
 		Servo.setAbwaehlbar(false);
 		
-		seperator();
-		
+		seperator();		
 		Termi = new RuestkammerStarter(ID, randAbstand, cnt, "SHPraetorTermiKammer", "");
 		Termi.initKammer();
 		Termi.setButtonText(BuildaHQ.translate("Terminatorweapons & Equipment"));

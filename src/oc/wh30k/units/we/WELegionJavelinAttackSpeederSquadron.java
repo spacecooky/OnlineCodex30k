@@ -5,41 +5,33 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
-public class WELegionPredatorStrikeArmourSquadron extends Eintrag {
+public class WELegionJavelinAttackSpeederSquadron extends Eintrag {
 
 	OptionsUpgradeGruppe o1;
 	RuestkammerStarter t1;
 	RuestkammerStarter t2;
 	RuestkammerStarter t3;
 
-	public WELegionPredatorStrikeArmourSquadron() {
-		name = "Legion Predator Strike Armour Squadron";
+	public WELegionJavelinAttackSpeederSquadron() {
+		name = "Legion Javelin Attack Speeder Squadron";
 		grundkosten = 0;
         überschriftSetzen = true;
 
         seperator();
-        		
-        ogE.addElement(new OptionsGruppeEintrag("Command tank", 25));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        		
-        seperator();
-
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "WEPredatorKammer", "Legion Predator");
+		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "WEJavelinKammer", "Javelin Attack Speeder");
 		t1.initKammer();
 		t1.setAbwaehlbar(false);
 		t1.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t1);
 
 		seperator();
-
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "WEPredatorKammer", "Legion Predator");
+		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "WEJavelinKammer", "Javelin Attack Speeder");
 		t2.initKammer();
 		t2.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t2);
 
 		seperator();
-
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "WEPredatorKammer", "Legion Predator");
+		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "WEJavelinKammer", "Javelin Attack Speeder");
 		t3.initKammer();
 		t3.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(t3);
