@@ -158,6 +158,10 @@ public class OnlineCodex extends BuildaPanel {
 			new IconedText("Emperor's Children", "oc/wh30k/images/VSEmperorsChildren.gif"),
 			new IconedText("Sons of Horus", "oc/wh30k/images/VSSonsofHorus.gif"),
 			new IconedText("World Eaters", "oc/wh30k/images/VSWorldEaters.gif"),
+			new IconedText("Iron Hands", "oc/wh30k/images/VSIronHands.gif"),
+			new IconedText("Night Lords", "oc/wh30k/images/VSNL.gif"),
+			new IconedText("Salamanders", "oc/wh30k/images/VSSL.gif"),
+			new IconedText("Word Bearers", "oc/wh30k/images/VSWB.gif"),
 			"",
 			new IconedText("Legio Cybernetica", "oc/wh30k/images/VSLegioCybernetica.gif"),
 			new IconedText("Ordo Reductor", "oc/wh30k/images/VSOrdoReductor.gif")
