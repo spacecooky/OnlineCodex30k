@@ -1,4 +1,4 @@
-package oc.wh30k.units.we;
+package oc.wh30k.units.ih;
 
 import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
@@ -7,11 +7,11 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
-public class WESergeant extends RuestkammerVater {
+public class IHSergeant extends RuestkammerVater {
 
 	OptionsUpgradeGruppe o1a, o1b, o1c, o1d, o2a, o2b, o2c, o3a, o3b, o3c, o4a, o4b, o5a, o5b, o5c, o5d, o5e, 
-		o6a, o6b, o6c, o7a, o7b, o7c, o8a, o8b, o8c, o8d, o9a, o9b, o10a, o10b, o10c, o10d, o11a, o11b, o11c, o11d,
-		o12a, o12b, o12c, o12d, o13a, o13b, o13c;
+						 o6a, o6b, o6c, o7a, o7b, o7c, o8a, o8b, o8c, o8d, o9a, o9b, o10a, o10b, o10c, o10d, 
+						 o11a, o11b, o11c, o11d, o12a, o12b, o12c;
 	OptionsZaehlerGruppe o4c;
 	
 	boolean isAssault = false;
@@ -19,16 +19,15 @@ public class WESergeant extends RuestkammerVater {
 	boolean isBreacher = false;
 	boolean isDestroyer = false;
 	boolean isHeavy = false;
+	boolean isReaver = false;
 	boolean isReco = false;
 	boolean isSeeker = false;
 	boolean isSupport = false;
 	boolean isTactical = false;
 	boolean isTerminator = false;
 	boolean isVeteran = false;
-	boolean isRampager = false;
-	boolean isButcher = false;
 
-	public WESergeant() {
+	public IHSergeant() {
 		grundkosten = 0;
 	}
 
@@ -40,14 +39,13 @@ public class WESergeant extends RuestkammerVater {
 		if(defaults[2]) isBreacher = true;
 		if(defaults[3]) isDestroyer = true;
 		if(defaults[4]) isHeavy = true;
-		if(defaults[5]) isReco = true;
-		if(defaults[6]) isSeeker = true;
-		if(defaults[7]) isSupport = true;
-		if(defaults[8]) isTactical = true;
-		if(defaults[9]) isTerminator = true;
-		if(defaults[10]) isVeteran = true;
-		if(defaults[11]) isRampager = true;
-		if(defaults[12]) isButcher = true;
+		if(defaults[5]) isReaver = true;
+		if(defaults[6]) isReco = true;
+		if(defaults[7]) isSeeker = true;
+		if(defaults[8]) isSupport = true;
+		if(defaults[9]) isTactical = true;
+		if(defaults[10]) isTerminator = true;
+		if(defaults[11]) isVeteran = true;
 				
 		if (isAssault) {
 			
@@ -59,7 +57,6 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();		
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
@@ -87,7 +84,6 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
@@ -126,7 +122,6 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
@@ -156,7 +151,6 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword & nuncio-vox", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainaxe & nuncio-vox", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon & nuncio-vox", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist & nuncio-vox", 15));
 			add(o5b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -180,11 +174,34 @@ public class WESergeant extends RuestkammerVater {
 			add(o5e = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 			}
 		
+		else if (isReaver) {
+			
+			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Boltgun", "Boltgun with Banestrike shells", 5));
+			ogE.addElement(new OptionsGruppeEintrag("Volkite charger", 7));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", "Combi-flamer with Banestrike shells", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", "Combi-melta with Banestrike shells", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", "Combi-plasma with Banestrike shells", 10));
+			add(o12a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			
+			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
+			ogE.addElement(new OptionsGruppeEintrag("Chain axe", 1));
+			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
+			add(o12b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+			
+			seperator();			
+			ogE.addElement(new OptionsGruppeEintrag("Melta bombs", 5));
+			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
+			ogE.addElement(new OptionsGruppeEintrag("Hand flamer", 5));
+			add(o12c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+			}
+		
 		else if (isReco) {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			add(o6a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -229,7 +246,6 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();			
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
@@ -304,7 +320,6 @@ public class WESergeant extends RuestkammerVater {
 			
 			seperator();
 			ogE.addElement(new OptionsGruppeEintrag("Chainsword", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
 			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
 			ogE.addElement(new OptionsGruppeEintrag("Single lightning claw", 15));
@@ -322,55 +337,6 @@ public class WESergeant extends RuestkammerVater {
 			seperator();
 			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
 			add(o11d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-			}
-		
-		else if (isRampager) {
-			
-			seperator();			
-			ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 15));
-			add(o12a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-			
-			seperator();			
-			ogE.addElement(new OptionsGruppeEintrag("Chainaxe", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Heavy chainsword", 5));
-			ogE.addElement(new OptionsGruppeEintrag("Power weapon", 10));
-			ogE.addElement(new OptionsGruppeEintrag("Singe lightning claw", 15));
-			ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
-			add(o12b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-			
-			seperator();			
-			ogE.addElement(new OptionsGruppeEintrag("Barb-hook lash", 10));
-			ogE.addElement(new OptionsGruppeEintrag("Excoriator chainaxe", 10));
-			ogE.addElement(new OptionsGruppeEintrag("Meteor hammer", 10));
-			ogE.addElement(new OptionsGruppeEintrag("Twin Falax blades", 10));
-			add(o12c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-			
-			seperator();			
-			ogE.addElement(new OptionsGruppeEintrag("Artificer armour", 10));
-			add(o12d = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-			}
-		
-		else if (isButcher) {
-			
-			seperator();			
-			ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Power axe", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", 5));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-melta", 5));
-			ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", 5));
-			add(o13a = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-			
-			seperator();			
-			ogE.addElement(new OptionsGruppeEintrag("Power axe", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Power fist", 5));
-			ogE.addElement(new OptionsGruppeEintrag("Chainfist", 10));
-			ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", 10));
-			add(o13b = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-			
-			seperator();
-			ogE.addElement(new OptionsGruppeEintrag("Pair of lightning claws", 5));
-			add(o13c = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			}
 		
 		
@@ -408,6 +374,10 @@ public class WESergeant extends RuestkammerVater {
 			if(!o5d.isSelected()) o5d.setSelected(0, true);
 			}
 		
+		else if (isReaver) {
+			if(!o12b.isSelected()) o12b.setSelected(0, true);
+			}
+		
 		else if (isReco) {
 			if(!o6a.isSelected()) o6a.setSelected(0, true);
 			if(!o6b.isSelected()) o6b.setSelected(0, true);
@@ -437,20 +407,6 @@ public class WESergeant extends RuestkammerVater {
 			if(!o11a.isSelected()) o11a.setSelected(0, true);
 			if(!o11b.isSelected()) o11b.setSelected(0, true);
 			if(!o11c.isSelected()) o11c.setSelected(0, true);
-			}
-		
-		else if (isRampager) {
-			if(!o12a.isSelected()) o12a.setSelected(0, true);
-			if(!o12b.isSelected()) o12b.setSelected(0, true);			
-			o12a.setAktiv(!o12c.isSelected());
-			o12b.setAktiv(!o12c.isSelected());
-			}
-		
-		else if (isButcher) {
-			o13a.setAktiv(!o13c.isSelected());
-			o13b.setAktiv(!o13c.isSelected());
-			if(!o13a.isSelected()) o13a.setSelected(0, true);
-			if(!o13b.isSelected()) o13b.setSelected(0, true);
 			}
 	}
 

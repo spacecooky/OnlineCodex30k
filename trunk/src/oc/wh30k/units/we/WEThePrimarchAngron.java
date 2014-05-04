@@ -8,6 +8,8 @@ public class WEThePrimarchAngron extends Eintrag {
 	public WEThePrimarchAngron() {
 		name = "The Primarch Angron";
 		grundkosten = 400;
+		
+		BuildaHQ.setInformationVectorValue("WEAngron", 1);
 
 		add(ico = new oc.Picture("oc/wh40k/images/xy.jpg"));
 
@@ -21,7 +23,8 @@ public class WEThePrimarchAngron extends Eintrag {
 	
 	@Override
 	public void deleteYourself() {
-		
+		BuildaHQ.setInformationVectorValue("WEAngron", 0);
+		super.deleteYourself();		
 		
 	}
 
